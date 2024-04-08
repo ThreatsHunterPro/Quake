@@ -275,8 +275,8 @@ public:
     {
         const SizeType& _index = Find(_element);
         if (_index == -1) return count;
-
-        return RemoveAt(_index);
+        RemoveAt(_index);
+        return 1;
     }
     SizeType RemoveAll(const Type& _element)
     {

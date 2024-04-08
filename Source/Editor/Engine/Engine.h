@@ -6,9 +6,12 @@
 #include "..\..\Runtime\Core\Containers\TArray.h"
 #include "../../Runtime/Objects/Actors/Lights/PointLight/APointLight.h"
 
+class UWorld;
+
 class Engine
 {
 	EngineWindow* mainWindow;
+	UWorld* world;
 
 	GLuint VAO;
 	GLuint VBO;

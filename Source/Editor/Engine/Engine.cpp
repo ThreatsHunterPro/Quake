@@ -2,11 +2,12 @@
 #include "..\..\Runtime\Managers\InputManager.h"
 #include "..\..\Runtime\Managers\CameraManager.h"
 #include "..\..\Runtime\Managers\TimerManager.h"
-
+#include"Source/Runtime/Objects/UWorld.h"
 
 Engine::Engine()
 {
 	mainWindow = new EngineWindow();
+	world = new UWorld();
 
 	VAO = GLuint();
 	VBO = GLuint();
@@ -36,13 +37,14 @@ Engine::Engine()
 Engine::~Engine()
 {
 	delete mainWindow;
+	delete world;
 }
 
 
 void Engine::Start()
 {
 	mainWindow->Start();
-
+	world->Start(mainWindow->GetWindow());
 	// Shaders
 	elementShader.LoadShadersFromPath("Element.vs", "Element.fs");
 	lampShader.LoadShadersFromPath("Lamp.vs", "Lamp.fs");
@@ -221,10 +223,10 @@ void Engine::Update()
 
 	do
 	{
-		TimerManager::GetInstance().Update();
-		InputManager::GetInstance().Update();
-		CameraManager::GetInstance().Update();
-
+		world->Update();
+		//TimerManager::GetInstance().Update();
+		//InputManager::GetInstance().Update();
+		//CameraManager::GetInstance().Update();
 		//ChangeBgColor();
 		Draw();
 
@@ -344,8 +346,8 @@ void Engine::DrawElements()
 		const float _angle = 20.0f * _index;
 		_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
 
-			elementShader.Use();
-			elementShader.SetMat4("model", _model);
+		elementShader.Use();
+		elementShader.SetMat4("model", _model);
 	}
 }
 
@@ -378,6 +380,7 @@ void Engine::DrawLamp()
 void Engine::Stop()
 {
 	mainWindow->Stop();
+	world->Stop();
 	ClearElements();
 }
 
