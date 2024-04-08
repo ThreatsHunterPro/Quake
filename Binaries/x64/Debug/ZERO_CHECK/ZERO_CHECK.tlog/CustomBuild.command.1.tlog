@@ -1,0 +1,10 @@
+^D:\P2VS\QUAKE\BINARIES\CMAKEFILES\EBC848508B35213EA4299F7C854333D8\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/p2vs/Quake/Binaries/Quake.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
