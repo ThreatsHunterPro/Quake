@@ -1,3 +1,1 @@
-﻿  Building Custom Rule D:/p2vs/Quake/external/CMakeLists.txt
-  glew.c
-  GLEW_1130.vcxproj -> D:\p2vs\Quake\Binaries\external\Debug\GLEW_1130.lib
+﻿  GLEW_1130.vcxproj -> D:\GitHub\Quake_Shared\Quake\Binaries\external\Debug\GLEW_1130.lib

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\Binaries\CMakeFiles\fa808936b1f0f897cb106256d53eb6c2\INSTALL_force.rule">
+    <CustomBuild Include="D:\GitHub\Quake_Shared\Quake\Binaries\CMakeFiles\61e927dec600298d49e7785f5164fc05\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{8A3BADB6-29C5-39DF-981A-47C0DDA4CEE0}</UniqueIdentifier>
+      <UniqueIdentifier>{E527DE0C-306A-328C-A502-4586DF49EE06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

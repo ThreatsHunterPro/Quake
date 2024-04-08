@@ -1,4 +1,4 @@
-# Install script for directory: D:/p2vs/Quake/external/assimp-3.0.1270/contrib/zlib
+# Install script for directory: D:/GitHub/Quake_Shared/Quake/external/assimp-3.0.1270/contrib/zlib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

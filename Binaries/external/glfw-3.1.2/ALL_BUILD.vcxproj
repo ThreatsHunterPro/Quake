@@ -25,9 +25,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{475EA6F4-AA97-3B46-A38A-AA4C55FF4747}</ProjectGuid>
+    <ProjectGuid>{47598692-E807-34D8-9460-370184C29CAD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
     <ProjectName>ALL_BUILD</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -108,11 +108,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\external\glfw-3.1.2\CMakeLists.txt">
+    <CustomBuild Include="D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/p2vs/Quake/external/glfw-3.1.2/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/GitHub/Quake_Shared/Quake/external/glfw-3.1.2/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/glfw-3.1.2/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/GitHub/Quake_Shared/Quake -BD:/GitHub/Quake_Shared/Quake/Binaries --check-stamp-file D:/GitHub/Quake_Shared/Quake/Binaries/external/glfw-3.1.2/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -120,12 +120,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;D:\p2vs\Quake\external\glfw-3.1.2\cmake_uninstall.cmake.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw3.pc.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw3Config.cmake.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindOpenGL.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\cmake_uninstall.cmake.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw3.pc.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw3Config.cmake.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/p2vs/Quake/external/glfw-3.1.2/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/GitHub/Quake_Shared/Quake/external/glfw-3.1.2/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/glfw-3.1.2/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/GitHub/Quake_Shared/Quake -BD:/GitHub/Quake_Shared/Quake/Binaries --check-stamp-file D:/GitHub/Quake_Shared/Quake/Binaries/external/glfw-3.1.2/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -133,12 +133,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;D:\p2vs\Quake\external\glfw-3.1.2\cmake_uninstall.cmake.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw3.pc.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw3Config.cmake.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindOpenGL.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\cmake_uninstall.cmake.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw3.pc.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw3Config.cmake.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/p2vs/Quake/external/glfw-3.1.2/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/GitHub/Quake_Shared/Quake/external/glfw-3.1.2/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/glfw-3.1.2/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/GitHub/Quake_Shared/Quake -BD:/GitHub/Quake_Shared/Quake/Binaries --check-stamp-file D:/GitHub/Quake_Shared/Quake/Binaries/external/glfw-3.1.2/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -146,12 +146,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;D:\p2vs\Quake\external\glfw-3.1.2\cmake_uninstall.cmake.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw3.pc.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw3Config.cmake.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindOpenGL.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\cmake_uninstall.cmake.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw3.pc.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw3Config.cmake.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/p2vs/Quake/external/glfw-3.1.2/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/GitHub/Quake_Shared/Quake/external/glfw-3.1.2/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/glfw-3.1.2/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/GitHub/Quake_Shared/Quake -BD:/GitHub/Quake_Shared/Quake/Binaries --check-stamp-file D:/GitHub/Quake_Shared/Quake/Binaries/external/glfw-3.1.2/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -159,114 +159,114 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;D:\p2vs\Quake\external\glfw-3.1.2\cmake_uninstall.cmake.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw3.pc.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw3Config.cmake.in;D:\p2vs\Quake\external\glfw-3.1.2\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindOpenGL.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;D:\CMake\cmake-3.29.0-windows-x86_64\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\cmake_uninstall.cmake.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw3.pc.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw3Config.cmake.in;D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\ZERO_CHECK.vcxproj">
-      <Project>{6388BD46-2429-321C-8946-E0CFE0C56207}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\ZERO_CHECK.vcxproj">
+      <Project>{77CBEF38-EC5A-3E69-B27A-6BA5F9554221}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\examples\boing.vcxproj">
-      <Project>{B896C1CB-A10A-32B8-BDB2-9B4A10B15E41}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\examples\boing.vcxproj">
+      <Project>{30FF851B-45FA-3123-94B5-75341A41A66C}</Project>
       <Name>boing</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\clipboard.vcxproj">
-      <Project>{C740F382-F678-33FD-B57C-FCDD9AA27DE3}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\clipboard.vcxproj">
+      <Project>{211C93DB-0483-3BE7-9A43-CC586FB08224}</Project>
       <Name>clipboard</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\cursor.vcxproj">
-      <Project>{248545B6-8CC2-3699-9EFD-BFA42142F42E}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\cursor.vcxproj">
+      <Project>{4684B8B2-8B4E-3AF7-80E4-8195D6902E8C}</Project>
       <Name>cursor</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\empty.vcxproj">
-      <Project>{976C45FA-C0E2-33FA-845D-4C48EC05CE5B}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\empty.vcxproj">
+      <Project>{36D58A5A-C80E-3C6C-B271-B8AF5CE65682}</Project>
       <Name>empty</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\events.vcxproj">
-      <Project>{9179105E-279E-31AC-97D6-375B277CD88C}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\events.vcxproj">
+      <Project>{1A392440-0B81-35CA-A81F-9DFE50D97FDB}</Project>
       <Name>events</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\gamma.vcxproj">
-      <Project>{69BBD4BF-65D9-3B94-B58E-6187AFD91773}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\gamma.vcxproj">
+      <Project>{A407607A-4C2D-3ED9-A808-D80975B0AF2D}</Project>
       <Name>gamma</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\examples\gears.vcxproj">
-      <Project>{13588EAF-FE32-3EBF-BE98-CF0A6966441D}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\examples\gears.vcxproj">
+      <Project>{8E08A514-26CC-364D-AC09-282FF61864E6}</Project>
       <Name>gears</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\src\glfw.vcxproj">
-      <Project>{9E420009-8C1B-3167-9D33-09E12218581D}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\src\glfw.vcxproj">
+      <Project>{49142521-B694-32B7-975F-942693A6216E}</Project>
       <Name>glfw</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\glfwinfo.vcxproj">
-      <Project>{C5CFB6CD-6EE9-34F4-9379-FFE0940BFC64}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\glfwinfo.vcxproj">
+      <Project>{7583EFB1-A4ED-3500-A95B-2FA955ED86AB}</Project>
       <Name>glfwinfo</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\examples\heightmap.vcxproj">
-      <Project>{9ECFBEF0-2772-30D4-BFBC-D3670EAEEBED}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\examples\heightmap.vcxproj">
+      <Project>{59EB5937-C849-3135-A1C4-929ED538AB36}</Project>
       <Name>heightmap</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\iconify.vcxproj">
-      <Project>{1FBF6FAC-C8D1-3E2B-BED4-F27B8D6AF9E9}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\iconify.vcxproj">
+      <Project>{A55F8DBA-AD37-38A7-8E78-15C86F2BEFFB}</Project>
       <Name>iconify</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\joysticks.vcxproj">
-      <Project>{E6CE2873-9E0A-3EDE-B399-DACBB43CE58F}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\joysticks.vcxproj">
+      <Project>{1BE22CDB-AFDA-3597-BBEA-55AB454236EC}</Project>
       <Name>joysticks</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\monitors.vcxproj">
-      <Project>{09FC039B-D9D0-30F7-B144-56075F48EE84}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\monitors.vcxproj">
+      <Project>{7F27D590-BC8B-3D98-B2A4-2038E096D4A0}</Project>
       <Name>monitors</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\msaa.vcxproj">
-      <Project>{310BD5E1-BC2C-31C2-AD04-0AF222D78FE0}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\msaa.vcxproj">
+      <Project>{BE812C7F-CCBF-359F-A0A8-DE82EFB874F9}</Project>
       <Name>msaa</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\examples\particles.vcxproj">
-      <Project>{4F2216B1-A552-34CC-9B8D-D6C6B32A728E}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\examples\particles.vcxproj">
+      <Project>{9F5485E1-4FF1-39CB-A008-760D40072D0D}</Project>
       <Name>particles</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\reopen.vcxproj">
-      <Project>{CB6A68CC-4FAA-30E4-9429-8F5ED2D2F5AF}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\reopen.vcxproj">
+      <Project>{CDF70F62-6D33-3C5B-AFAB-0593FEC81367}</Project>
       <Name>reopen</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\sharing.vcxproj">
-      <Project>{AE6AFAA3-FD07-3C49-9799-B0DD7A135689}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\sharing.vcxproj">
+      <Project>{795F7B38-3567-380C-A3FC-B23E543D413B}</Project>
       <Name>sharing</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\examples\simple.vcxproj">
-      <Project>{13C05FE1-784B-3331-A607-89C90E450A2F}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\examples\simple.vcxproj">
+      <Project>{B7758321-552E-3DA4-A680-9648B8496AE7}</Project>
       <Name>simple</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\examples\splitview.vcxproj">
-      <Project>{E7124E21-F5C7-30FF-8F64-5C03BED9086B}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\examples\splitview.vcxproj">
+      <Project>{E80B1B05-0707-3072-BACD-E57523F10778}</Project>
       <Name>splitview</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\tearing.vcxproj">
-      <Project>{61AAD928-31FB-302A-A233-8C1BA826CD6A}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\tearing.vcxproj">
+      <Project>{C74EA2C0-2308-3295-99C0-C1CBC9EEEC48}</Project>
       <Name>tearing</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\threads.vcxproj">
-      <Project>{87FCAC58-4913-31F2-B318-FE594FCD2B00}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\threads.vcxproj">
+      <Project>{701FFFE5-F642-3C6B-BC21-F7F7BEEE0E03}</Project>
       <Name>threads</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\title.vcxproj">
-      <Project>{4FCEE7B5-E981-3C48-893F-CF1C6E7821DB}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\title.vcxproj">
+      <Project>{BAE0D9BD-8160-31C6-8583-99F2216BD58A}</Project>
       <Name>title</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\examples\wave.vcxproj">
-      <Project>{80593E73-A1B9-3F42-B27A-00F87258B1A8}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\examples\wave.vcxproj">
+      <Project>{7248EF58-8544-3EC4-B312-BDB883F2E42A}</Project>
       <Name>wave</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\windows.vcxproj">
-      <Project>{FC0F23CF-B892-363B-BE61-ECA6F6459F49}</Project>
+    <ProjectReference Include="D:\GitHub\Quake_Shared\Quake\Binaries\external\glfw-3.1.2\tests\windows.vcxproj">
+      <Project>{21B5B763-69C7-3EA3-BCBB-D16EA355353A}</Project>
       <Name>windows</Name>
     </ProjectReference>
   </ItemGroup>

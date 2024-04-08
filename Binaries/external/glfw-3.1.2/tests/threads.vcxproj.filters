@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\p2vs\Quake\external\glfw-3.1.2\tests\threads.c">
+    <ClCompile Include="D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\tests\threads.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\external\glfw-3.1.2\deps\tinycthread.c">
+    <ClCompile Include="D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\deps\tinycthread.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\p2vs\Quake\external\glfw-3.1.2\deps\tinycthread.h">
+    <ClInclude Include="D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\deps\tinycthread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\external\glfw-3.1.2\tests\CMakeLists.txt" />
+    <CustomBuild Include="D:\GitHub\Quake_Shared\Quake\external\glfw-3.1.2\tests\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{D3CEDF22-7A50-3577-98E2-727AB606B562}</UniqueIdentifier>
+      <UniqueIdentifier>{C26DFDF7-F489-3BF2-86EF-CAAA003ADB28}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{C8A093B8-9311-39FF-A95E-F9EAC41E3998}</UniqueIdentifier>
+      <UniqueIdentifier>{CE3B3527-2C0D-372A-B9DE-3E169EB7FDA0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-# Install script for directory: D:/p2vs/Quake/external
+# Install script for directory: D:/GitHub/Quake_Shared/Quake/external
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,36 +34,36 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/p2vs/Quake/Binaries/external/glfw-3.1.2/cmake_install.cmake")
+  include("D:/GitHub/Quake_Shared/Quake/Binaries/external/glfw-3.1.2/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/p2vs/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/cmake_install.cmake")
+  include("D:/GitHub/Quake_Shared/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/p2vs/Quake/Binaries/external/assimp-3.0.1270/code/cmake_install.cmake")
+  include("D:/GitHub/Quake_Shared/Quake/Binaries/external/assimp-3.0.1270/code/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/p2vs/Quake/Binaries/external/bullet-2.81-rev2613/src/BulletSoftBody/cmake_install.cmake")
+  include("D:/GitHub/Quake_Shared/Quake/Binaries/external/bullet-2.81-rev2613/src/BulletSoftBody/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/p2vs/Quake/Binaries/external/bullet-2.81-rev2613/src/BulletCollision/cmake_install.cmake")
+  include("D:/GitHub/Quake_Shared/Quake/Binaries/external/bullet-2.81-rev2613/src/BulletCollision/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/p2vs/Quake/Binaries/external/bullet-2.81-rev2613/src/BulletDynamics/cmake_install.cmake")
+  include("D:/GitHub/Quake_Shared/Quake/Binaries/external/bullet-2.81-rev2613/src/BulletDynamics/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/p2vs/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/cmake_install.cmake")
+  include("D:/GitHub/Quake_Shared/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/cmake_install.cmake")
 endif()
 

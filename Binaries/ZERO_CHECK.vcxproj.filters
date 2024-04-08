@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\Binaries\CMakeFiles\ebc848508b35213ea4299f7c854333d8\generate.stamp.rule">
+    <CustomBuild Include="D:\GitHub\Quake_Shared\Quake\Binaries\CMakeFiles\48a40f0bc53d2e937bf60143effb148b\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{8A3BADB6-29C5-39DF-981A-47C0DDA4CEE0}</UniqueIdentifier>
+      <UniqueIdentifier>{E527DE0C-306A-328C-A502-4586DF49EE06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
