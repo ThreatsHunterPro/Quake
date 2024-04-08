@@ -1,5 +1,6 @@
 #define STB_IMAGE_IMPLEMENTATION // a definir avec <stb_image.h> au dans le main
-
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 #include "CoreMinimal.h"
 #include "Runtime/Managers/UGameInstance.h"
 #include "Runtime/Objects/Actors/AActor.h"
@@ -147,8 +148,25 @@ int main()
 
 #pragma endregion
 	*/
+	sf::Window window(sf::VideoMode(800, 600), "My window");
 
+	// run the program as long as the window is open
+	while (window.isOpen())
+	{
+		// check all the window's events that were triggered since the last iteration of the loop
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			// "close requested" event: we close the window
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+	}
+
+	return 0;
+	/*
 	Engine* _engine = new Engine();
 	_engine->Launch();
 	delete _engine;
+	*/
 }
