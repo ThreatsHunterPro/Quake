@@ -1,75 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\adler32.c">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\adler32.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\compress.c">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\compress.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\crc32.c">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\crc32.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\deflate.c">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\deflate.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inffast.c">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inffast.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inflate.c">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inflate.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inftrees.c">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inftrees.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\trees.c">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\trees.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\zutil.c">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\zutil.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\zconf.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\zconf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\zlib.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\zlib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\crc32.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\crc32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\deflate.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\deflate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inffast.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inffast.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inffixed.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inffixed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inflate.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inflate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inftrees.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inftrees.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\trees.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\trees.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\zutil.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\zutil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\CMakeLists.txt" />
+    <CustomBuild Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{D3CEDF22-7A50-3577-98E2-727AB606B562}</UniqueIdentifier>
+      <UniqueIdentifier>{7AD9DEE0-B908-3D54-97DE-24E6471A3F89}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{C8A093B8-9311-39FF-A95E-F9EAC41E3998}</UniqueIdentifier>
+      <UniqueIdentifier>{41CA1699-CB94-3571-8964-A5E5C1804B5D}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

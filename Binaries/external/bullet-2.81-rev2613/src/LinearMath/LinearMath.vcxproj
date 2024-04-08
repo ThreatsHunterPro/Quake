@@ -22,9 +22,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{98FEF956-3C16-3848-9FE1-924E6CF8D840}</ProjectGuid>
+    <ProjectGuid>{08B278C1-190D-327B-9848-58B2B30DA690}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
     <ProjectName>LinearMath</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LinearMath.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LinearMath</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LinearMath.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LinearMath</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LinearMath.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LinearMath</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LinearMath.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LinearMath</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -96,10 +96,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_BOOST_WORKAROUND;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -112,7 +112,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -130,10 +130,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_BOOST_WORKAROUND;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -146,7 +146,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -164,10 +164,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_BOOST_WORKAROUND;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -180,7 +180,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -197,10 +197,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_BOOST_WORKAROUND;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -212,11 +212,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\CMakeLists.txt">
+    <CustomBuild Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/p2vs/Quake/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,11 +225,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/p2vs/Quake/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -238,11 +238,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/p2vs/Quake/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -251,11 +251,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/p2vs/Quake/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -264,49 +264,49 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\LinearMath\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btAlignedAllocator.cpp" />
-    <ClCompile Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btConvexHull.cpp" />
-    <ClCompile Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btConvexHullComputer.cpp" />
-    <ClCompile Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btGeometryUtil.cpp" />
-    <ClCompile Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btPolarDecomposition.cpp" />
-    <ClCompile Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btQuickprof.cpp" />
-    <ClCompile Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btSerializer.cpp" />
-    <ClCompile Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btVector3.cpp" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btAabbUtil2.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btAlignedAllocator.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btAlignedObjectArray.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btConvexHull.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btConvexHullComputer.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btDefaultMotionState.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btGeometryUtil.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btGrahamScan2dConvexHull.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btHashMap.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btIDebugDraw.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btList.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btMatrix3x3.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btMinMax.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btMotionState.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btPolarDecomposition.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btPoolAllocator.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btQuadWord.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btQuaternion.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btQuickprof.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btRandom.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btScalar.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btSerializer.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btStackAlloc.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btTransform.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btTransformUtil.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\bullet-2.81-rev2613\src\LinearMath\btVector3.h" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btAlignedAllocator.cpp" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btConvexHull.cpp" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btConvexHullComputer.cpp" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btGeometryUtil.cpp" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btPolarDecomposition.cpp" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btQuickprof.cpp" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btSerializer.cpp" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btVector3.cpp" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btAabbUtil2.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btAlignedAllocator.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btAlignedObjectArray.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btConvexHull.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btConvexHullComputer.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btDefaultMotionState.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btGeometryUtil.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btGrahamScan2dConvexHull.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btHashMap.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btIDebugDraw.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btList.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btMatrix3x3.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btMinMax.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btMotionState.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btPolarDecomposition.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btPoolAllocator.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btQuadWord.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btQuaternion.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btQuickprof.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btRandom.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btScalar.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btSerializer.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btStackAlloc.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btTransform.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btTransformUtil.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\LinearMath\btVector3.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\ZERO_CHECK.vcxproj">
-      <Project>{6388BD46-2429-321C-8946-E0CFE0C56207}</Project>
+    <ProjectReference Include="D:\repository\Quake\QuakeGH\Quake\Binaries\ZERO_CHECK.vcxproj">
+      <Project>{FA4E6B93-31F6-33B9-AFCF-C21B1E40972C}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

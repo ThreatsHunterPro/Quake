@@ -1,6 +1,6 @@
 # CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-3.29/Modules/CheckFunctionExists.cmake
-C:/Program Files/CMake/share/cmake-3.29/Modules/CheckIncludeFile.cmake
-C:/Program Files/CMake/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake
-C:/Program Files/CMake/share/cmake-3.29/Modules/CheckTypeSize.cmake
-D:/p2vs/Quake/external/CMakeLists.txt
+D:/CMake/cmake-3.29.0-windows-x86_64/share/cmake-3.29/Modules/CheckFunctionExists.cmake
+D:/CMake/cmake-3.29.0-windows-x86_64/share/cmake-3.29/Modules/CheckIncludeFile.cmake
+D:/CMake/cmake-3.29.0-windows-x86_64/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake
+D:/CMake/cmake-3.29.0-windows-x86_64/share/cmake-3.29/Modules/CheckTypeSize.cmake
+D:/repository/Quake/QuakeGH/Quake/external/CMakeLists.txt

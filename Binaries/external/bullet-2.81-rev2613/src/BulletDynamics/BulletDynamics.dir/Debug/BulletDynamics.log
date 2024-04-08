@@ -1,0 +1,25 @@
+﻿  Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/bullet-2.81-rev2613/src/BulletDynamics/CMakeLists.txt
+  btKinematicCharacterController.cpp
+  btConeTwistConstraint.cpp
+  btContactConstraint.cpp
+  btGearConstraint.cpp
+  btGeneric6DofConstraint.cpp
+  btGeneric6DofSpringConstraint.cpp
+  btHinge2Constraint.cpp
+  btHingeConstraint.cpp
+D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\BulletDynamics\ConstraintSolver\btContactConstraint.h(25,28): warning C4359: 'btContactConstraint': Alignment specifier is less than actual alignment (128), and will be ignored. (compiling source file D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\BulletDynamics\ConstraintSolver\btContactConstraint.cpp)
+  btPoint2PointConstraint.cpp
+  btSequentialImpulseConstraintSolver.cpp
+  btSliderConstraint.cpp
+  btSolve2LinearConstraint.cpp
+  btTypedConstraint.cpp
+  btUniversalConstraint.cpp
+  btDiscreteDynamicsWorld.cpp
+  btRigidBody.cpp
+  btSimpleDynamicsWorld.cpp
+  Bullet-C-API.cpp
+  btRaycastVehicle.cpp
+  btWheelInfo.cpp
+D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\BulletDynamics/ConstraintSolver/btContactConstraint.h(25,28): warning C4359: 'btContactConstraint': Alignment specifier is less than actual alignment (128), and will be ignored. (compiling source file D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.cpp)
+D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\BulletDynamics/ConstraintSolver/btContactConstraint.h(25,28): warning C4359: 'btContactConstraint': Alignment specifier is less than actual alignment (128), and will be ignored. (compiling source file D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\BulletDynamics\Vehicle\btRaycastVehicle.cpp)
+  BulletDynamics.vcxproj -> D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\BulletDynamics\Debug\BulletDynamics.lib

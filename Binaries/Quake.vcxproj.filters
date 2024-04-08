@@ -1,320 +1,377 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\p2vs\Quake\Source\Common\controls.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\controls.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Common\objloader.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\objloader.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Common\quaternion_utils.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\quaternion_utils.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Common\shader.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\shader.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Common\tangentspace.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\tangentspace.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Common\text2D.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\text2D.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Common\texture.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\texture.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Common\vboindexer.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\vboindexer.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\Engine\Engine.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Engine\Engine.cpp">
       <Filter>Editor\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\Engine\EngineWindow.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Engine\EngineWindow.cpp">
       <Filter>Editor\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\Engine\Material\Material.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Engine\Material\Material.cpp">
       <Filter>Editor\Engine\Material</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\Engine\Shader\CustomShader.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Engine\Shader\CustomShader.cpp">
       <Filter>Editor\Engine\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\GarbageCollector\GarbageCollector.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\GarbageCollector\GarbageCollector.cpp">
       <Filter>Editor\GarbageCollector</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\Pointers\TObjectPtr.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TObjectPtr.cpp">
       <Filter>Editor\Pointers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\Pointers\TPtr.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TPtr.cpp">
       <Filter>Editor\Pointers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\Pointers\TSharedPtr.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TSharedPtr.cpp">
       <Filter>Editor\Pointers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\Pointers\TSoftObjectPtr.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TSoftObjectPtr.cpp">
       <Filter>Editor\Pointers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Editor\Pointers\TWeakPtr.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TWeakPtr.cpp">
       <Filter>Editor\Pointers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Main.cpp" />
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Classes\GameFramework\USpringArmComponent.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_demo.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_draw.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_impl_glfw.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_impl_opengl3.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_impl_win32.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_tables.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_widgets.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Main.cpp" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Classes\GameFramework\USpringArmComponent.cpp">
       <Filter>Runtime\Classes\GameFramework</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Classes\Kismet\UKismetMathLibrary.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Classes\Kismet\UKismetMathLibrary.cpp">
       <Filter>Runtime\Classes\Kismet</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Core\Containers\FString.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Containers\FString.cpp">
       <Filter>Runtime\Core\Containers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FColor.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FColor.cpp">
       <Filter>Runtime\Core\Math</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FMath.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FMath.cpp">
       <Filter>Runtime\Core\Math</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FMatrix.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FMatrix.cpp">
       <Filter>Runtime\Core\Math</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FRotator.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FRotator.cpp">
       <Filter>Runtime\Core\Math</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FVector\FVector2.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FVector\FVector2.cpp">
       <Filter>Runtime\Core\Math\FVector</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FVector\FVector4.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FVector\FVector4.cpp">
       <Filter>Runtime\Core\Math\FVector</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Core\Math\MathFwd.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\MathFwd.cpp">
       <Filter>Runtime\Core\Math</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Core\Math\Quat.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\Quat.cpp">
       <Filter>Runtime\Core\Math</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Managers\CameraManager.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Managers\CameraManager.cpp">
       <Filter>Runtime\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Managers\InputManager.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Managers\InputManager.cpp">
       <Filter>Runtime\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Managers\TimerManager.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Managers\TimerManager.cpp">
       <Filter>Runtime\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Managers\UGameInstance.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Managers\UGameInstance.cpp">
       <Filter>Runtime\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Objects\Actors\AActor.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Actors\AActor.cpp">
       <Filter>Runtime\Objects\Actors</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Objects\Actors\Lights\ALight.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Actors\Lights\ALight.cpp">
       <Filter>Runtime\Objects\Actors\Lights</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Objects\Actors\Lights\PointLight\APointLight.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Actors\Lights\PointLight\APointLight.cpp">
       <Filter>Runtime\Objects\Actors\Lights\PointLight</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Objects\Components\UActorComponent.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Components\UActorComponent.cpp">
       <Filter>Runtime\Objects\Components</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Objects\Components\UMovementComponent.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Components\UMovementComponent.cpp">
       <Filter>Runtime\Objects\Components</Filter>
     </ClCompile>
-    <ClCompile Include="D:\p2vs\Quake\Source\Runtime\Objects\UObject.cpp">
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\UObject.cpp">
       <Filter>Runtime\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\p2vs\Quake\Source\CoreMinimal.h" />
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\Engine\Engine.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\CoreMinimal.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Engine\Engine.h">
       <Filter>Editor\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\Engine\EngineWindow.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Engine\EngineWindow.h">
       <Filter>Editor\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\Engine\Material\Material.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Engine\Material\Material.h">
       <Filter>Editor\Engine\Material</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\Engine\Shader\CustomShader.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Engine\Shader\CustomShader.h">
       <Filter>Editor\Engine\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\GarbageCollector\GarbageCollector.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\GarbageCollector\GarbageCollector.h">
       <Filter>Editor\GarbageCollector</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\Pointers\TObjectPtr.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TObjectPtr.h">
       <Filter>Editor\Pointers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\Pointers\TPtr.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TPtr.h">
       <Filter>Editor\Pointers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\Pointers\TSharedPtr.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TSharedPtr.h">
       <Filter>Editor\Pointers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\Pointers\TSoftObjectPtr.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TSoftObjectPtr.h">
       <Filter>Editor\Pointers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Editor\Pointers\TWeakPtr.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Editor\Pointers\TWeakPtr.h">
       <Filter>Editor\Pointers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Classes\GameFramework\USpringArmComponent.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imconfig.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_impl_glfw.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_impl_opengl3.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_impl_opengl3_loader.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_impl_win32.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imgui_internal.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imstb_rectpack.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imstb_textedit.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\ImGUI\imstb_truetype.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Classes\GameFramework\USpringArmComponent.h">
       <Filter>Runtime\Classes\GameFramework</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Classes\Kismet\UKismetMathLibrary.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Classes\Kismet\UKismetMathLibrary.h">
       <Filter>Runtime\Classes\Kismet</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Containers\FString.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Containers\FString.h">
       <Filter>Runtime\Core\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Containers\TArray.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Containers\TArray.h">
       <Filter>Runtime\Core\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Containers\TMap.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Containers\TMap.h">
       <Filter>Runtime\Core\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FColor.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FColor.h">
       <Filter>Runtime\Core\Math</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FMath.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FMath.h">
       <Filter>Runtime\Core\Math</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FMatrix.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FMatrix.h">
       <Filter>Runtime\Core\Math</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FRotator.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FRotator.h">
       <Filter>Runtime\Core\Math</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FVector\FVector2.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FVector\FVector2.h">
       <Filter>Runtime\Core\Math\FVector</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FVector\FVector4.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FVector\FVector4.h">
       <Filter>Runtime\Core\Math\FVector</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Math\FVector\TVector.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\FVector\TVector.h">
       <Filter>Runtime\Core\Math\FVector</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Math\MathFwd.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\MathFwd.h">
       <Filter>Runtime\Core\Math</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Core\Math\Quat.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Core\Math\Quat.h">
       <Filter>Runtime\Core\Math</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Managers\CameraManager.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Managers\CameraManager.h">
       <Filter>Runtime\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Managers\InputManager.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Managers\InputManager.h">
       <Filter>Runtime\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Managers\TimerManager.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Managers\TimerManager.h">
       <Filter>Runtime\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Managers\UGameInstance.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Managers\UGameInstance.h">
       <Filter>Runtime\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Objects\Actors\AActor.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Actors\AActor.h">
       <Filter>Runtime\Objects\Actors</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Objects\Actors\Lights\ALight.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Actors\Lights\ALight.h">
       <Filter>Runtime\Objects\Actors\Lights</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Objects\Actors\Lights\PointLight\APointLight.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Actors\Lights\PointLight\APointLight.h">
       <Filter>Runtime\Objects\Actors\Lights\PointLight</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Objects\Components\UActorComponent.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Components\UActorComponent.h">
       <Filter>Runtime\Objects\Components</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Objects\Components\UMovementComponent.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\Components\UMovementComponent.h">
       <Filter>Runtime\Objects\Components</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Runtime\Objects\UObject.h">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Runtime\Objects\UObject.h">
       <Filter>Runtime\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Common\controls.hpp">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\controls.hpp">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Common\objloader.hpp">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\objloader.hpp">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Common\quaternion_utils.hpp">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\quaternion_utils.hpp">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Common\shader.hpp">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\shader.hpp">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Common\tangentspace.hpp">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\tangentspace.hpp">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Common\text2D.hpp">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\text2D.hpp">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Common\texture.hpp">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\texture.hpp">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="D:\p2vs\Quake\Source\Common\vboindexer.hpp">
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\Source\Common\vboindexer.hpp">
       <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\CMakeLists.txt" />
+    <CustomBuild Include="D:\repository\Quake\QuakeGH\Quake\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
-      <UniqueIdentifier>{3A1CD259-7E6E-3E30-997D-0DFD2053ED4F}</UniqueIdentifier>
+      <UniqueIdentifier>{FE41A4EE-9760-3F2B-91AD-0CF8C2C12CB2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Editor">
-      <UniqueIdentifier>{5EACD632-792A-31BF-861E-39975F9B6456}</UniqueIdentifier>
+      <UniqueIdentifier>{6B10F7F8-0B2F-3C12-91BA-511721E9871B}</UniqueIdentifier>
     </Filter>
     <Filter Include="Editor\Engine">
-      <UniqueIdentifier>{3C1574D2-558F-37AF-A161-584F1336A270}</UniqueIdentifier>
+      <UniqueIdentifier>{A2D4FC50-229B-300C-B888-B1E57A6254B3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Editor\Engine\Material">
-      <UniqueIdentifier>{B28074E4-79EC-355B-B8EC-3DDE577F91F0}</UniqueIdentifier>
+      <UniqueIdentifier>{E102481E-03F7-3E02-B187-876FD5C35B78}</UniqueIdentifier>
     </Filter>
     <Filter Include="Editor\Engine\Shader">
-      <UniqueIdentifier>{AC9A9DAB-390E-3B73-AF38-A51F67AE7383}</UniqueIdentifier>
+      <UniqueIdentifier>{56694F39-693B-327C-A953-19F3133416D9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Editor\GarbageCollector">
-      <UniqueIdentifier>{84749CC9-9C45-3600-9519-1713BE088051}</UniqueIdentifier>
+      <UniqueIdentifier>{62AAFAA6-F8C3-3B86-9A45-97102C475A32}</UniqueIdentifier>
     </Filter>
     <Filter Include="Editor\Pointers">
-      <UniqueIdentifier>{CCC92D41-2F48-3A11-9775-358C510CFCDF}</UniqueIdentifier>
+      <UniqueIdentifier>{FD35ABC4-33BB-3157-82C7-E628E8DB277F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGUI">
+      <UniqueIdentifier>{4DD39FF9-5127-312D-B283-0686CC5CFCBF}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime">
-      <UniqueIdentifier>{13471DC1-2B53-3BB9-A4B2-3CA2956302AC}</UniqueIdentifier>
+      <UniqueIdentifier>{311BF4B2-C831-3F35-A62E-75F479BD636A}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Classes">
-      <UniqueIdentifier>{DD815592-49F8-3A66-97C0-07AB4AF805DA}</UniqueIdentifier>
+      <UniqueIdentifier>{9919D5E2-F67E-3299-BB95-8F7962E0E2A7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Classes\GameFramework">
-      <UniqueIdentifier>{E512C313-60B4-360A-A377-D03441E8DDC5}</UniqueIdentifier>
+      <UniqueIdentifier>{FBBAF464-0071-30F5-8ABD-783C48C00DFD}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Classes\Kismet">
-      <UniqueIdentifier>{3D17EED5-CD5C-3A16-9F09-F047C2E3AFC3}</UniqueIdentifier>
+      <UniqueIdentifier>{78CFB452-8D1D-31BB-8E59-6DC9E018F032}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core">
-      <UniqueIdentifier>{CA8277AA-959D-333B-BE95-E774646BA805}</UniqueIdentifier>
+      <UniqueIdentifier>{C3A12628-4A56-3F70-A701-D04BAC5E3E2B}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core\Containers">
-      <UniqueIdentifier>{8F3AEBFD-0907-3E3E-ADC1-82448ACECDBC}</UniqueIdentifier>
+      <UniqueIdentifier>{6BF52B8A-B0E0-3535-B822-597DE6DEB6EC}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core\Math">
-      <UniqueIdentifier>{CDD6677D-C519-3FE1-AEFD-815806DF4027}</UniqueIdentifier>
+      <UniqueIdentifier>{CA3724E7-9E62-30DE-A04A-1B4297C772DB}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core\Math\FVector">
-      <UniqueIdentifier>{37710869-3DF0-3E9D-A7B7-1D5522CAA8E9}</UniqueIdentifier>
+      <UniqueIdentifier>{A0648B9F-13AE-3B2D-82DB-39FD9E6DF635}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Managers">
-      <UniqueIdentifier>{8BF5CF7E-455F-3836-A3FB-5F3B21EFF690}</UniqueIdentifier>
+      <UniqueIdentifier>{1CAD295B-D87A-3934-8B99-6B56F8E425D8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Objects">
-      <UniqueIdentifier>{364B5879-1F2D-3602-AF8F-82B6A6567CD8}</UniqueIdentifier>
+      <UniqueIdentifier>{02A3F386-3FF1-30A8-BFD4-E8BFCF21305C}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Objects\Actors">
-      <UniqueIdentifier>{8CAB621B-BBC1-371F-9ADD-1024A341A825}</UniqueIdentifier>
+      <UniqueIdentifier>{B6214F4D-B8F4-3A55-A4A3-AA8DD802005A}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Objects\Actors\Lights">
-      <UniqueIdentifier>{6856C9D3-DA46-327E-8665-876808A64A57}</UniqueIdentifier>
+      <UniqueIdentifier>{633FBF6F-D95C-3250-8D9F-BDDBB4F150E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Objects\Actors\Lights\PointLight">
-      <UniqueIdentifier>{3299AC90-A85F-31B1-ADAE-654AEA5B7943}</UniqueIdentifier>
+      <UniqueIdentifier>{29DDE099-583E-35FA-809C-7D81DEF0373A}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Objects\Components">
-      <UniqueIdentifier>{4C6EB215-6487-3E58-AC54-7CB22DA3B164}</UniqueIdentifier>
+      <UniqueIdentifier>{1FD5B91D-2D8E-3ED5-BE23-CB63DBC87976}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

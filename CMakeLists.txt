@@ -37,7 +37,6 @@ file(GLOB_RECURSE HEADERS "Source/*.h")
 # Récupération des fichiers .hpp dans les sous-dossiers de Source
 file(GLOB_RECURSE HPP "Source/*.hpp")
 
-# Ajout des sources à l'exécutable
 add_executable(Quake ${SOURCES} ${HEADERS} ${HPP})
 
 # Parcourir récursivement les sous-dossiers de Source pour les fichiers .cpp
@@ -68,7 +67,10 @@ foreach(_hpp IN ITEMS ${HPP_LIST})
 endforeach()
 
 #Includes
-include_directories(Engine/Includes)
+include_directories(
+	Engine/Includes/
+	.
+)
 
 #Librairies
 link_directories(Engine/Libraries)

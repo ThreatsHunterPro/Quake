@@ -231,6 +231,18 @@ void Engine::Update()
 		glfwSwapBuffers(_window);
 		glfwPollEvents();
 
+		 //Start the Dear ImGui frame
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
+		ImGui::ShowDemoWindow(); // Show demo window! :)
+
+		// Rendering
+		// (Your code clears your framebuffer, renders your other stuff etc.)
+		ImGui::Render();
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		// (Your code calls glfwSwapBuffers() etc.)
+
 	} while (glfwGetKey(_window, GLFW_KEY_ESCAPE) != GLFW_PRESS && !glfwWindowShouldClose(_window));
 
 	glfwTerminate();
@@ -333,21 +345,6 @@ void Engine::DrawElement()
 	elementShader.SetMat4("model", _model);
 }
 
-void Engine::DrawElements()
-{
-	for (unsigned int _index = 0; _index < 10; _index++)
-	{
-		ApplyShader();
-
-		FMatrix _model = FMatrix::Identity;
-		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());
-		const float _angle = 20.0f * _index;
-		_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
-
-			elementShader.Use();
-			elementShader.SetMat4("model", _model);
-	}
-}
 
 void Engine::DrawLamp()
 {
@@ -374,9 +371,28 @@ void Engine::DrawLamp()
 	use2D ? glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0) : glDrawArrays(GL_TRIANGLES, 0, 54);
 }
 
+void Engine::DrawElements()
+{
+	for (unsigned int _index = 0; _index < 10; _index++)
+	{
+		ApplyShader();
+
+		FMatrix _model = FMatrix::Identity;
+		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());
+		const float _angle = 20.0f * _index;
+		_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
+
+			elementShader.Use();
+			elementShader.SetMat4("model", _model);
+	}
+}
 
 void Engine::Stop()
 {
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	ImGui::DestroyContext();
+
 	mainWindow->Stop();
 	ClearElements();
 }
