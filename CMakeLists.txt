@@ -5,9 +5,9 @@ find_package(OpenGL REQUIRED)# Compile external dependencies
 add_subdirectory (external)
 
 
-set(SFML_DIR "D:/code/Thomas/Quake/external/SFML-2.6.1/lib/cmake/SFML")
-set(SFML_INCLUDE_DIR "D:/code/Thomas/Quake/external/SFML-2.6.1/include")
-set(SFML_INCLUDE_LIB "D:/code/Thomas/Quake/external/SFML-2.6.1/lib")
+set(SFML_DIR "D:/Quake/Quake/external/SFML-2.6.1/lib/cmake/SFML") 
+set(SFML_INCLUDE_DIR "D:/Quake/Quake/external/SFML-2.6.1/include")
+set(SFML_INCLUDE_LIB "D:/Quake/Quake/external/SFML-2.6.1/lib")
 
 set(SFML_STATIC_LIBRARIES TRUE)
 
