@@ -1,208 +1,200 @@
 #include "UPrimitiveMesh.h"
 
-const float* UPrimitiveMesh::GetFloatArrayByType(const PrimitiveType& _type)
+vector<float> UPrimitiveMesh::GetFloatArrayByType(const PrimitiveType& _type)
 {
-	//const float** _box = {
-	//	// position		 // normals		    // color	      // texture
-	//	-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f ,
-	//	0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-	//	0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-	//	0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-	//	-0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-	//	-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+#pragma region Box
+	vector<float> _box = {
+		//position		 // normals		    // color	      // texture
+		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f ,
+		0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
+		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+		-0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
 
-	//	-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-	//	0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-	//	0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-	//	0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-	//	-0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-	//	-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+		-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+		0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
+		0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+		-0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
 
-	//	-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-	//	-0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-	//	-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-	//	-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-	//	-0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-	//	-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+		-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+		-0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
+		-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
 
-	//	0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-	//	0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-	//	0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-	//	0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-	//	0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-	//	0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+		0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
+		0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
 
-	//	-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-	//	0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-	//	0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-	//	0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-	//	-0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-	//	-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
+		0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+		0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+		-0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
+		-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
 
-	//	-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-	//	0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-	//	0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-	//	0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-	//	-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-	//	-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0
-	//};
+		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+		0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
+		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+		-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
+		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0
+	};
+#pragma endregion Box
+#pragma region Sphere
+	vector<float> _sphere;
+	vector<float> _sphereVertices;
+	std::vector<unsigned int> _sphereIndices;
 
+	float _sectorCount = 20;
+	float stackCount = 20;
+	float _radius = 1;
+	float _sectorStep = 2 * pi<float>() / _sectorCount;
+	float stackStep = pi<float>() / stackCount;
 
-	const float* _arrays = {};
+	for (int i = 0; i <= stackCount; ++i) {
+		float stackAngle = pi<float>() / 2 - i * stackStep;
+		float xy = _radius * cos(stackAngle);
+		float z = _radius * sin(stackAngle);
 
-	return _arrays;
+		for (int j = 0; j <= _sectorCount; ++j) {
+			float sectorAngle = j * _sectorStep;
+
+			float x = xy * cos(sectorAngle);
+			float y = xy * sin(sectorAngle);
+
+			_sphereVertices.push_back(x);
+			_sphereVertices.push_back(y);
+			_sphereVertices.push_back(z);
+
+			// Normales (pour la lumière)
+
+			_sphereVertices.push_back(x / _radius);
+			_sphereVertices.push_back(y / _radius);
+			_sphereVertices.push_back(z / _radius);
+
+			// Couleur (par exemple, blanc)
+			_sphereVertices.push_back(1.0f);
+			_sphereVertices.push_back(1.0f);
+			_sphereVertices.push_back(1.0f);
+
+			// Coordonnées de texture (non utilisées dans cet exemple)
+			_sphereVertices.push_back(0.0f);
+			_sphereVertices.push_back(0.0f);
+		}
+	}
+
+	for (int i = 0; i < stackCount; ++i) {
+		int k1 = i * (_sectorCount + 1);
+		int k2 = k1 + _sectorCount + 1;
+
+		for (int j = 0; j < _sectorCount; ++j, ++k1, ++k2) {
+			// Triangle 1
+			_sphereIndices.push_back(k1);
+			_sphereIndices.push_back(k2);
+			_sphereIndices.push_back(k1 + 1);
+
+			// Triangle 2
+			_sphereIndices.push_back(k2);
+			_sphereIndices.push_back(k2 + 1);
+			_sphereIndices.push_back(k1 + 1);
+		}
+	}
+
+	// Convertir les indices en un tableau de float pour OpenGL
+	for (unsigned int index : _sphereIndices) {
+		for (int i = 0; i < 8; ++i) { // 8 car nous avons 8 valeurs par sommet
+			_sphere.push_back(_sphereVertices[index * 8 + i]);
+		}
+	}
+#pragma endregion Sphere
+#pragma region Plane
+	vector<float> _plane = {
+		//position           // normals			   // color             // textures
+		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f ,
+		0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
+		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+		-0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+		};
+#pragma endregion Plane
+#pragma region Cylinder
+	//float sectorStep = 2 * M_PI / sectorCount;
+	//float sectorAngle;
+
+	//// Create the vertices for the side of the cylinder
+	//for (int i = 0; i <= sectorCount; ++i) {
+	//	sectorAngle = i * sectorStep;
+	//	float x = radius * cos(sectorAngle);
+	//	float z = radius * sin(sectorAngle);
+
+	//	// Bottom vertex
+	//	cylinderVertices.push_back(x);
+	//	cylinderVertices.push_back(-height / 2.0f);
+	//	cylinderVertices.push_back(z);
+
+	//	// Top vertex
+	//	cylinderVertices.push_back(x);
+	//	cylinderVertices.push_back(height / 2.0f);
+	//	cylinderVertices.push_back(z);
+	//}
+
+	//// Create the indices for rendering the cylinder
+	//std::vector<unsigned int> indices;
+	//for (int i = 0; i < sectorCount; ++i) {
+	//	int base = i * 2;
+	//	indices.push_back(base);
+	//	indices.push_back(base + 1);
+	//	indices.push_back(base + 2);
+
+	//	indices.push_back(base + 2);
+	//	indices.push_back(base + 1);
+	//	indices.push_back(base + 3);
+	//}
+
+	//// Now, format the vertex data into a flat vector
+	//std::vector<float> result;
+	//for (size_t i = 0; i < indices.size(); ++i) {
+	//	int index = indices[i];
+	//	result.push_back(cylinderVertices[index * 3]);
+	//	result.push_back(cylinderVertices[index * 3 + 1]);
+	//	result.push_back(cylinderVertices[index * 3 + 2]);
+
+	//	// normals
+	//	result.push_back(cylinderVertices[index * 3] / radius);
+	//	result.push_back(0.0f);
+	//	result.push_back(cylinderVertices[index * 3 + 2] / radius);
+
+	//	// color
+	//	result.push_back(1.0f);
+	//	result.push_back(0.0f);
+	//	result.push_back(0.0f);
+
+	//	// texture
+	//	result.push_back(0.0f);
+	//	result.push_back(0.0f);
+	//}
+#pragma endregion Cylinder
+
+	vector<vector<float>> _forms =
+	{
+		_box,
+		_sphere,
+		_plane
+	};
+
+	return _forms[_type];
 }
 
-//const float UPrimitiveMesh::GenerateBoxVertexesFloat()
-//{
-//	const float _result[] = {
-//		 position		 // normals		    // color	      // texture
-//		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f ,
-//		0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-//		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-//		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-//		-0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-//		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-//
-//		-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-//		0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-//		0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-//		0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-//		-0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-//		-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-//
-//		-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-//		-0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-//		-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-//		-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-//		-0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-//		-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-//
-//		0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-//		0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-//		0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-//		0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-//		0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-//		0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-//
-//		-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-//		0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-//		0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-//		0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-//		-0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-//		-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-//
-//		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-//		0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-//		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-//		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-//		-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-//		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0
-//	};
-//
-//	return _result;
-//}
-//
-//const float* UPrimitiveMesh::GenerateSphereVertexesFloat()
-//{
-//	int _numStacks = 20;
-//	int _numSlices = 20;
-//	float _radius = 1;
-//	float _stackStep = pi<float>() / _numStacks;
-//	float _sliceStep = (2.0f * pi<float>()) / _numSlices;
-//	float* _result;
-//	int vertexIndex = 0;
-//
-//	// Generate vertices for the sphere
-//	for (int i = 0; i <= _numStacks; ++i) {
-//		float stackAngle = i * _stackStep;
-//		float y = _radius * cos(stackAngle);
-//		float sinStack = sin(stackAngle);
-//
-//		for (int j = 0; j <= _numSlices; ++j) {
-//			float sliceAngle = j * _sliceStep;
-//			float x = _radius * cos(sliceAngle) * sinStack;
-//			float z = _radius * sin(sliceAngle) * sinStack;
-//
-//			// Position
-//			_result[vertexIndex++] = x;
-//			_result[vertexIndex++] = y;
-//			_result[vertexIndex++] = z;
-//
-//			// Normal (same as position for a unit sphere)
-//			_result[vertexIndex++] = x / _radius;
-//			_result[vertexIndex++] = y / _radius;
-//			_result[vertexIndex++] = z / _radius;
-//
-//			// Color (for demonstration)
-//			_result[vertexIndex++] = 0.0f;   // Red
-//			_result[vertexIndex++] = 0.0f;   // Green
-//			_result[vertexIndex++] = 1.0f;   // Blue
-//
-//			// Texture coordinates (s, t)
-//			_result[vertexIndex++] = (float)j / _numSlices;
-//			_result[vertexIndex++] = (float)i / _numStacks;
-//		}
-//	}
-//	const float _result[10] = {};
-//	return _result;
-//}
-//
-//const float* UPrimitiveMesh::GeneratePlaneVertexesFloat()
-//{
-//	const float _result[] = {
-//		    position        // normals			   // color    // textures
-//			0.5f, 0.5f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-//			0.5f, -0.5f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-//		};
-//	return _result;
-//}
-//
-//const float* UPrimitiveMesh::GenerateCylinderVertexesFloat()
-//{
-//	int _numSegments = 20;
-//	float _radius = 1;
-//	float _height = 1;
-//	float _segmentAngle = pi<float>() * 2 / _numSegments;
-//	float _numVertices = _numSegments * 6; // Chaque Segment a 2 triangle, donc 3 * 2 vertexs
-//	const float* _result = new float* [_numVertices];
-//	int _index = 0;
-//
-//	for (int i = 0; i < _numSegments; ++i) {
-//		float _angle = i * _segmentAngle;
-//		float _nextAngle = (i + 1) * _segmentAngle;
-//
-//		// Bottom vertex of the current Segment
-//
-//		_result[_index] = new float [11] {_radius* cos(_angle), 0.0f, _radius* sin(_angle), //position 
-//			cos(_angle), 0.0f, sin(_angle),					 //normals
-//			1.0, 0,										     // color
-//			(float)i / _numSegments, 0};						 // textures
-//
-//		_result[_index + 1] = new float [11] {_radius* cos(_angle), 0.0f, _radius* sin(_angle),
-//			cos(_nextAngle), 0.0f, sin(_nextAngle),
-//			1.0, 0, 0,
-//			((float)i + 1) / _numSegments, 0};
-//
-//		// Top vertices of the current segment
-//		_result[_index + 2] = new float [11] {_radius* cos(_angle), _height, _radius* sin(_angle),
-//			cos(_angle), 0.0f, sin(_angle),
-//			0, 1.0, 0,
-//			(float)i / _numSegments, 0};
-//
-//		_result[_index + 3] = new float [11] {_radius* cos(_angle), _height, _radius* sin(_angle),
-//			cos(_nextAngle), 0.0f, sin(_nextAngle),
-//			0, 1.0, 0,
-//			((float)i + 1) / _numSegments, 0};
-//
-//		// side triangles for the current segment
-//		_result[_index + 4] = _result[_index];      // x
-//		_result[_index + 5] = _result[_index + 2];   // y (top of the cylinder)
-//	 
-//	}
-//
-//	return new float();
-//}
+
 //
 //const float* UPrimitiveMesh::GenerateConeVertexesFloat()
 //{

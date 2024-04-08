@@ -1,6 +1,0 @@
-# CMake generation dependency list for this directory.
-D:/CMake/cmake-3.29.0-windows-x86_64/share/cmake-3.29/Modules/CheckFunctionExists.cmake
-D:/CMake/cmake-3.29.0-windows-x86_64/share/cmake-3.29/Modules/CheckIncludeFile.cmake
-D:/CMake/cmake-3.29.0-windows-x86_64/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake
-D:/CMake/cmake-3.29.0-windows-x86_64/share/cmake-3.29/Modules/CheckTypeSize.cmake
-D:/GitHub/Quake_Shared/Quake/external/CMakeLists.txt
