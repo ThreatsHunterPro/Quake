@@ -22,9 +22,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{ADC5B98D-AA03-32EA-A204-03963E644534}</ProjectGuid>
+    <ProjectGuid>{EC2328BE-8076-3F06-85E0-A20F43C2DAA1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
     <ProjectName>zlib</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">zlib.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">zlibd</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">zlib.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">zlib</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">zlib.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">zlib</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">zlib.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">zlib</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -96,10 +96,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -112,7 +112,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -130,10 +130,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -146,7 +146,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -164,10 +164,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -180,7 +180,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>
@@ -197,10 +197,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include\GLFW;D:\repository\Quake\QuakeGH\Quake\external\glew-1.13.0\include;D:\repository\Quake\QuakeGH\Quake\external\AntTweakBar-1.16\include;D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -212,11 +212,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\CMakeLists.txt">
+    <CustomBuild Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/p2vs/Quake/external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,11 +225,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/p2vs/Quake/external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -238,11 +238,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/p2vs/Quake/external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -251,11 +251,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/p2vs/Quake/external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/assimp-3.0.1270/contrib/zlib/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -264,34 +264,34 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\assimp-3.0.1270\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\adler32.c" />
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\compress.c" />
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\crc32.c" />
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\deflate.c" />
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inffast.c" />
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inflate.c" />
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inftrees.c" />
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\trees.c" />
-    <ClCompile Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\zutil.c" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\zconf.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\zlib.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\crc32.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\deflate.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inffast.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inffixed.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inflate.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\inftrees.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\trees.h" />
-    <ClInclude Include="D:\p2vs\Quake\external\assimp-3.0.1270\contrib\zlib\zutil.h" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\adler32.c" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\compress.c" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\crc32.c" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\deflate.c" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inffast.c" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inflate.c" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inftrees.c" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\trees.c" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\zutil.c" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\zconf.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\zlib.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\crc32.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\deflate.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inffast.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inffixed.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inflate.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\inftrees.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\trees.h" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\assimp-3.0.1270\contrib\zlib\zutil.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\ZERO_CHECK.vcxproj">
-      <Project>{6388BD46-2429-321C-8946-E0CFE0C56207}</Project>
+    <ProjectReference Include="D:\repository\Quake\QuakeGH\Quake\Binaries\ZERO_CHECK.vcxproj">
+      <Project>{FA4E6B93-31F6-33B9-AFCF-C21B1E40972C}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

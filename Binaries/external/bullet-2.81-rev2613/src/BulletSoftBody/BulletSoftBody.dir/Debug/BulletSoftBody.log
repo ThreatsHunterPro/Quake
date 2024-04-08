@@ -1,0 +1,25 @@
+﻿  Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeLists.txt
+  btSoftBody.cpp
+  btSoftBodyConcaveCollisionAlgorithm.cpp
+  btSoftBodyHelpers.cpp
+  btSoftBodyRigidBodyCollisionConfiguration.cpp
+  btSoftRigidCollisionAlgorithm.cpp
+  btSoftRigidDynamicsWorld.cpp
+  btSoftSoftCollisionAlgorithm.cpp
+  btDefaultSoftBodySolver.cpp
+D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\BulletSoftBody\btSoftBodyHelpers.cpp(914,41): warning C4838: conversion from 'T' to 'const int' requires a narrowing conversion
+          with
+          [
+              T=unsigned int
+          ]
+D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\BulletSoftBody\btSoftBodyHelpers.cpp(915,24): warning C4838: conversion from 'T' to 'const int' requires a narrowing conversion
+          with
+          [
+              T=unsigned int
+          ]
+D:\repository\Quake\QuakeGH\Quake\external\bullet-2.81-rev2613\src\BulletSoftBody\btSoftBodyHelpers.cpp(916,24): warning C4838: conversion from 'T' to 'const int' requires a narrowing conversion
+          with
+          [
+              T=unsigned int
+          ]
+  BulletSoftBody.vcxproj -> D:\repository\Quake\QuakeGH\Quake\Binaries\external\bullet-2.81-rev2613\src\BulletSoftBody\Debug\BulletSoftBody.lib

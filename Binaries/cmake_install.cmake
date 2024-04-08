@@ -1,4 +1,4 @@
-# Install script for directory: D:/p2vs/Quake
+# Install script for directory: D:/repository/Quake/QuakeGH/Quake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/p2vs/Quake/Binaries/external/cmake_install.cmake")
+  include("D:/repository/Quake/QuakeGH/Quake/Binaries/external/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/p2vs/Quake/Binaries/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/repository/Quake/QuakeGH/Quake/Binaries/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

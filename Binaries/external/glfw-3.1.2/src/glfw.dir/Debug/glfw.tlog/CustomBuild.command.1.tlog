@@ -1,6 +1,6 @@
-^D:\P2VS\QUAKE\EXTERNAL\GLFW-3.1.2\SRC\CMAKELISTS.TXT
+^D:\REPOSITORY\QUAKE\QUAKEGH\QUAKE\EXTERNAL\GLFW-3.1.2\SRC\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/glfw-3.1.2/src/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
