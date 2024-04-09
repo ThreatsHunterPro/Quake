@@ -236,8 +236,9 @@ GLuint Engine::LoadTexture(const char* _path, const int _wrapParam, const int _f
 
 void Engine::Update()
 {
-	GLFWwindow* _window = mainWindow->GetWindow();
-
+	sf::RenderWindow* _window = mainWindow->GetWindow();
+	_window->setActive(true);
+	//sf::CircleShape shape(100, 20);
 	do
 	{
 		TimerManager::GetInstance().Update();
@@ -247,10 +248,10 @@ void Engine::Update()
 		//ChangeBgColor();
 		Draw();
 
-		glfwSwapBuffers(_window);
-		glfwPollEvents();
+		_window->display();
+		//_window->draw(shape);
 
-	} while (glfwGetKey(_window, GLFW_KEY_ESCAPE) != GLFW_PRESS && !glfwWindowShouldClose(_window));
+	} while (_window->isOpen());
 
 	glfwTerminate();
 }

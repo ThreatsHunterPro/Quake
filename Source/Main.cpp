@@ -1,5 +1,4 @@
-#define STB_IMAGE_IMPLEMENTATION // a definir avec <stb_image.h> au dans le main
-
+ 
 #include "CoreMinimal.h"
 #include "Runtime/Managers/UGameInstance.h"
 #include "Runtime/Objects/Actors/AActor.h"
@@ -148,9 +147,7 @@ int main()
 #pragma endregion
 	*/
 
-
-
-	return 0;
+	 
 	
 
 	Engine* _engine = new Engine();
