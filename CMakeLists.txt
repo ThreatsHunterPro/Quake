@@ -1,10 +1,20 @@
 cmake_minimum_required(VERSION 3.19)
 project(Quake)
 
-find_package(OpenGL REQUIRED)
-
-# Compile external dependencies 
+find_package(OpenGL REQUIRED)# Compile external dependencies 
 add_subdirectory (external)
+
+
+set(SFML_DIR "D:/code/Thomas/Quake/external/SFML-2.6.1/lib/cmake/SFML")
+set(SFML_INCLUDE_DIR "D:/code/Thomas/Quake/external/SFML-2.6.1/include")
+set(SFML_INCLUDE_LIB "D:/code/Thomas/Quake/external/SFML-2.6.1/lib")
+
+set(SFML_STATIC_LIBRARIES TRUE)
+
+find_package(SFML COMPONENTS graphics window system audio network REQUIRED)
+
+
+set(CMAKE_PREFIX_PATH "D:/code/Thomas/Quake/external/freetype-2.13.0")
 
 include_directories(
 	external/AntTweakBar-1.16/include/
@@ -12,14 +22,21 @@ include_directories(
 	external/glm-0.9.7.1/
 	external/glew-1.13.0/include/
 	external/assimp-3.0.1270/include/
-	external/bullet-2.81-rev2613/src/
+	external/SFML-2.6.1/include/
+	external/SFML-2.6.1/lib/
 	.
 )
 
+
 set(ALL_LIBS
 	${OPENGL_LIBRARY}
+        #sfml-network
 	glfw
 	GLEW_1130
+        sfml-graphics
+        sfml-window 
+        sfml-system	
+	sfml-audio
 )
 
 add_definitions(
@@ -29,6 +46,9 @@ add_definitions(
 	-DGLEW_STATIC
 	-D_CRT_SECURE_NO_WARNINGS
 )
+
+
+
 
 # Récupération des fichiers .cpp dans les sous-dossiers de Source
 file(GLOB_RECURSE SOURCES "Source/*.cpp")
@@ -71,6 +91,7 @@ include_directories(
 	Engine/Includes/
 	.
 )
+
 
 #Librairies
 link_directories(Engine/Libraries)
