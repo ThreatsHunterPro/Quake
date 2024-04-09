@@ -48,6 +48,15 @@ class Engine
 	// Point light
 	APointLight pointLight;
 
+	PhysicsCommon physics;
+	PhysicsWorld* world = nullptr;
+
+	RigidBody* body = nullptr;
+	RigidBody* floor = nullptr;
+	const float timeStep = 1.0f / 60.0f;
+	GLuint floorVAO;
+	GLuint floorVBO;
+
 public:
 	FORCEINLINE static Engine& GetInstance()
 	{
@@ -69,6 +78,7 @@ private:
 	void Draw();
 	void ApplyShader();
 	void DrawLamp();
+	void DrawFloor();
 	void DrawElement();
 	void DrawElements();
 	void ChangeElementColor();

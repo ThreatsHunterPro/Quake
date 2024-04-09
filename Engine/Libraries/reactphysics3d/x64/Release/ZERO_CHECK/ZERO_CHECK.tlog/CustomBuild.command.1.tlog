@@ -1,0 +1,10 @@
+^D:\GITHUB\QUAKE\ENGINE\LIBRARIES\REACTPHYSICS3D\CMAKEFILES\6A6D1F61E7712C72E8B9304D2E3BBDBA\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/reactphysics3d -BD:/Github/Quake/Engine/Libraries/reactphysics3d --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Github/Quake/Engine/Libraries/reactphysics3d/ReactPhysics3D.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
