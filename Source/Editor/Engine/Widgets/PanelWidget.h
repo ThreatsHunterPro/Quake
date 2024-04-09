@@ -4,6 +4,6 @@
 class PanelWidget : public ActiveWidget
 {
 public:
-    PanelWidget(const FString& _name, Window* _window);
+    PanelWidget(const FString& _name, EngineWindow* _window);
     ~PanelWidget() override;
 };

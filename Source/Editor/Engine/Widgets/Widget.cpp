@@ -1,7 +1,7 @@
 #include "Widget.h"
-#include "../Windows/Window.h"
+#include "../EngineWindow.h"
 
-Widget::Widget(const FString& _name, Window* _window)
+Widget::Widget(const FString& _name, EngineWindow* _window)
 {
     name = _name;
     window = _window;

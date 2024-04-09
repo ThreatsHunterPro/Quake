@@ -1,4 +1,5 @@
 #include "EngineWindow.h"
+#include "Source/Editor/Engine/Widgets/PlaceActorsWidget.h"
 
 EngineWindow::EngineWindow()
 {
@@ -6,11 +7,13 @@ EngineWindow::EngineWindow()
 	size = FVector2(1920, 1080);
 	bgColor = FColor(51, 85, 85, 255);
 	mainWindow = nullptr;
+
+	widgets.Add(new PlaceActorsWidget(FString("test"), this));
 }
 
 EngineWindow::~EngineWindow()
 {
-
+	widgets.Empty();
 }
 
 
@@ -19,18 +22,7 @@ EngineWindow::~EngineWindow()
 void EngineWindow::Start()
 {
 	InitGLFW();
-
-	//Setup Dear ImGui context
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO();
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // IF using Docking Branch
-
-	// Setup Platform/Renderer backends
-	ImGui_ImplGlfw_InitForOpenGL(mainWindow, true);          // Second param install_callback=true will install GLFW callbacks and chain to existing ones.
-	ImGui_ImplOpenGL3_Init();
+	InitImGUI();
 }
 
 void EngineWindow::InitGLFW()
@@ -71,16 +63,53 @@ void EngineWindow::InitGLFW()
 	glClearColor((float)bgColor.color.RGB.R/255.f, (float)bgColor.color.RGB.G/255.f, (float)bgColor.color.RGB.B/255.f, (float)bgColor.color.RGB.A/255.f);
 }
 
+void EngineWindow::InitImGUI()
+{
+	//Setup Dear ImGui context
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO();
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // IF using Docking Branch
+
+	// Setup Platform/Renderer backends
+	ImGui_ImplGlfw_InitForOpenGL(mainWindow, true);          // Second param install_callback=true will install GLFW callbacks and chain to existing ones.
+	ImGui_ImplOpenGL3_Init();
+}
+
 #pragma endregion
 
 #pragma region Update
 
-void EngineWindow::Update() const
+void EngineWindow::Update()
 {
+	UpdateWidgets();
 	UpdateWindow();
 }
 
-void EngineWindow::UpdateWindow() const
+void EngineWindow::UpdateWidgets()
+{
+	//Start the Dear ImGui frame
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+	ImGui::NewFrame();
+
+	// Draw widgets
+	const int _widgetsCount = widgets.Num();
+	for (int _widgetIndex = 0; _widgetIndex < _widgetsCount; _widgetIndex++)
+	{
+		Widget* _widget = widgets[_widgetIndex];
+		if (!_widget) continue;
+		_widget->Draw();
+	}
+	// Rendering
+	// (Your code clears your framebuffer, renders your other stuff etc.)
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+}
+
+void EngineWindow::UpdateWindow()
 {
 	glfwSwapBuffers(mainWindow);
 }
@@ -89,12 +118,30 @@ void EngineWindow::UpdateWindow() const
 
 #pragma region Stop
 
-void EngineWindow::Stop() const
+void EngineWindow::Stop()
 {
+	StopImGUI();
 	StopWindow();
 }
 
-void EngineWindow::StopWindow() const
+void EngineWindow::StopImGUI()
+{
+	// Stop widgets
+	const int _widgetsCount = widgets.Num();
+	for (int _widgetIndex = 0; _widgetIndex < _widgetsCount; _widgetIndex++)
+	{
+		Widget* _widget = widgets[_widgetIndex];
+		if (!_widget) continue;
+		_widget->Stop();
+	}
+
+	// Clean ImGui
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	ImGui::DestroyContext();
+}
+
+void EngineWindow::StopWindow()
 {
 	glfwDestroyWindow(mainWindow);
 	glfwTerminate();

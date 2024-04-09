@@ -230,28 +230,8 @@ void Engine::Update()
 
 		glfwPollEvents();
 
-		//Start the Dear ImGui frame
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
-
-		char buf[255]{};
-
-		ImGui::Begin("Hello, world!");
-		ImGui::Text("This is some useful text.");
-		ImGui::SliderFloat("float", &floatSlider, 0.0f, 1.0f);
-		if (ImGui::Button("Button"))
-			counter++;
-		ImGui::SameLine();
-		ImGui::Text("counter = %d", counter);
-		ImGui::End();
-
-		//ImGui::ShowDemoWindow(); // Show demo window! :)
-
-		// Rendering
-		// (Your code clears your framebuffer, renders your other stuff etc.)
-		ImGui::Render();
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		// Update mainWindow
+		mainWindow->Update();
 
 		// (Your code calls glfwSwapBuffers() etc.)
 		glfwSwapBuffers(_window);
@@ -402,10 +382,6 @@ void Engine::DrawElements()
 
 void Engine::Stop()
 {
-	ImGui_ImplOpenGL3_Shutdown();
-	ImGui_ImplGlfw_Shutdown();
-	ImGui::DestroyContext();
-
 	mainWindow->Stop();
 	ClearElements();
 }
