@@ -13,7 +13,7 @@ Engine::Engine()
 	EBO = GLuint();
 	texture1 = GLuint();
 	texture2 = GLuint();
-	elementShader = CustomShader();
+	elementShader = new CustomShader();
 
 	use2D = false;
 	rotateElements = false;
@@ -30,7 +30,7 @@ Engine::Engine()
 	diffuseMap = GLuint();
 	specularMap = GLuint();
 	emissionMap = GLuint();
-	lampShader = CustomShader();
+	lampShader = new CustomShader();
 }
 
 Engine::~Engine()
@@ -44,11 +44,12 @@ void Engine::Start()
 	mainWindow->Start();
 
 	// Shaders
-	elementShader.LoadShadersFromPath("Element.vs", "Element.fs");
-	lampShader.LoadShadersFromPath("Lamp.vs", "Lamp.fs");
+	elementShader->LoadShadersFromPath("Element.vs", "Element.fs");
+	lampShader->LoadShadersFromPath("Lamp.vs", "Lamp.fs");
+	vector<CustomShader*> shaders = { elementShader, lampShader };
 
 	InputManager::GetInstance().Start(mainWindow->GetWindow());
-	CameraManager::GetInstance().Start(mainWindow->GetSize(), lampShader, elementShader);
+	CameraManager::GetInstance().Start(mainWindow->GetSize(), shaders);
 
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
@@ -158,10 +159,10 @@ void Engine::Start()
 	emissionMap = LoadTexture("../Content/Textures/matrix.jpg", GL_REPEAT, GL_LINEAR);
 
 	// Shaders
-	elementShader.Use();
-	elementShader.SetInt("material.diffuse", 0);
-	elementShader.SetInt("material.specular", 1);
-	elementShader.SetInt("material.emission", 2);
+	elementShader->Use();
+	elementShader->SetInt("material.diffuse", 0);
+	elementShader->SetInt("material.specular", 1);
+	elementShader->SetInt("material.emission", 2);
 
 	if (drawLamp)
 	{
@@ -170,13 +171,32 @@ void Engine::Start()
 		texture2 = LoadTexture("../Content/Textures/smiley.png", GL_REPEAT, GL_LINEAR);
 
 		// Shaders
-		lampShader.Use();
-		lampShader.SetInt("texture1", 0);
-		lampShader.SetInt("texture2", 1);
+		lampShader->Use();
+		lampShader->SetInt("texture1", 0);
+		lampShader->SetInt("texture2", 1);
 
-		const FVector& _color = FVector(1.0f, 1.0f, 1.0f);
+#pragma region LIGHT INIT
+		FVector& _color = FVector(1.0f, 1.0f, 1.0f);
 		const FVector& _position = lightPos;
-		pointLight = APointLight(_color, _position, PointLightDistance::TROIS_MILLE_DEUX_CENT_CINQUANTE);
+		const FVector& _direction = FVector(0.0f, -1.0f, 0.0f);
+		//Set lights array size
+		elementShader->SetInt("lights.dirLightsSize", 1);
+		elementShader->SetInt("lights.pointLightsSize", 1);
+		elementShader->SetInt("lights.spotLightsSize", 1);
+		//Directional light
+		directionalLight = ADirectionalLight(_color, _direction);
+		directionalLight.SetPhong(_color * 0.1f, _color, _color);
+		directionalLight.SetShader(elementShader);
+		//Point light
+		pointLight = APointLight(_color, _position, PointLightDistance::TRENTE_DEUX);
+		pointLight.SetPhong(_color * 0.05f, _color * 0.8f, _color);
+		pointLight.SetShader(elementShader);
+		//SPot light
+		spotLight = ASpotLight(_color, _position, PointLightDistance::CINQUANTE, 12.5f, 15.0f);
+		spotLight.SetPhong(_color * 0.0f, _color, _color);
+		spotLight.SetShader(elementShader);
+#pragma endregion
+
 	}
 }
 
@@ -245,10 +265,9 @@ void Engine::ChangeBgColor()
 	glClearColor(redValue, greenValue, blueValue, 1.0f);
 }
 
-
 void Engine::Draw()
 {
-	lampShader.Use();
+	lampShader->Use();
 	ChangeElementColor();
 
 	multipleCubes ? DrawElements() : DrawElement();
@@ -263,48 +282,37 @@ void Engine::ChangeElementColor()
 	const float _redValue = static_cast<float>(sin(_timeValue) / 2.0);
 	const float _greenValue = static_cast<float>(cos(_timeValue) / 2.0);
 	const float _blueValue = static_cast<float>(-cos(_timeValue) / 2.0);
-	lampShader.SetVec4("newColor", FVector4(_redValue, _greenValue, _blueValue, 1.0f));
+	lampShader->SetVec4("newColor", FVector4(_redValue, _greenValue, _blueValue, 1.0f));
 }
 
 void Engine::ApplyShader()
 {
-	elementShader.Use();
+	elementShader->Use();
 
 	// main properties
-	elementShader.SetVec3("viewPos", CameraManager::GetInstance().GetPosition());
-	elementShader.SetFloat("time", glfwGetTime());
+	elementShader->SetVec3("viewPos", CameraManager::GetInstance().GetPosition());
+	elementShader->SetFloat("time", glfwGetTime());
 
-	// ====> light properties <====
-
+#pragma region LIGHT UPDATE
 	// == Directional light ==
-	//const FVector& _direction = FVector(0.0f, 0.0f, -1.0f);
-	//elementShader.SetVec3("light.direction", _direction);
+	const FVector& _direction = FVector(0.0f, -1.0f, 0.0f);
+	directionalLight.Update(0);
 
 	// == Point light ==
-	/*elementShader.SetVec3("light.ambient", FVector(0.2f, 0.2f, 0.2f));
-	elementShader.SetVec3("light.diffuse", FVector(0.5f, 0.5f, 0.5f));
-	elementShader.SetVec3("light.specular", FVector(1.0f, 1.0f, 1.0f));
 	pointLight.SetPosition(lightPos);
-	pointLight.Start(elementShader);*/
+	pointLight.Update(0);
 
-	// == Spot light ==
+	// == Spot light / Flash light ==
 	CameraManager& _camera = CameraManager::GetInstance();
-	elementShader.SetVec3("light.position", _camera.GetPosition());
-	elementShader.SetVec3("light.direction", _camera.GetForward());
-	elementShader.SetFloat("light.cutOff", cos(radians(12.5f)));
-	elementShader.SetFloat("light.outerCutOff", cos(radians(17.5f)));
+	spotLight.SetPosition(_camera.GetPosition());
+	spotLight.SetDirection(_camera.GetForward());
+	spotLight.Update(0);
+#pragma endregion
 
-	elementShader.SetVec3("light.ambient", FVector(0.1f, 0.1f, 0.1f));
-	elementShader.SetVec3("light.diffuse", FVector(0.8f, 0.8f, 0.8f));
-	elementShader.SetVec3("light.specular", FVector(1.0f, 1.0f, 1.0f));
-
-	elementShader.SetFloat("light.constant", 1.0f);
-	elementShader.SetFloat("light.linear", 0.09f);
-	elementShader.SetFloat("light.quadratic", 0.032f);
 
 	// material properties
-	const float _intensity = 64.0f;
-	elementShader.SetFloat("material.shininess", _intensity);
+	const float _intensity = 32.0f;
+	elementShader->SetFloat("material.shininess", _intensity);
 
 	// bind diffuse map
 	glActiveTexture(GL_TEXTURE0);
@@ -328,9 +336,10 @@ void Engine::DrawElement()
 	ApplyShader();
 
 	FMatrix _model = FMatrix::Identity;
-	//_model = translate(_model, FVector(0.0f, 0.0f, -5.0f));
-	_model = rotate(_model.ToMat4(), TimerManager::GetInstance().DeltaTimeSeconds(), vec3(0.0f, 1.0f, 0.0f));
-	elementShader.SetMat4("model", _model);
+	_model = translate(_model.ToMat4(), FVector(0.0f, 0.0f, -5.0f).ToVec3());
+	//_model = rotate(_model.ToMat4(), TimerManager::GetInstance().DeltaTimeSeconds(), vec3(0.0f, 1.0f, 0.0f));
+	elementShader->Use();
+	elementShader->SetMat4("model", _model);
 }
 
 void Engine::DrawElements()
@@ -342,16 +351,16 @@ void Engine::DrawElements()
 		FMatrix _model = FMatrix::Identity;
 		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());
 		const float _angle = 20.0f * _index;
-		_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
+		//_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
 
-			elementShader.Use();
-			elementShader.SetMat4("model", _model);
+		elementShader->Use();
+		elementShader->SetMat4("model", _model);
 	}
 }
 
 void Engine::DrawLamp()
 {
-	lampShader.Use();
+	lampShader->Use();
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture1);
@@ -368,12 +377,11 @@ void Engine::DrawLamp()
 	FMatrix _model = FMatrix::Identity;
 	_model = translate(_model.ToMat4(), lightPos.ToVec3());
 	_model = scale(_model.ToMat4(), vec3(0.2f));
-	lampShader.SetMat4("model", _model);
+	lampShader->SetMat4("model", _model);
 
 	glBindVertexArray(lightVAO);
 	use2D ? glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0) : glDrawArrays(GL_TRIANGLES, 0, 54);
 }
-
 
 void Engine::Stop()
 {
@@ -389,10 +397,9 @@ void Engine::ClearElements()
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
 
-	lampShader.ClearShader();
-	elementShader.ClearShader();
+	lampShader->ClearShader();
+	elementShader->ClearShader();
 }
-
 
 void Engine::Launch()
 {

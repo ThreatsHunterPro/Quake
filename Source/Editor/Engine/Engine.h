@@ -5,6 +5,8 @@
 #include "..\..\Runtime\Core\Math\FVector\TVector.h"
 #include "..\..\Runtime\Core\Containers\TArray.h"
 #include "../../Runtime/Objects/Actors/Lights/PointLight/APointLight.h"
+#include "../../Runtime/Objects/Actors/Lights/SpotLight/ASpotLight.h"
+#include "../../Runtime/Objects/Actors/Lights/DirectionalLight/ADirectionalLight.h"	
 
 class Engine
 {
@@ -15,7 +17,7 @@ class Engine
 	GLuint EBO;
 	GLuint texture1;
 	GLuint texture2;
-	CustomShader elementShader;
+	CustomShader* elementShader;
 
 	bool use2D;
 	bool multipleCubes;
@@ -43,10 +45,12 @@ class Engine
 	GLuint diffuseMap;
 	GLuint specularMap;
 	GLuint emissionMap;
-	CustomShader lampShader;
+	CustomShader* lampShader;
 
 	// Point light
+	ADirectionalLight directionalLight;
 	APointLight pointLight;
+	ASpotLight spotLight;
 
 public:
 	FORCEINLINE static Engine& GetInstance()
