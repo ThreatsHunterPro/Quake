@@ -7,6 +7,6 @@ protected:
     bool widgetStatus;
     
 public:
-    ActiveWidget(const FString& _name, Window* _window);
+    ActiveWidget(const FString& _name, EngineWindow* _window);
     ~ActiveWidget() override;
 };

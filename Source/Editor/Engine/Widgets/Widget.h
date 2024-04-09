@@ -1,20 +1,20 @@
 #pragma once
 #include "Source/CoreMinimal.h"
 
-class Window;
+class EngineWindow;
 
 class Widget
 {
 protected:
     FString name;
-    Window* window;
+    EngineWindow* window;
 
 public:
     FORCEINLINE void SetName(const FString& _name) { name = _name; }
     FORCEINLINE FString GetName() const { return name; }
     
 public:
-    Widget(const FString& _name, Window* _window);
+    Widget(const FString& _name, EngineWindow* _window);
     virtual ~Widget();
 
 public:
