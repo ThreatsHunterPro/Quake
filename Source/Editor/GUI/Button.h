@@ -1,6 +1,6 @@
 #pragma once
 #include "../../CoreMinimal.h"
-#include < functional >
+
 class Button
 {
 
@@ -15,6 +15,7 @@ public:
 
         return false;
     }
+   // template <typename RetVal, typename ... Args >
     static bool MakeButton(const char* _label, const std::function<void()>& _callback)
     {
         if (ImGui::Button(_label))

@@ -20,6 +20,14 @@ void HUD::Start(GLFWwindow* _window)
 	}
 }
 
+void HUD::Start(GLFWwindow* _window, CustomShader* elementShader)
+{
+	for (Widget* _widget : widgets)
+	{
+		_widget->Start(_window, elementShader);
+	}
+}
+
 void HUD::Update()
 {
 	for (Widget* _widget : widgets)

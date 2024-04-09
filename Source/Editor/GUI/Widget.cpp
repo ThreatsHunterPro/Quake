@@ -10,6 +10,11 @@ Widget::~Widget()
 	io = nullptr;
 }
 
+void Widget::Start(GLFWwindow* _window, CustomShader* elementShader)
+{
+	Start(_window);
+}
+
 void Widget::Start(GLFWwindow* _window)
 {
 	IMGUI_CHECKVERSION();

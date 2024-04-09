@@ -43,13 +43,17 @@ Engine::~Engine()
 void Engine::Start()
 {
 	mainWindow->Start();
-	hud->Start(mainWindow->GetWindow());
+
 	// Shaders
 	elementShader.LoadShadersFromPath("Element.vs", "Element.fs");
 	lampShader.LoadShadersFromPath("Lamp.vs", "Lamp.fs");
 
 	InputManager::GetInstance().Start(mainWindow->GetWindow());
 	CameraManager::GetInstance().Start(mainWindow->GetSize(), lampShader, elementShader);
+	
+	
+	hud->Start(mainWindow->GetWindow());
+
 
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
