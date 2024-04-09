@@ -15,10 +15,6 @@
 #include "common/shader.hpp"
 #include "Source/Runtime/Core/Math/MathFwd.h"
 
-//#include <ImGUI/imgui.h>
-//#include <ImGUI/imgui_impl_glfw.h>
-//#include <ImGUI/imgui_impl_opengl3.h>
-
 #include "Source/ImGUI/imgui.h"
 #include "Source/ImGUI/imgui_impl_glfw.h"
 #include "Source/ImGUI/imgui_impl_opengl3.h"

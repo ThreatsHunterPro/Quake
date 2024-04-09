@@ -8,6 +8,8 @@
 
 class Engine
 {
+	float floatSlider = 0.5f;
+
 	int counter = 0;
 	EngineWindow* mainWindow;
 
