@@ -1,0 +1,4 @@
+﻿  Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/glfw-3.1.2/tests/CMakeLists.txt
+  glfwinfo.c
+  getopt.c
+  glfwinfo.vcxproj -> D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\tests\Debug\glfwinfo.exe

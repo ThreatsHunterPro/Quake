@@ -1,4 +1,4 @@
-﻿  Building Custom Rule D:/p2vs/Quake/external/glfw-3.1.2/src/CMakeLists.txt
+﻿  Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/glfw-3.1.2/src/CMakeLists.txt
   context.c
   init.c
   input.c
@@ -11,4 +11,4 @@
   win32_window.c
   winmm_joystick.c
   wgl_context.c
-  glfw.vcxproj -> D:\p2vs\Quake\Binaries\external\glfw-3.1.2\src\Debug\glfw3.lib
+  glfw.vcxproj -> D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\src\Debug\glfw3.lib

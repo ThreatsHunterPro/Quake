@@ -22,9 +22,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{61AAD928-31FB-302A-A233-8C1BA826CD6A}</ProjectGuid>
+    <ProjectGuid>{55B59362-3B9A-3C84-BD24-FEFF074B198D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
     <ProjectName>tearing</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\tests\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">tearing.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">tearing</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\tests\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">tearing.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">tearing</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\tests\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">tearing.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">tearing</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\tests\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">tearing.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">tearing</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -104,10 +104,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -121,8 +121,8 @@
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/Debug/tearing.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/Debug/tearing.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/Debug/tearing.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/Debug/tearing.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -131,7 +131,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -149,10 +149,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -166,8 +166,8 @@
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/Release/tearing.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/Release/tearing.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/Release/tearing.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/Release/tearing.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -176,7 +176,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -194,10 +194,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -211,8 +211,8 @@
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/MinSizeRel/tearing.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/MinSizeRel/tearing.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/MinSizeRel/tearing.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/MinSizeRel/tearing.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -221,7 +221,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>
@@ -238,10 +238,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include;D:\p2vs\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\include;D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -255,8 +255,8 @@
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/RelWithDebInfo/tearing.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/RelWithDebInfo/tearing.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/RelWithDebInfo/tearing.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/RelWithDebInfo/tearing.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -264,11 +264,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\external\glfw-3.1.2\tests\CMakeLists.txt">
+    <CustomBuild Include="D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\tests\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/p2vs/Quake/external/glfw-3.1.2/tests/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/glfw-3.1.2/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -277,11 +277,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/p2vs/Quake/external/glfw-3.1.2/tests/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/glfw-3.1.2/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -290,11 +290,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/p2vs/Quake/external/glfw-3.1.2/tests/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/glfw-3.1.2/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -303,11 +303,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/p2vs/Quake/external/glfw-3.1.2/tests/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/repository/Quake/QuakeGH/Quake/external/glfw-3.1.2/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/glfw-3.1.2/tests/CMakeFiles/generate.stamp
+D:\CMake\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/repository/Quake/QuakeGH/Quake -BD:/repository/Quake/QuakeGH/Quake/Binaries --check-stamp-file D:/repository/Quake/QuakeGH/Quake/Binaries/external/glfw-3.1.2/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -316,24 +316,24 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\Quake\Binaries\external\glfw-3.1.2\tests\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\p2vs\Quake\external\glfw-3.1.2\tests\tearing.c" />
-    <ClInclude Include="D:\p2vs\Quake\external\glfw-3.1.2\deps\getopt.h" />
-    <ClCompile Include="D:\p2vs\Quake\external\glfw-3.1.2\deps\getopt.c" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\tests\tearing.c" />
+    <ClInclude Include="D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps\getopt.h" />
+    <ClCompile Include="D:\repository\Quake\QuakeGH\Quake\external\glfw-3.1.2\deps\getopt.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\ZERO_CHECK.vcxproj">
-      <Project>{6388BD46-2429-321C-8946-E0CFE0C56207}</Project>
+    <ProjectReference Include="D:\repository\Quake\QuakeGH\Quake\Binaries\ZERO_CHECK.vcxproj">
+      <Project>{FA4E6B93-31F6-33B9-AFCF-C21B1E40972C}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\src\glfw.vcxproj">
-      <Project>{9E420009-8C1B-3167-9D33-09E12218581D}</Project>
+    <ProjectReference Include="D:\repository\Quake\QuakeGH\Quake\Binaries\external\glfw-3.1.2\src\glfw.vcxproj">
+      <Project>{B5E2A152-C055-3B4B-A915-F2469E427325}</Project>
       <Name>glfw</Name>
     </ProjectReference>
   </ItemGroup>

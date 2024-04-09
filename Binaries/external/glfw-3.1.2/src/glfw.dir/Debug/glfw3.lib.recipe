@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\p2vs\Quake\Binaries\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>D:\repository\Quake\QuakeGH\Quake\Binaries\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
