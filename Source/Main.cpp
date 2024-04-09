@@ -150,8 +150,8 @@ int main()
 
 #pragma endregion
 	*/
-
-	
+	/*
+	Widget* _widget = new Widget();
 
 	// Initialise GLFW
 	if (!glfwInit())
@@ -183,18 +183,19 @@ int main()
 		fprintf(stderr, "Failed to initialize GLEW\n");
 		return -1;
 	}
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO();
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // IF using Docking Branch
+	_widget->Start(window);
+	//IMGUI_CHECKVERSION();
+	//ImGui::CreateContext();
+	//ImGuiIO& io = ImGui::GetIO();
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+	//io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // IF using Docking Branch
 
 	// Setup Platform/Renderer backends
-	ImGui_ImplGlfw_InitForOpenGL(window, true);          // Second param install_callback=true will install GLFW callbacks and chain to existing ones.
-	ImGui_ImplOpenGL3_Init();
+	//ImGui_ImplGlfw_InitForOpenGL(window, true);          // Second param install_callback=true will install GLFW callbacks and chain to existing ones.
+	//ImGui_ImplOpenGL3_Init();
 	
-	ImGui::StyleColorsDark();
+	//ImGui::StyleColorsDark();
 
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	
@@ -204,27 +205,30 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 	
 
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
+		//ImGui_ImplOpenGL3_NewFrame();
+		//ImGui_ImplGlfw_NewFrame();
+		//ImGui::NewFrame();
+		_widget->Update();
 
-
-		ImGui::ShowDemoWindow();
-		ImGui::Render();
+		//ImGui::ShowDemoWindow();
+		//ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	
 	} while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(window) == 0);
-	
-	ImGui_ImplOpenGL3_Shutdown();
-	ImGui_ImplGlfw_Shutdown();
-	ImGui::DestroyContext();
-/*
+	_widget->End();
+	delete _widget;
+	delete window;
+	//ImGui_ImplOpenGL3_Shutdown();
+	//ImGui_ImplGlfw_Shutdown();
+	//ImGui::DestroyContext();
+	*/
+
 	Engine* _engine = new Engine();
 	_engine->Launch();
 	delete _engine;
-*/
+
 	return 0;
 	
 	

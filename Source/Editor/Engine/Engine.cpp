@@ -7,7 +7,7 @@
 Engine::Engine()
 {
 	mainWindow = new EngineWindow();
-
+	hud = new HUD();
 	VAO = GLuint();
 	VBO = GLuint();
 	EBO = GLuint();
@@ -36,13 +36,14 @@ Engine::Engine()
 Engine::~Engine()
 {
 	delete mainWindow;
+	delete hud;
 }
 
 
 void Engine::Start()
 {
 	mainWindow->Start();
-
+	hud->Start(mainWindow->GetWindow());
 	// Shaders
 	elementShader.LoadShadersFromPath("Element.vs", "Element.fs");
 	lampShader.LoadShadersFromPath("Lamp.vs", "Lamp.fs");
@@ -227,21 +228,14 @@ void Engine::Update()
 
 		//ChangeBgColor();
 		Draw();
+		hud->Update();
+
 
 		glfwSwapBuffers(_window);
 		glfwPollEvents();
 
 		 //Start the Dear ImGui frame
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
-		ImGui::ShowDemoWindow(); // Show demo window! :)
-
-		// Rendering
-		// (Your code clears your framebuffer, renders your other stuff etc.)
-		ImGui::Render();
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-		// (Your code calls glfwSwapBuffers() etc.)
+		
 
 	} while (glfwGetKey(_window, GLFW_KEY_ESCAPE) != GLFW_PRESS && !glfwWindowShouldClose(_window));
 
@@ -389,10 +383,8 @@ void Engine::DrawElements()
 
 void Engine::Stop()
 {
-	ImGui_ImplOpenGL3_Shutdown();
-	ImGui_ImplGlfw_Shutdown();
-	ImGui::DestroyContext();
 
+	hud->End();
 	mainWindow->Stop();
 	ClearElements();
 }
