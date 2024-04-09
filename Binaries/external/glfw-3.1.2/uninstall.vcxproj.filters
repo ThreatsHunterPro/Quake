@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\Binaries\CMakeFiles\95a65fbce88e0c78c25408b890148eaf\uninstall.rule">
+    <CustomBuild Include="D:\p2vs\QuakeGit\Quake\Binaries\CMakeFiles\a09dd5b4e35ccd87ee54d2580169ce52\uninstall.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="D:\p2vs\Quake\external\glfw-3.1.2\CMakeLists.txt" />
+    <CustomBuild Include="D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\p2vs\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\uninstall" />
+    <None Include="D:\p2vs\QuakeGit\Quake\Binaries\external\glfw-3.1.2\CMakeFiles\uninstall" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{8A3BADB6-29C5-39DF-981A-47C0DDA4CEE0}</UniqueIdentifier>
+      <UniqueIdentifier>{6C9D44FB-6324-3F7C-978C-49305208D544}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

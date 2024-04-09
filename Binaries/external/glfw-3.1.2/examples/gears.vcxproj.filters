@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\p2vs\Quake\external\glfw-3.1.2\examples\gears.c">
+    <ClCompile Include="D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\examples\gears.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\external\glfw-3.1.2\examples\CMakeLists.txt" />
+    <CustomBuild Include="D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\examples\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{C8A093B8-9311-39FF-A95E-F9EAC41E3998}</UniqueIdentifier>
+      <UniqueIdentifier>{C738FB2A-E853-309F-B1CB-400DF614F56C}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
