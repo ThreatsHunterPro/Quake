@@ -19,8 +19,8 @@ void ADirectionalLight::Update(const int _index)
 	FString _name;
 	_name = _name.Format("dirLights[{}].", _index);
 
-	lighting->SetVec3(_name + "direction", direction);
-	lighting->SetVec3(_name + "ambient", ambient);
-	lighting->SetVec3(_name + "diffuse", diffuse);
-	lighting->SetVec3(_name + "specular", specular);
+	lighting.SetVec3(_name + "direction", direction);
+	lighting.SetVec3(_name + "ambient", ambient);
+	lighting.SetVec3(_name + "diffuse", diffuse);
+	lighting.SetVec3(_name + "specular", specular);
 }

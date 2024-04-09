@@ -5,7 +5,7 @@ ALight::ALight(const FVector& _color, const FVector& _position)
 	color = _color;
 	position = _position;
 	direction = FVector(0, 0, -1);
-	lighting = new CustomShader();
+	lighting = CustomShader();
 	ambient = FVector(0.1f);
 	diffuse = FVector(0.5f);
 	specular = FVector(1.0f);
@@ -17,7 +17,7 @@ ALight::ALight(const FVector& _color, const FVector& _position, const FVector& _
 	color = _color;
 	position = _position;
 	direction = FVector(0, 0, -1);
-	lighting = new CustomShader();
+	lighting = CustomShader();
 	ambient = _ambient;
 	diffuse = _diffuse;
 	specular = _specular;
@@ -29,7 +29,7 @@ ALight::ALight(const FVector& _color, const FVector& _position, const FVector& _
 	color = _color;
 	position = _position;
 	direction = FVector(0, 0, -1);
-	lighting = new CustomShader();
+	lighting = CustomShader();
 	ambient = _ambient;
 	diffuse = _diffuse;
 	specular = _specular;
@@ -43,9 +43,9 @@ void ALight::SetPhong(const FVector& _ambient, const FVector& _diffuse, const FV
 	specular = _specular;
 }
 
-void ALight::SetShader(CustomShader* _lighting)
+void ALight::SetShader(const CustomShader& _shader)
 {
-	lighting = _lighting;
+	lighting = _shader;
 }
 
 void ALight::Update(const int _index)

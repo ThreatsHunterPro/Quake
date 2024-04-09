@@ -39,16 +39,16 @@ void ASpotLight::Update(const int _index)
 	FString _name;
 	_name = _name.Format("spotLights[{}].", _index);
 
-	lighting->SetFloat(_name + "cutOff", cutOff);
-	lighting->SetFloat(_name + "outerCutOff", outerCutOff);
-	lighting->SetVec3(_name + "direction", direction);
-	lighting->SetVec3(_name + "position", position);
-
-	lighting->SetFloat(_name + "constant", constant);
-	lighting->SetFloat(_name + "linear", linear);
-	lighting->SetFloat(_name + "quadratic", quadratic);
-
-	lighting->SetVec3(_name + "ambient", ambient);
-	lighting->SetVec3(_name + "diffuse", diffuse);
-	lighting->SetVec3(_name + "specular", specular);
+	lighting.SetFloat(_name + "cutOff", cutOff);
+	lighting.SetFloat(_name + "outerCutOff", outerCutOff);
+	lighting.SetVec3(_name + "direction", direction);
+	lighting.SetVec3(_name + "position", position);
+			
+	lighting.SetFloat(_name + "constant", constant);
+	lighting.SetFloat(_name + "linear", linear);
+	lighting.SetFloat(_name + "quadratic", quadratic);
+			
+	lighting.SetVec3(_name + "ambient", ambient);
+	lighting.SetVec3(_name + "diffuse", diffuse);
+	lighting.SetVec3(_name + "specular", specular);
 }

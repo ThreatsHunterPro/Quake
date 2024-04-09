@@ -1,0 +1,17 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.29/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindOpenGL.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/WriteBasicConfigVersionFile.cmake
+D:/p2vs/QuakeGit/Quake/external/glfw-3.1.2/CMakeLists.txt
+D:/p2vs/QuakeGit/Quake/external/glfw-3.1.2/cmake_uninstall.cmake.in
+D:/p2vs/QuakeGit/Quake/external/glfw-3.1.2/src/glfw3.pc.in
+D:/p2vs/QuakeGit/Quake/external/glfw-3.1.2/src/glfw3Config.cmake.in
+D:/p2vs/QuakeGit/Quake/external/glfw-3.1.2/src/glfw_config.h.in

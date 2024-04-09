@@ -17,7 +17,7 @@ class Engine
 	GLuint EBO;
 	GLuint texture1;
 	GLuint texture2;
-	CustomShader* elementShader;
+	CustomShader elementShader;
 
 	bool use2D;
 	bool multipleCubes;
@@ -45,7 +45,7 @@ class Engine
 	GLuint diffuseMap;
 	GLuint specularMap;
 	GLuint emissionMap;
-	CustomShader* lampShader;
+	CustomShader lampShader;
 
 	// Point light
 	ADirectionalLight directionalLight;

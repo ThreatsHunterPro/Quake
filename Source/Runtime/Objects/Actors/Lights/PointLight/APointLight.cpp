@@ -29,11 +29,11 @@ void APointLight::Update(const int _index)
 	FString _name;
 	_name = _name.Format("pointLights[{}].", _index);
 
-	lighting->SetFloat(_name + "constant", constant);
-	lighting->SetFloat(_name + "linear", linear);
-	lighting->SetFloat(_name + "quadratic", quadratic);
-	lighting->SetVec3(_name + "position", position);
-	lighting->SetVec3(_name + "ambient", ambient);
-	lighting->SetVec3(_name + "diffuse", diffuse);
-	lighting->SetVec3(_name + "specular", specular);
+	lighting.SetFloat(_name + "constant", constant);
+	lighting.SetFloat(_name + "linear", linear);
+	lighting.SetFloat(_name + "quadratic", quadratic);
+	lighting.SetVec3(_name + "position", position);
+	lighting.SetVec3(_name + "ambient", ambient);
+	lighting.SetVec3(_name + "diffuse", diffuse);
+	lighting.SetVec3(_name + "specular", specular);
 }

@@ -41,7 +41,7 @@ CameraManager::CameraManager()
 }
 
 // Start
-void CameraManager::Start(const FVector2& _windowSize, const vector<CustomShader*>& _shaders)
+void CameraManager::Start(const FVector2& _windowSize, const vector<CustomShader>& _shaders)
 {
 	windowSize = _windowSize;
 	shaders = _shaders;
@@ -80,9 +80,9 @@ void CameraManager::Update()
 	size_t _size = shaders.size();
 	for (size_t i = 0; i < _size; i++)
 	{
- 		shaders[i]->Use();
-		shaders[i]->SetMat4("view", view);
-		shaders[i]->SetMat4("projection", projection);
+ 		shaders[i].Use();
+		shaders[i].SetMat4("view", view);
+		shaders[i].SetMat4("projection", projection);
 	}
 }
 void CameraManager::UpdateCameraVectors()

@@ -18,7 +18,7 @@ protected:
     float intensity;
     FVector position;
     FVector direction;
-    CustomShader* lighting;
+    CustomShader lighting;
 
 public:
     FORCEINLINE void SetColor(const FVector& _color)
@@ -62,6 +62,6 @@ public:
 
 public:
     void SetPhong(const FVector& _ambient, const FVector& _diffuse, const FVector& _specular);
-    void SetShader(CustomShader* _lighting);
+    void SetShader(const CustomShader& _shader);
     virtual void Update(const int _index);
 };
