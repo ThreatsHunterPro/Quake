@@ -1,5 +1,6 @@
 #include "EngineWindow.h"
 #include "Source/Editor/Engine/Widgets/PlaceActorsWidget.h"
+#include "Source/Editor/Engine/Widgets/DetailsWindow.h"
 
 EngineWindow::EngineWindow()
 {
@@ -8,7 +9,8 @@ EngineWindow::EngineWindow()
 	bgColor = FColor(51, 85, 85, 255);
 	mainWindow = nullptr;
 
-	widgets.Add(new PlaceActorsWidget(FString("test"), this));
+	//widgets.Add(new PlaceActorsWidget(FString("test"), this));
+	widgets.Add(new DetailsWindow(FString("Details"), this));
 }
 
 EngineWindow::~EngineWindow()
