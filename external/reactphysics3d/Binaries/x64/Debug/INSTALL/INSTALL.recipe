@@ -2,13 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Github\Quake\external\reactphysics3d\Binaries\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>D:\Quake\external\reactphysics3d\Binaries\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\Github\Quake\external\reactphysics3d\Binaries\x64\Debug\ALL_BUILD</FullPath>
+      <FullPath>D:\Quake\external\reactphysics3d\Binaries\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\Github\Quake\external\reactphysics3d\Binaries\x64\Debug\INSTALL</FullPath>
+      <FullPath>D:\Quake\external\reactphysics3d\Binaries\x64\Debug\INSTALL</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

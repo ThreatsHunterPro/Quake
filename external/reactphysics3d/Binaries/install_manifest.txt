@@ -1,7 +1,6 @@
 C:/Program Files (x86)/ReactPhysics3D/lib/reactphysics3d.lib
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/body/Body.h
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/body/RigidBody.h
-C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/.DS_Store
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/broadphase/DynamicAABBTree.h
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/Collider.h
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/CollisionCallback.h
@@ -12,7 +11,6 @@ C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/ContactPo
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/ConvexMesh.h
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/HalfEdgeStructure.h
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/HeightField.h
-C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/narrowphase/.DS_Store
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/narrowphase/CapsuleVsCapsuleAlgorithm.h
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/narrowphase/CapsuleVsConvexPolyhedronAlgorithm.h
 C:/Program Files (x86)/ReactPhysics3D/include/reactphysics3d/collision/narrowphase/CollisionDispatch.h

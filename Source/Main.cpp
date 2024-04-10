@@ -151,15 +151,8 @@ int main()
 #pragma endregion
 	*/
 
-	FCollisionShape _shape;
+	Engine::GetInstance().Launch();
 
-	_shape.MakeBox(FVector(100, 500, 600));
-	_shape.GetBox().ToString().Display();
-
-
-	Engine* _engine = new Engine();
-	_engine->Launch();
-	delete _engine;
 	
 	//PhysicsCommon _physics;
 	
@@ -242,4 +235,5 @@ int main()
 	//Vector3 scaling(1, 1, 1);
 	//// Create the ConvexMeshShape
 	//ConvexMeshShape* convexMeshShape = _physics.createConvexMeshShape(convexMesh, scaling);	
+	
 }

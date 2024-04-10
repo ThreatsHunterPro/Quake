@@ -3,10 +3,10 @@
 #include "..\..\Runtime\Managers\CameraManager.h"
 #include "..\..\Runtime\Managers\TimerManager.h"
 
-
 Engine::Engine()
 {
 	mainWindow = new EngineWindow();
+	world = new UWorld();
 
 	VAO = GLuint();
 	VBO = GLuint();
@@ -43,8 +43,6 @@ Engine::~Engine()
 
 void Engine::Start()
 {
-
-	world = physics.createPhysicsWorld();
 	mainWindow->Start();
 
 	// Shaders
@@ -199,25 +197,24 @@ void Engine::Start()
 		//}
 		//assert(convexMesh != nullptr);
 
-		BoxShape* _box = physics.createBoxShape(Vector3(1, 1, 1));
-		BoxShape* _floorBox = physics.createBoxShape(Vector3(30, 1, 30));
+		BoxShape* _floorBox = world->GetPhysics().createBoxShape(Vector3(30, 1, 30));
 
 		//Vector3 scaling(1, 1, 1);
 
 		//ConvexMeshShape* convexMeshShape = physics.createConvexMeshShape(convexMesh, scaling);
 
-		//BoxShape* _box = physics.createBoxShape(Vector3(1, 1, 1));
+		BoxShape* _box = world->GetPhysics().createBoxShape(Vector3(1, 1, 1));
 		Vector3 _position = Vector3(0, 5, 0);
 		Quaternion _orientation = Quaternion(45, 0, 0, 1);
 		Transform _transform(_position, _orientation);
-		body = world->createRigidBody(_transform);
-		body->addCollider(_box, _transform);
+		//body = world->GetWorld()->createRigidBody(_transform);
+		//body->addCollider(_box, _transform);
 
 
-		//BoxShape* _box = physics.createBoxShape(Vector3(1, 1, 1));
+		//BoxShape* _box = world->GetPhysics().createBoxShape(Vector3(1, 1, 1));
 		_position = Vector3(0, 1, 0);
 		Transform _floorTransform(_position, Quaternion::identity());
-		floor = world->createRigidBody(_floorTransform);
+		floor = world->GetWorld()->createRigidBody(_floorTransform);
 		floor->addCollider(_floorBox, _floorTransform);
 		floor->setType(BodyType::STATIC);
 
@@ -324,14 +321,14 @@ void Engine::Update()
 	GLFWwindow* _window = mainWindow->GetWindow();
 	do
 	{
-		world->update(timeStep);
+		world->GetWorld()->update(timeStep);
 
-		const Transform& transform = body->getTransform();
+		/*const Transform& transform = body->getTransform();
 		const Vector3& position = transform.getPosition();
 		const Quaternion& _rotation = transform.getOrientation();
 
 		std::cout << " Body Rotation : (" << position.x << "," <<
-			position.y << ", " << position.z << ")" << std::endl;
+			position.y << ", " << position.z << ")" << std::endl;*/
 
 		TimerManager::GetInstance().Update();
 		InputManager::GetInstance().Update();
@@ -440,10 +437,10 @@ void Engine::DrawElement()
 	ApplyShader();
 
 	FMatrix _model = FMatrix::Identity;
-	Vector3 _position = body->getTransform().getPosition();
+	/*Vector3 _position = body->getTransform().getPosition();
 	Quaternion _rotation = body->getTransform().getOrientation();
 	_model = translate(_model.ToMat4(), vec3(_position.x, _position.y, _position.z));
-	_model = rotate(_model.ToMat4(), _rotation.x, vec3(1, 0, 0));
+	_model = rotate(_model.ToMat4(), _rotation.x, vec3(1, 0, 0));*/
 	//_model = rotate(_model.ToMat4(), _rotation.y, vec3(0, 1, 0));
 	//_model = rotate(_model.ToMat4(), _rotation.z, vec3(0, 0, 1));
 
