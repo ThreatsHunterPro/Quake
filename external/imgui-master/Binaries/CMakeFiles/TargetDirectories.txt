@@ -1,0 +1,4 @@
+D:/p2vs/QuakeGit/Quake/external/imgui-master/Binaries/CMakeFiles/imgui.dir
+D:/p2vs/QuakeGit/Quake/external/imgui-master/Binaries/CMakeFiles/INSTALL.dir
+D:/p2vs/QuakeGit/Quake/external/imgui-master/Binaries/CMakeFiles/ALL_BUILD.dir
+D:/p2vs/QuakeGit/Quake/external/imgui-master/Binaries/CMakeFiles/ZERO_CHECK.dir
