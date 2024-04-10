@@ -5,13 +5,13 @@ find_package(OpenGL REQUIRED)# Compile external dependencies
 add_subdirectory (external)
 
 
-set(SFML_DIR "D:/Quake/Quake/external/SFML-2.6.1/lib/cmake/SFML") 
-set(SFML_INCLUDE_DIR "D:/Quake/Quake/external/SFML-2.6.1/include")
-set(SFML_INCLUDE_LIB "D:/Quake/Quake/external/SFML-2.6.1/lib")
+#set(SFML_DIR "D:/Quake/Quake/external/SFML-2.6.1/lib/cmake/SFML") 
+#set(SFML_INCLUDE_DIR "D:/Quake/Quake/external/SFML-2.6.1/include")
+#set(SFML_INCLUDE_LIB "D:/Quake/Quake/external/SFML-2.6.1/lib")
 
-set(SFML_STATIC_LIBRARIES TRUE)
+#set(SFML_STATIC_LIBRARIES TRUE)
 
-find_package(SFML COMPONENTS graphics window system audio network REQUIRED)
+#find_package(SFML COMPONENTS graphics window system audio network REQUIRED)
 
 
 set(CMAKE_PREFIX_PATH "D:/code/Thomas/Quake/external/freetype-2.13.0")
@@ -22,9 +22,9 @@ include_directories(
 	external/glm-0.9.7.1/
 	external/glew-1.13.0/include/
 	external/assimp-3.0.1270/include/
-	external/SFML-2.6.1/include/
-	external/SFML-2.6.1/lib/
-	.
+	#external/SFML-2.6.1/include/
+	#external/SFML-2.6.1/lib/
+	
 )
 
 
@@ -33,10 +33,10 @@ set(ALL_LIBS
         #sfml-network
 	glfw
 	GLEW_1130
-        sfml-graphics
-        sfml-window 
-        sfml-system	
-	sfml-audio
+       # sfml-graphics
+       # sfml-window 
+       # sfml-system	
+       # sfml-audio
 )
 
 add_definitions(

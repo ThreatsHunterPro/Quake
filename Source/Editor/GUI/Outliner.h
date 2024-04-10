@@ -1,20 +1,19 @@
 #pragma once
 #include "Widget.h"
-#include "DynamicButtonField.h"
+#include "ContentField.h"
+#include "SearchOutliner.h"
+
 
 class Outliner : public Widget
 {
-	string expl;
-	std::vector< DynamicButtonField*> field;
-	CustomShader* shader = nullptr;
+	ContentField* contentField = nullptr;
+	SearchOutliner* searchOutliner = nullptr;
 public:
+	Outliner();
 	~Outliner();
-	//Outliner(CustomShader* _shader);
 public:
-	void Start(GLFWwindow* _window, CustomShader* elementShader) override;
-	void Start(GLFWwindow* _window) override;
+	void Start(class GLFWwindow* _window) override;
 	void Draw() override;
-private:
-	void Init(GLFWwindow* _window, CustomShader* elementShader = nullptr);
+
 };
 

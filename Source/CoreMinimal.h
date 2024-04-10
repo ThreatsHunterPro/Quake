@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <functional>
+#include <deque>
+
 
 #include "Runtime/Core/Containers/FString.h"
 #include "Runtime/Core/Containers/TArray.h"

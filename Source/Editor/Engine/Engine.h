@@ -27,6 +27,8 @@ class Engine
 	bool rotateElements;
 
 	int cubeIndex;
+	
+
 	FVector cubePositions[10] = {
 		FVector(0.0f,  0.0f,  0.0f),
 		FVector(2.0f,  5.0f, -15.0f),
@@ -61,7 +63,14 @@ public:
 		static Engine _instance;
 		return _instance;
 	}
-
+	FVector GetCubePosition(const int& _index)const { return cubePositions[_index]; }
+	size_t GetAllActors()const 
+	{ 
+		size_t count = 0;
+		for (auto i : cubePositions)
+			count++;
+		return count;
+	}
 public:
 	Engine();
 	~Engine();
@@ -74,7 +83,7 @@ private:
 
 #pragma region Draws
 	void Draw();
-	void ApplyShader();
+	void ApplyShader( int _currentIndex);
 	void DrawLamp();
 	void DrawElement();
 	void DrawElements();

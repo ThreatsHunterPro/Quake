@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include "Widget.h"
-#include "../../Editor/Engine/Shader/CustomShader.h"
 class HUD
 {
 protected:
@@ -10,8 +9,7 @@ public:
 	HUD();
 	~HUD();
 public:
-	void Start(GLFWwindow* _window);
-	void Start(GLFWwindow* _window, CustomShader *elementShader);
+	void Start(class GLFWwindow* _window);
 	void Update();
 	void End();
 };

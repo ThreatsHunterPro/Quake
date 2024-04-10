@@ -7,7 +7,7 @@
 class CustomShader
 {
 	int shaderProgramID;
-
+	
 public:
 	FORCEINLINE int GetShaderID() const { return shaderProgramID; }
 

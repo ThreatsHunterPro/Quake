@@ -1,5 +1,6 @@
 #include "HUD.h"
 #include "Outliner.h"
+#include "../../Editor/Engine/Engine.h"
 HUD::HUD()
 {
 	widgets.push_back(new Outliner());
@@ -20,13 +21,6 @@ void HUD::Start(GLFWwindow* _window)
 	}
 }
 
-void HUD::Start(GLFWwindow* _window, CustomShader* elementShader)
-{
-	for (Widget* _widget : widgets)
-	{
-		_widget->Start(_window, elementShader);
-	}
-}
 
 void HUD::Update()
 {

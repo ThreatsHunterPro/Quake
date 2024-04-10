@@ -1,5 +1,5 @@
 #include "Widget.h"
-
+#include "../../Editor/Engine/Engine.h"
 Widget::Widget()
 {
 }
@@ -10,10 +10,7 @@ Widget::~Widget()
 	io = nullptr;
 }
 
-void Widget::Start(GLFWwindow* _window, CustomShader* elementShader)
-{
-	Start(_window);
-}
+
 
 void Widget::Start(GLFWwindow* _window)
 {

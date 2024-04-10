@@ -3,7 +3,7 @@
 #include "..\..\Runtime\Managers\CameraManager.h"
 #include "..\..\Runtime\Managers\TimerManager.h"
 
-
+#include "..\..\Editor\GUI\RegisterActor.h"
 Engine::Engine()
 {
 	mainWindow = new EngineWindow();
@@ -20,6 +20,10 @@ Engine::Engine()
 	multipleCubes = true;
 
 	cubeIndex = 0;
+	for (auto i : cubePositions)
+		RegisterActor::GetInstance().Add(0);
+	
+	
 
 	// Lamp
 	drawLamp = true;
@@ -42,6 +46,7 @@ Engine::~Engine()
 
 void Engine::Start()
 {
+	
 	mainWindow->Start();
 
 	// Shaders
@@ -50,9 +55,6 @@ void Engine::Start()
 
 	InputManager::GetInstance().Start(mainWindow->GetWindow());
 
-	CameraManager::GetInstance().Start(mainWindow->GetSize(), lampShader, elementShader);
-	
-	
 	hud->Start(mainWindow->GetWindow());
 
 
@@ -253,15 +255,15 @@ void Engine::Update()
 		InputManager::GetInstance().Update();
 		CameraManager::GetInstance().Update();
 
-		//ChangeBgColor();
+		
 		Draw();
+		
+		//Start the Dear ImGui frame
 		hud->Update();
-
 
 		glfwSwapBuffers(_window);
 		glfwPollEvents();
 
-		 //Start the Dear ImGui frame
 		
 
 	} while (glfwGetKey(_window, GLFW_KEY_ESCAPE) != GLFW_PRESS && !glfwWindowShouldClose(_window));
@@ -298,7 +300,7 @@ void Engine::ChangeElementColor()
 	lampShader.SetVec4("newColor", FVector4(_redValue, _greenValue, _blueValue, 1.0f));
 }
 
-void Engine::ApplyShader()
+void Engine::ApplyShader(int _currentIndex)
 {
 	elementShader.Use();
 
@@ -325,8 +327,16 @@ void Engine::ApplyShader()
 	#pragma endregion
 
 	// material properties
+
+	
 	const float _intensity = 32.0f;
-	elementShader.SetFloat("material.shininess", _intensity);
+	//TODO Register ImGUi
+	if (RegisterActor::GetInstance().GetCurrentActor() == _currentIndex)
+	{
+		elementShader.SetFloat("material.shininess", 0);
+	}
+	else
+		elementShader.SetFloat("material.shininess", _intensity);
 
 	// bind diffuse map
 	glActiveTexture(GL_TEXTURE0);
@@ -347,32 +357,14 @@ void Engine::ApplyShader()
 
 void Engine::DrawElement()
 {
-	ApplyShader();
-
+	ApplyShader(-2);
+	
 	FMatrix _model = FMatrix::Identity;
 	_model = translate(_model.ToMat4(), FVector(0.0f, 0.0f, -5.0f).ToVec3());
 	//_model = rotate(_model.ToMat4(), TimerManager::GetInstance().DeltaTimeSeconds(), vec3(0.0f, 1.0f, 0.0f));
 	elementShader.Use();
 	elementShader.SetMat4("model", _model);
 }
-
-
-void Engine::DrawElements()
-{
-	for (unsigned int _index = 0; _index < 10; _index++)
-	{
-		ApplyShader();
-
-		FMatrix _model = FMatrix::Identity;
-		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());
-		const float _angle = 20.0f * _index;
-		//_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
-
-		elementShader.Use();
-		elementShader.SetMat4("model", _model);
-	}
-}
-
 
 void Engine::DrawLamp()
 {
@@ -404,7 +396,7 @@ void Engine::DrawElements()
 {
 	for (unsigned int _index = 0; _index < 10; _index++)
 	{
-		ApplyShader();
+		ApplyShader(_index);
 
 		FMatrix _model = FMatrix::Identity;
 		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());

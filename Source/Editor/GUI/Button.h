@@ -15,12 +15,12 @@ public:
 
         return false;
     }
-   // template <typename RetVal, typename ... Args >
-    static bool MakeButton(const char* _label, const std::function<void()>& _callback)
+    template <typename RetVal, typename ... Args >
+    static bool MakeButton(const char* _label, const std::function<RetVal(Args ...) >& _callback)
     {
         if (ImGui::Button(_label))
         {
-            _callback();
+            _callback(Args ...);
             return true;
         }
 

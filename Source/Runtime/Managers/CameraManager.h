@@ -53,6 +53,10 @@ public:
 	{
 		targetLocation = _location;
 	}
+	FORCEINLINE void SetPosition(const FVector& _position)
+	{
+		position = _position;
+	}
 	FORCEINLINE static CameraManager& GetInstance()
 	{
 		static CameraManager _instance;
