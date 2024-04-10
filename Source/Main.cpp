@@ -7,6 +7,7 @@
 #include "Editor/Pointers/TSharedPtr.h"
 #include "Source/Editor/Engine/Engine.h"
 #include <reactphysics3d/reactphysics3d.h>
+#include "Runtime/PhysicsCore/CollisionShape.h"
 
 using namespace std;
 using namespace glm;
@@ -150,6 +151,12 @@ int main()
 #pragma endregion
 	*/
 
+	FCollisionShape _shape;
+
+	_shape.MakeBox(FVector(100, 500, 600));
+	_shape.GetBox().ToString().Display();
+
+
 	Engine* _engine = new Engine();
 	_engine->Launch();
 	delete _engine;
@@ -161,13 +168,19 @@ int main()
 	//_settings.defaultVelocitySolverNbIterations = 20;
 	//_settings.isSleepingEnabled = false;
 	//_settings.gravity = Vector3(0, -9.81, 0);
+
+	
 	
 	//PhysicsWorld* _world = _physics.createPhysicsWorld();
+	//
+	//_world->setIsGravityEnabled(true);
+	//_world->setGravity(FVector().ToReactVector3())
+
 	//
 	//
 	//Transform _tranforms = Transform::identity();
 	//RigidBody* _body = _world->createRigidBody(_tranforms);
-	////_body->enableGravity(false);
+	//_body->enableGravity(false);
 	//
 	//SphereShape* _sphere = _physics.createSphereShape(3.0f);
 	//

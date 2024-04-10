@@ -2,8 +2,10 @@
 #include <iostream>
 #include "../../Containers/FString.h"
 #include "glm/glm.hpp"
+#include <reactphysics3d/reactphysics3d.h>
 using namespace std;
 using namespace glm;
+using namespace reactphysics3d;
 class FString;
 class FMath;
 
@@ -46,6 +48,12 @@ public:
 		X = _other.X;
 		Y = _other.Y;
 		Z = _other.Z;
+	}
+	TVector(const Vector3& _other)
+	{
+		X = _other.x;
+		Y = _other.y;
+		Z = _other.z;
 	}
 	//TVector<T>(const FVector4& _vector)
 	//TVector<T>(const FLinearColor& _color);
@@ -138,6 +146,10 @@ public:
 	vec3 ToVec3()
 	{
 		return vec3(X, Y, Z);
+	}
+	Vector3 ToReactVector3()
+	{
+		return Vector3(X, Y, Z);
 	}
 
 #pragma region Operator 

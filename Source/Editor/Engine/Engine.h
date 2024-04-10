@@ -63,7 +63,10 @@ public:
 		static Engine _instance;
 		return _instance;
 	}
-
+	FORCEINLINE PhysicsCommon& GetPhysics()
+	{
+		return physics;
+	}
 public:
 	Engine();
 	~Engine();

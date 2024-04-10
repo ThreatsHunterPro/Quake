@@ -13,7 +13,7 @@ struct HitInfo
 
 	bool operator!=(HitInfo& _hitInfo) const
 	{
-		return (actor != _hitInfo.actor && distance != _hitInfo.distance && position != _hitInfo.position);
+		//return (actor != _hitInfo.actor && distance != _hitInfo.distance && position != _hitInfo.position);
 	}
 };
 
