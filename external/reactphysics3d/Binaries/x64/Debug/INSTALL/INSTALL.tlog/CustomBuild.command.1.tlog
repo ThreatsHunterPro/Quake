@@ -1,0 +1,10 @@
+^D:\GITHUB\QUAKE\EXTERNAL\REACTPHYSICS3D\BINARIES\CMAKEFILES\270B9287C04C01F8148A1DE6BE0C6DC5\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

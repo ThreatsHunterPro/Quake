@@ -208,7 +208,7 @@ void Engine::Start()
 
 		//BoxShape* _box = physics.createBoxShape(Vector3(1, 1, 1));
 		Vector3 _position = Vector3(0, 5, 0);
-		Quaternion _orientation(10,50,20,30);
+		Quaternion _orientation = Quaternion(45, 0, 0, 1);
 		Transform _transform(_position, _orientation);
 		body = world->createRigidBody(_transform);
 		body->addCollider(_box, _transform);
