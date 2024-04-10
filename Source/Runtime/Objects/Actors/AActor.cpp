@@ -119,7 +119,7 @@ void AActor::Tick(const float _deltaTime)
 
 void AActor::Update()
 {
-	staticMesh->DrawElement();
+	//staticMesh->DrawElement();
 }
 
 void AActor::Destroy()
@@ -128,7 +128,7 @@ void AActor::Destroy()
 
 void AActor::InitStaticMesh(const FString& _objPath, const FString& _texturePath, const bool& _useCustomMethod)
 {
-	staticMesh->InitCreationByType(PT_BOX);
+	//staticMesh->InitCreationByType(PT_BOX);
 }
 
 void AActor::AddActorLocation(const FVector& _location)

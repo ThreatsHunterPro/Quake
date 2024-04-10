@@ -77,6 +77,7 @@ public:
 
 	FString ToLower();
 	FString ToUpper();
+	const char * ToCstr();
 	void Display();
 
 	FString Trim();

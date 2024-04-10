@@ -15,6 +15,9 @@
 #include "common/shader.hpp"
 #include "Source/Runtime/Core/Math/MathFwd.h"
 
+// PATH
+#define VERTEX_SHADER_PATH "StandardShading.vertexshader"
+#define FRAGMENT_SHADER_PATH "StandardShading.fragmentshader"
 
 // OBJECTS MACRO.H
 #ifdef _DEBUG

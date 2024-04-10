@@ -17,7 +17,7 @@ public:
 	virtual ~UComponent() {}
 
 public:
-	virtual void Start() = 0;
-	virtual void Update(float _deltaTime) = 0;
-	virtual void Stop() = 0;
+	virtual void Start() {}
+	virtual void Update(float _deltaTime) {}
+	virtual void Stop() {}
 };
