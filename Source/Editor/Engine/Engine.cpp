@@ -2,6 +2,7 @@
 #include "..\..\Runtime\Managers\InputManager.h"
 #include "..\..\Runtime\Managers\CameraManager.h"
 #include "..\..\Runtime\Managers\TimerManager.h"
+#include "../../Runtime/Objects/Components/RigideBody/URigidBody.h"
 
 Engine::Engine()
 {
@@ -169,6 +170,7 @@ void Engine::Start()
 			-0.5f,  0.5f,  0.5f,
 			-0.5f,  0.5f, -0.5f
 		};
+
 		glBufferData(GL_ARRAY_BUFFER, sizeof(_cubeVertices), _cubeVertices, GL_STATIC_DRAW);
 
 
@@ -203,23 +205,24 @@ void Engine::Start()
 
 		//ConvexMeshShape* convexMeshShape = physics.createConvexMeshShape(convexMesh, scaling);
 
-		BoxShape* _box = world->GetPhysics().createBoxShape(Vector3(1, 1, 1));
-		Vector3 _position = Vector3(0, 5, 0);
-		Quaternion _orientation = Quaternion(45, 0, 0, 1);
-		Transform _transform(_position, _orientation);
+		//BoxShape* _box = world->GetPhysics().createBoxShape(Vector3(1, 1, 1));
+		//Vector3 _position = Vector3(0, 5, 0);
+		FVector _positionBody = FVector(0, 5, 0);
+		body = new URigidBody(_positionBody, Quaternion::identity());
+		//Quaternion _orientation = Quaternion(45, 0, 0, 1);
+		//Transform _transform(_position, _orientation);
 		//body = world->GetWorld()->createRigidBody(_transform);
 		//body->addCollider(_box, _transform);
 
 
-		//BoxShape* _box = world->GetPhysics().createBoxShape(Vector3(1, 1, 1));
-		_position = Vector3(0, 1, 0);
+		Vector3 _position = Vector3(0, 1, 0);
 		Transform _floorTransform(_position, Quaternion::identity());
 		floor = world->GetWorld()->createRigidBody(_floorTransform);
 		floor->addCollider(_floorBox, _floorTransform);
 		floor->setType(BodyType::STATIC);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+		glEnableVertexAttribArray(0);
 #pragma endregion 
 
 	}
@@ -330,6 +333,9 @@ void Engine::Update()
 		std::cout << " Body Rotation : (" << position.x << "," <<
 			position.y << ", " << position.z << ")" << std::endl;*/
 
+		
+		
+
 		TimerManager::GetInstance().Update();
 		InputManager::GetInstance().Update();
 		CameraManager::GetInstance().Update();
@@ -438,9 +444,9 @@ void Engine::DrawElement()
 
 	FMatrix _model = FMatrix::Identity;
 	/*Vector3 _position = body->getTransform().getPosition();
-	Quaternion _rotation = body->getTransform().getOrientation();
-	_model = translate(_model.ToMat4(), vec3(_position.x, _position.y, _position.z));
-	_model = rotate(_model.ToMat4(), _rotation.x, vec3(1, 0, 0));*/
+	Quaternion _rotation = body->getTransform().getOrientation();*/
+	_model = translate(_model.ToMat4(), body->GetPosition().ToVec3());
+	//_model = rotate(_model.ToMat4(), _rotation.x, vec3(1, 0, 0));
 	//_model = rotate(_model.ToMat4(), _rotation.y, vec3(0, 1, 0));
 	//_model = rotate(_model.ToMat4(), _rotation.z, vec3(0, 0, 1));
 

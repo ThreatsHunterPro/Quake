@@ -10,14 +10,20 @@ class URigidBody : public UComponent
     BoxShape* box;
     Quaternion rotation;
     Transform* transform = nullptr;
+    RigidBody* rigidBody = nullptr;
+
+    float timeStep = 1.0f / 60.0f;
 
 public:
-    URigidBody(AActor* _owner, FVector _position, const Quaternion _rotation);
+    URigidBody(FVector _position, const Quaternion _rotation);
 
 public:
     virtual void Start()override;
     virtual void Update(float _deltaTime)override;
     virtual void Stop()override;
 
-
+    FORCEINLINE FVector GetPosition()
+    {
+        return rigidBody->getTransform().getPosition();
+    }
 };

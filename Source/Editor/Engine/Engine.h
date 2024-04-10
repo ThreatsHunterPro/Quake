@@ -7,11 +7,15 @@
 #include "../../Runtime/Objects/Actors/Lights/PointLight/APointLight.h"
 #include "../../Runtime/Classes/World/UWorld.h"
 
+
+class URigidBody;
 class Engine
 {
 	EngineWindow* mainWindow;
 
 	UWorld* world;
+
+	URigidBody* body = nullptr;
 
 	GLuint VAO;
 	GLuint VBO;
@@ -51,8 +55,6 @@ class Engine
 	// Point light
 	APointLight pointLight;
 
-
-	RigidBody* body = nullptr;
 	RigidBody* floor = nullptr;
 	const float timeStep = 1.0f / 60.0f;
 	GLuint floorVAO;
