@@ -5,10 +5,10 @@
 
 FCollisionShape::FCollisionShape()
 {
-    //ShapeType = ECollisionShape::Line;
+    ShapeType = ECollisionShape::Line;
     Box.Shape = Engine::GetInstance().GetWorld()->GetPhysics().createBoxShape(Vector3());
-    //Sphere.Shape = UWorld::GetPhysics().createSphereShape(0);
-    //Capsule.Shape = UWorld::GetPhysics().createCapsuleShape(0, 0);
+    Sphere.Shape = Engine::GetInstance().GetWorld()->GetPhysics().createSphereShape(0);
+    Capsule.Shape = Engine::GetInstance().GetWorld()->GetPhysics().createCapsuleShape(0, 0);
 }
 
 FCollisionShape::FCollisionShape(const FCollisionShape& _copy) : FCollisionShape()

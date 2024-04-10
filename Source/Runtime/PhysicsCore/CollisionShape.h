@@ -13,8 +13,6 @@ namespace ECollisionShape
 	};
 }
 
-
-
 struct FCollisionShape
 {
 	union
