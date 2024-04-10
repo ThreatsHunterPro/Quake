@@ -205,10 +205,21 @@ bool FString::operator==(const char* _string)
 	return text == _string;
 }
 
+//bool FString::operator==(const char* _string) const
+//{
+//	return text == _string;
+//}
+
 bool FString::operator==(const FString& _string)
 {
 	return operator==(_string.text.c_str());
 }
+
+//bool FString::operator==(const FString& _string) const
+//{
+//	return operator==(_string.text.c_str());
+//}
+
 
 bool FString::operator!=(const char* _string)
 {

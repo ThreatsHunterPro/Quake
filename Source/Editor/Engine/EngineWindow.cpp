@@ -1,5 +1,6 @@
 #include "EngineWindow.h"
 #include "Source/Editor/Engine/Widgets/PlaceActorsWidget.h"
+#include "Source/Editor/Engine/Widgets/LogWidget.h"
 
 EngineWindow::EngineWindow()
 {
@@ -9,6 +10,7 @@ EngineWindow::EngineWindow()
 	mainWindow = nullptr;
 
 	widgets.push_back(new PlaceActorsWidget(FString("test"), this));
+	widgets.push_back(new LogWidget(FString("LOG"), this));
 }
 
 EngineWindow::~EngineWindow()

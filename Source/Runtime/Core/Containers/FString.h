@@ -102,7 +102,9 @@ public:
 	FString& operator = (const char* _string);
 	FString& operator = (const FString& _string);
 	bool operator == (const char* _string);
+	//bool operator == (const char* _string) const;
 	bool operator == (const FString& _string);
+	//bool operator == (const FString& _string) const;
 	bool operator != (const char* _string);
 	bool operator != (const FString& _string);
 	FString& operator += (const char _c);
