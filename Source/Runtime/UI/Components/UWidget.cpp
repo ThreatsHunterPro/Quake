@@ -16,9 +16,9 @@ void UWidget::SetPosition(const FWidgetTransform& _transform)
 	renderTransform = _transform;
 }
 
-void UWidget::SetPosition(const uInt& _x, const uInt& _y)
+void UWidget::SetPosition(const int& _x, const int& _y)
 {
-	renderTransform = (_x, _y);
+	renderTransform = FWidgetTransform(_x, _y);
 }
 
 void UWidget::Destroy()

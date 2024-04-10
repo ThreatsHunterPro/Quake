@@ -2,7 +2,8 @@
 
 bool GameViewport::IsWisgetAdded(const FString& _userWIdgetName) const
 {
-    return viewportWidgetList.GetAllKeys().Contains((_userWIdgetName.GetText()));
+    vector<string> keys = viewportWidgetList.GetAllKeys();
+    return std::find(keys.begin(), keys.end(), _userWIdgetName.GetText()) != keys.end();
 }
 
 void GameViewport::DrawUI(sf::RenderWindow& _window)

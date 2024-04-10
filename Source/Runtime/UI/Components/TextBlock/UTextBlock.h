@@ -34,7 +34,7 @@ public:
 
 
 	virtual void SetPosition(const FWidgetTransform& _transform) override;
-	virtual void SetPosition(const uInt& _x, const uInt& _y) override;
+	virtual void SetPosition(const int& _x, const int& _y) override;
 	virtual FVector2 GetPosition() const override;
 	virtual sf::Vector2f GetPositionSF() const override;
 };

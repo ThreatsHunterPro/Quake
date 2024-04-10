@@ -41,4 +41,10 @@ public:
 	void DrawUI(sf::RenderWindow& _window);
 	void CreateWidget(UWidget* _widget);
 	void RemoveWidget(const FString& _widgetName);
+	
+	template<typename T>
+	T* GetWidget(const FString& _widgetName)
+	{
+		return dynamic_cast<T*>(*widgets.Find(_widgetName.GetText()));
+	}
 };

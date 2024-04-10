@@ -76,7 +76,7 @@ void UTextBlock::SetPosition(const FWidgetTransform& _transform)
 	text->setPosition(_transform.posX, _transform.posY);
 }
 
-void UTextBlock::SetPosition(const uInt& _x, const uInt& _y)
+void UTextBlock::SetPosition(const int& _x, const int& _y)
 {
 	UWidget::SetPosition(_x, _y);
 	text->setPosition(_x, _y);

@@ -1,5 +1,6 @@
 #pragma once
 #include<map>
+#include<vector>
 #include<iostream>
 #include<utility>
 
@@ -31,15 +32,15 @@ public:
 		return false;
 	}
 
-	//map<TKey,TValue>::iterator& Begin() const
-	//{
-	//	return currentMap.begin();
-	//}	
+	/*map<TKey,TValue>::iterator& Begin() const
+	{
+		return currentMap;
+	}	
 
-	//map::const_iterator& End() const
-	//{
-	//	return currentMap.end();
-	//}
+	map<TKey, TValue>::const_iterator& End() const
+	{
+		return currentMap + Num();
+	}*/
 
 public:
 	TMap()
@@ -55,7 +56,9 @@ public:
 
 	void Add(const TKey& _key, const TValue& _value)
 	{
-		currentMap.emplace(_key, _value);
+		//currentMap.emplace(_key, _value);
+		currentMap.insert(currentMap.end(), { _key, _value });
+		//TODO remake operator <
 	}
 
 	void Empty()
@@ -90,7 +93,6 @@ public:
 		{
 			if (_it->first == _key)
 			{
-				cout << _it->second << endl;
 				return &_it->second;
 			}
 		}
@@ -103,12 +105,33 @@ public:
 		{
 			if (_it->second == _value)
 			{
-				cout << _it->first << endl;
 				return &_it->first;
 			}
 		}
 		return nullptr;
 	}
+
+	vector<TKey> GetAllKeys() const
+	{
+		vector<TKey> keys;
+		for (map<TKey, TValue>::const_iterator _it = currentMap.begin(); _it != currentMap.end(); _it++)
+		{
+			keys.push_back(_it->first);
+		}
+		return keys;
+	}
+
+	vector<TValue> GetAllValues() const
+	{
+		vector<TValue> values;
+		for (map<TKey, TValue>::const_iterator _it = currentMap.begin(); _it != currentMap.end(); _it++)
+		{
+			values.push_back(_it->second);
+		}
+		return values;
+	}
+	
+	
 
 public:
 	TMap<TKey, TValue>& operator= (const TMap<TKey, TValue>& _other)
@@ -127,6 +150,6 @@ public:
 	//		}
 	//	}
 	//	return nullptr;
-	//}
+	//}	
 };
 

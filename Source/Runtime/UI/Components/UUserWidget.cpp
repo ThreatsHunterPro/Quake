@@ -15,6 +15,7 @@ UUserWidget::UUserWidget(const FString& _id, const TArray<UWidget*>& _listWidget
 	}
 
 	NativeConstruct();
+	AddToViewport();
 }
 
 UUserWidget::~UUserWidget()
@@ -78,12 +79,15 @@ void UUserWidget::CreateWidget(UWidget* _widget)
 
 void UUserWidget::RemoveWidget(const FString& _widgetName)
 {
-	for (UWidget* _widget : widgets.GetAllValues())
-	{
-		if (_widget->GetID() == _widgetName)
-		{
-			_widget->Destroy();
-			widgets.RemoveAt(_widgetName.GetText());
-		}
+	string _name = _widgetName.GetText();
+	UWidget** _tmp = widgets.Find(_name);
+
+	if (!_tmp) {
+		std::cout << FString::Format("[UUserWidget][{}] Widget \"{}\" has not found in widget list.", id.GetText(), _name).GetText() << std::endl;
+		return;
 	}
+
+	UWidget* _widget = *_tmp;
+	_widget->Destroy();
+	widgets.RemoveAt(_widgetName.GetText());
 }

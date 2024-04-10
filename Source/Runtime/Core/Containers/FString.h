@@ -93,6 +93,18 @@ private:
 	static void WriteArgToStream(stringstream& ss, vector<string>& _list, _first_arg first_arg, _args... args);
 
 public:
+	/**
+	* @brief How to use format ?
+	* @brief Example: FString::Format("Hello {}", "world");
+	* @brief Example: FString::Format("Hello {}, how are you ? {}", "world", "fine");
+	* @brief Result: "Hello world, how are you ? fine.
+	* 
+	* @param _text: first parameter is text which will be formatted. Add {} is each param you want format
+	* @param _args: Will be the arguments that replace the {}
+	*
+	* 
+	* @return FString formated
+	*/
 	template<typename ...Args>
 	static FString Format(const char* _text, Args... _args);
 

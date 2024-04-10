@@ -5,6 +5,8 @@
 
 #include <SFML/Graphics.hpp>
 
+
+
 enum EVisibility
 {
 	Visible = 0,	
@@ -14,11 +16,21 @@ enum EVisibility
 struct FWidgetTransform
 {
 	int posX, posY;
+	float sizeX, sizeY;
 
-	FWidgetTransform(const int& _positionX = 0, const int& _positionY = 0)
+	FWidgetTransform(const int& _positionX, const int& _positionY)
 	{
 		posX = _positionX;
 		posY = _positionY;
+		sizeX = 0;
+		sizeY = 0;
+	}
+	FWidgetTransform(const float& _positionX, const float& _positionY, const float& _sizeX, const float& _sizeY)
+	{
+		posX = _positionX;
+		posY = _positionY;
+		sizeX = _sizeX;
+		sizeY = _sizeY;
 	}
 };
 
@@ -31,7 +43,7 @@ private:
 
 protected:
 	sf::Drawable* drawable = nullptr;
-	FWidgetTransform renderTransform = (0,0);
+	FWidgetTransform renderTransform = FWidgetTransform(0,0);
 	
 
 public:
@@ -60,7 +72,7 @@ public:
 	virtual void DrawWidget(sf::RenderWindow& _window);
 
 	virtual void SetPosition(const FWidgetTransform& _transform);
-	virtual void SetPosition(const uInt& _x, const uInt& _y);
+	virtual void SetPosition(const int& _x, const int& _y);
 	virtual FVector2 GetPosition() const = 0;
 	virtual sf::Vector2f GetPositionSF() const = 0;
 
