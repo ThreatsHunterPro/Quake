@@ -78,6 +78,15 @@ public:
 	}
 	FORCEINLINE const FMatrix& GetViewMatrix()
 	{
+		if (moveView)
+		{
+			const float _radius = 5.0f;
+			const float _angle = glfwGetTime();
+			const float _camX = targetLocation.X + _radius * (float)FMath::Sin(_angle);
+			const float _camZ = targetLocation.Z + _radius * (float)FMath::Cos(_angle);
+			return view = lookAt(vec3(_camX, 2.0f, _camZ), targetLocation.ToVec3(), vec3(0.0f, 1.0f, 0.0f));
+		}
+		
 		return view = lookAt(position.ToVec3(), position.ToVec3() + forward.ToVec3(), up.ToVec3());
 	}
 

@@ -16,5 +16,8 @@ enum PrimitiveType
 class UPrimitiveMesh
 {
 public:
-	static vector<float> GetFloatArrayByType(const PrimitiveType& _type);
+	static void GetFloatArrayByType(const PrimitiveType& _type, TArray<float>& _vertices,TArray<float>& _indices);
+private:
+	static void GenerateSphereVerticesAndIndices(TArray<float>& _vertices, TArray<float>& _indices);
+	static void GenerateBoxVertices(TArray<float>& _vertices);
 };

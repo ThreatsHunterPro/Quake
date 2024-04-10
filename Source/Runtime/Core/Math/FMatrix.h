@@ -13,6 +13,7 @@ namespace EAxis
 		Z
 	};
 }
+
 struct FMatrix
 {
 #pragma region Var
@@ -65,6 +66,7 @@ struct FMatrix
 	FString ToString() const;
 
 	mat4 ToMat4();
+	const mat4 ToMat4() const;
 #pragma endregion
 
 #pragma region Operators

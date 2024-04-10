@@ -1,9 +1,35 @@
 #include "UPrimitiveMesh.h"
 
-vector<float> UPrimitiveMesh::GetFloatArrayByType(const PrimitiveType& _type)
+
+
+void UPrimitiveMesh::GetFloatArrayByType(const PrimitiveType& _type, TArray<float>& _vertices, TArray<float>& _indices)
 {
-#pragma region Box
-	vector<float> _box = {
+	switch (_type)
+	{
+	case PT_BOX:
+		GenerateBoxVertices(_vertices);
+		break;
+	case PT_SPHERE:
+		GenerateSphereVerticesAndIndices(_vertices, _indices);
+		break;
+	case PT_PLANE:
+		GenerateSphereVerticesAndIndices(_vertices, _indices);
+		break;
+	case PT_CYLINDER:
+		GenerateSphereVerticesAndIndices(_vertices, _indices);
+		break;
+	case PT_CONE:
+		GenerateSphereVerticesAndIndices(_vertices, _indices);
+		break;
+	default:
+		break;
+	}
+
+}
+
+void UPrimitiveMesh::GenerateBoxVertices(TArray<float>& _vertices)
+{
+	_vertices = {
 		//position		 // normals		    // color	      // texture
 		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f ,
 		0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
@@ -47,11 +73,12 @@ vector<float> UPrimitiveMesh::GetFloatArrayByType(const PrimitiveType& _type)
 		-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
 		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0
 	};
-#pragma endregion Box
-#pragma region Sphere
-	vector<float> _sphere;
-	vector<float> _sphereVertices;
-	std::vector<unsigned int> _sphereIndices;
+}
+
+void UPrimitiveMesh::GenerateSphereVerticesAndIndices(TArray<float>& _vertices, TArray<float>& _indices)
+{
+	TArray<float> _sphereVertices;
+	TArray<unsigned int> _sphereIndices;
 
 	float _sectorCount = 20;
 	float stackCount = 20;
@@ -70,24 +97,24 @@ vector<float> UPrimitiveMesh::GetFloatArrayByType(const PrimitiveType& _type)
 			float x = xy * cos(sectorAngle);
 			float y = xy * sin(sectorAngle);
 
-			_sphereVertices.push_back(x);
-			_sphereVertices.push_back(y);
-			_sphereVertices.push_back(z);
+			_vertices.Add(x);
+			_vertices.Add(y);
+			_vertices.Add(z);
 
 			// Normales (pour la lumière)
 
-			_sphereVertices.push_back(x / _radius);
-			_sphereVertices.push_back(y / _radius);
-			_sphereVertices.push_back(z / _radius);
+			_vertices.Add(x / _radius);
+			_vertices.Add(y / _radius);
+			_vertices.Add(z / _radius);
 
 			// Couleur (par exemple, blanc)
-			_sphereVertices.push_back(1.0f);
-			_sphereVertices.push_back(1.0f);
-			_sphereVertices.push_back(1.0f);
+			_vertices.Add(1.0f);
+			_vertices.Add(1.0f);
+			_vertices.Add(1.0f);
 
 			// Coordonnées de texture (non utilisées dans cet exemple)
-			_sphereVertices.push_back(0.0f);
-			_sphereVertices.push_back(0.0f);
+			_vertices.Add(0.0f);
+			_vertices.Add(0.0f);
 		}
 	}
 
@@ -97,101 +124,23 @@ vector<float> UPrimitiveMesh::GetFloatArrayByType(const PrimitiveType& _type)
 
 		for (int j = 0; j < _sectorCount; ++j, ++k1, ++k2) {
 			// Triangle 1
-			_sphereIndices.push_back(k1);
-			_sphereIndices.push_back(k2);
-			_sphereIndices.push_back(k1 + 1);
+			_sphereIndices.Add(k1);
+			_sphereIndices.Add(k2);
+			_sphereIndices.Add(k1 + 1);
 
 			// Triangle 2
-			_sphereIndices.push_back(k2);
-			_sphereIndices.push_back(k2 + 1);
-			_sphereIndices.push_back(k1 + 1);
+			_sphereIndices.Add(k2);
+			_sphereIndices.Add(k2 + 1);
+			_sphereIndices.Add(k1 + 1);
 		}
 	}
 
 	// Convertir les indices en un tableau de float pour OpenGL
 	for (unsigned int index : _sphereIndices) {
 		for (int i = 0; i < 8; ++i) { // 8 car nous avons 8 valeurs par sommet
-			_sphere.push_back(_sphereVertices[index * 8 + i]);
+			_indices.Add(_sphereVertices[index * 8 + i]);
 		}
 	}
-#pragma endregion Sphere
-#pragma region Plane
-	vector<float> _plane = {
-		//position           // normals			   // color             // textures
-		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f ,
-		0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-		-0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-		};
-#pragma endregion Plane
-#pragma region Cylinder
-	//float sectorStep = 2 * M_PI / sectorCount;
-	//float sectorAngle;
-
-	//// Create the vertices for the side of the cylinder
-	//for (int i = 0; i <= sectorCount; ++i) {
-	//	sectorAngle = i * sectorStep;
-	//	float x = radius * cos(sectorAngle);
-	//	float z = radius * sin(sectorAngle);
-
-	//	// Bottom vertex
-	//	cylinderVertices.push_back(x);
-	//	cylinderVertices.push_back(-height / 2.0f);
-	//	cylinderVertices.push_back(z);
-
-	//	// Top vertex
-	//	cylinderVertices.push_back(x);
-	//	cylinderVertices.push_back(height / 2.0f);
-	//	cylinderVertices.push_back(z);
-	//}
-
-	//// Create the indices for rendering the cylinder
-	//std::vector<unsigned int> indices;
-	//for (int i = 0; i < sectorCount; ++i) {
-	//	int base = i * 2;
-	//	indices.push_back(base);
-	//	indices.push_back(base + 1);
-	//	indices.push_back(base + 2);
-
-	//	indices.push_back(base + 2);
-	//	indices.push_back(base + 1);
-	//	indices.push_back(base + 3);
-	//}
-
-	//// Now, format the vertex data into a flat vector
-	//std::vector<float> result;
-	//for (size_t i = 0; i < indices.size(); ++i) {
-	//	int index = indices[i];
-	//	result.push_back(cylinderVertices[index * 3]);
-	//	result.push_back(cylinderVertices[index * 3 + 1]);
-	//	result.push_back(cylinderVertices[index * 3 + 2]);
-
-	//	// normals
-	//	result.push_back(cylinderVertices[index * 3] / radius);
-	//	result.push_back(0.0f);
-	//	result.push_back(cylinderVertices[index * 3 + 2] / radius);
-
-	//	// color
-	//	result.push_back(1.0f);
-	//	result.push_back(0.0f);
-	//	result.push_back(0.0f);
-
-	//	// texture
-	//	result.push_back(0.0f);
-	//	result.push_back(0.0f);
-	//}
-#pragma endregion Cylinder
-
-	vector<vector<float>> _forms =
-	{
-		_box,
-		_sphere,
-		_plane
-	};
-
-	return _forms[_type];
 }
 
 

@@ -29,8 +29,6 @@ void UMaterial::InitMaterialTextures()
 
 void UMaterial::BindAndUseMaterialTextures()
 {
-	materialShader.Use();
-
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, diffuseTexture);
 
@@ -46,6 +44,11 @@ void UMaterial::SetLightValues(FVector _ambientValue, FVector _diffuseValue, FVe
 	SetAmbientValue(_ambientValue);
 	SetDiffuseValue(_diffuseValue);
 	SetSpecularValue(_specularValue);
+}
+
+void UMaterial::Use()
+{
+	materialShader.Use();
 }
 
 void UMaterial::LoadMaterialShader(const char* _vertexPath, const char* _fragmentPath)
@@ -138,7 +141,12 @@ void UMaterial::SetLightSourcePosition(FVector _lightSourcePosition)
 {
 	lightSourcePosition = _lightSourcePosition;
 	materialShader.SetVec3("light.position", lightSourcePosition);
-	materialShader.SetVec3("lightPos", lightSourcePosition);
+}
+
+void UMaterial::SetLightDirection(FVector _direction)
+{
+	cameraDirection = _direction;
+	materialShader.SetVec3("light.direction", cameraDirection);
 }
 
 void UMaterial::SetCameraPosition(FVector _cameraPosition)

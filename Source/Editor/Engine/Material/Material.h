@@ -17,6 +17,7 @@ class UMaterial
 	
 	FVector lightSourcePosition;
 	FVector cameraPosition;
+	FVector cameraDirection;
 
 	FVector ambientValue;
 	FVector diffuseValue;
@@ -50,6 +51,7 @@ public:
 	FORCEINLINE FMatrix GetCurrentModel() const { return currentModel; }
 
 public:
+	void Use();
 	void LoadMaterialShader(const char* _vertexPath, const char* _fragmentPath);
 	void LoadDiffuseTexture(const char* _texturePath, int _wrapParam, int _filterParam);
 	void LoadSpecularTexture(const char* _texturePath, int _wrapParam, int _filterParam);
@@ -63,6 +65,7 @@ public:
 	void SetSpecularValue(FVector _specularValue);
 	void SetShininessValue(float _shininessValue);
 	void SetLightSourcePosition(FVector _lightSourcePosition);
+	void SetLightDirection(FVector _lightSourcePosition);
 	void SetCameraPosition(FVector _cameraPosition);
 	void SetMVPMatrix(FMatrix _currentModel, FMatrix _currentView, FMatrix _currentProjection);
 	void SetCurrentProjection(FMatrix _currentProjection);

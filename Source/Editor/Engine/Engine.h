@@ -6,9 +6,14 @@
 #include "..\..\Runtime\Core\Containers\TArray.h"
 #include "../../Runtime/Objects/Actors/Lights/PointLight/APointLight.h"
 
+class AActor;
+
 class Engine
 {
 	EngineWindow* mainWindow;
+
+	// Test
+	AActor* actor;
 
 	GLuint VAO;
 	GLuint VBO;
