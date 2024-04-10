@@ -9,7 +9,6 @@
 class Engine
 {
 	EngineWindow* mainWindow;
-	
 
 	GLuint VAO;
 	GLuint VBO;
@@ -17,7 +16,6 @@ class Engine
 	GLuint texture1;
 	GLuint texture2;
 	CustomShader elementShader;
-	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
 	bool use2D;
 	bool multipleCubes;
@@ -50,6 +48,14 @@ class Engine
 	// Point light
 	APointLight pointLight;
 
+	PhysicsCommon physics;
+	PhysicsWorld* world = nullptr;
+
+	RigidBody* body = nullptr;
+	RigidBody* floor = nullptr;
+	const float timeStep = 1.0f / 60.0f;
+	GLuint floorVAO;
+	GLuint floorVBO;
 
 public:
 	FORCEINLINE static Engine& GetInstance()
@@ -72,6 +78,7 @@ private:
 	void Draw();
 	void ApplyShader();
 	void DrawLamp();
+	void DrawFloor();
 	void DrawElement();
 	void DrawElements();
 	void ChangeElementColor();
