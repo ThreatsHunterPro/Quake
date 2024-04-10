@@ -3,6 +3,7 @@
 #include "Source/Editor/Engine/Controls/Button.h"
 #include "Source/CoreMinimal.h"
 #include <Source/Editor/Engine/Controls/Menu.h>
+#include <Source/Runtime/Objects/UObject.h>
 
 class DetailsWindow : public PanelWidget
 {

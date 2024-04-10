@@ -14,6 +14,10 @@ public:
     {
         return count;
     }
+    inline Type* GetArray()const
+    {
+        return tArray;
+    }
     inline bool IsEmpty() const
     {
         return count == 0;
@@ -96,6 +100,8 @@ public:
 
     ~TArray()
     {
+        if (!tArray)
+            return;
         delete[] tArray;
     }
 

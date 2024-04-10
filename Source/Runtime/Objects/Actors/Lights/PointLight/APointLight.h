@@ -31,9 +31,14 @@ struct PointLightSettings
     }
 };
 
+
+/// <summary>
+/// A light that works like a bulbe
+/// </summary>
 class APointLight : public ALight
 {
-    float distance;
+protected:
+    int distance;
     float constant = 1.f;
     float linear;
     float quadratic;
@@ -73,9 +78,9 @@ public:
     APointLight(const FVector& _color, const FVector& _position, const PointLightDistance& _distance);
     APointLight(const FVector& _color, const FVector& _position, const float _distance, const float _linear, const float _quadratic);
 
-private:
+protected:
     void UpdatePointLightSettings(const PointLightDistance& _distance);
 
 public:
-    void Start(const CustomShader& _lighting) override;
+    void Update(const int _index) override;
 };

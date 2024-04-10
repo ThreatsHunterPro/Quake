@@ -115,15 +115,15 @@ public:
 		else
 		{
 			// Scale = S(A)/S(B)
-			TVector<T> _vSafeScale3D = Scale3D/_other.Scale3D;
+			TVector<T> _vSafeScale3D = Scale3D / _other.Scale3D;
 
-			TVector<T> _vScale3D = Scale3D*_vSafeScale3D;
+			TVector<T> _vScale3D = Scale3D * _vSafeScale3D;
 
 			//_vQTranslation = (  ( T(A).X - T(B).X ),  ( T(A).Y - T(B).Y ), ( T(A).Z - T(B).Z), 0.f );
 			TVector<T> _vQTranslation = ((Translation.X - _other.Translation.X), (Translation.Y - _other.Translation.Y), (Translation.Z - _other.Translation.Z), 0.f);
 
 			//Translation = 1/S(B)
-			TVector<T> VTranslation = 1/_other.Scale3D;
+			TVector<T> VTranslation = 1 / _other.Scale3D;
 
 			// Rotation = Q(B)(-1) * Q(A)	
 			FQuat VRotation = -_other.Rotation * Rotation;
@@ -137,7 +137,7 @@ public:
 	}
 
 public:
-	FORCEINLINE void SetComponents(const FQuat&InRotation, const TVector<T>&InTranslation, const TVector<T>&InScale3D)
+	FORCEINLINE void SetComponents(const FQuat& InRotation, const TVector<T>& InTranslation, const TVector<T>& InScale3D)
 	{
 		Rotation = &InRotation;
 		Translation = &InTranslation;
@@ -153,23 +153,46 @@ public:
 	{
 		Rotation = FQuat::Identity;
 		Translation = TVector<T>::ZeroVector;
-		Scale3D = TVector<T>(0,0,0);
+		Scale3D = TVector<T>(0, 0, 0);
 	}
 	FORCEINLINE void SetTranslation(const TVector<T>& _newTranslation)
 	{
 		Translation = &_newTranslation;
 	}
-	FORCEINLINE void SetRotation(const FQuat& _newRotation)
+	FORCEINLINE void SetRotation(FQuat _newRotation)
 	{
-		Rotation =&_newRotation;
+		if (_newRotation.W >= 1.0)
+		{
+			// min - (current + max)
+			_newRotation.W = -1.0f + (_newRotation.W - 1.0f);
+		}
+
+		if (_newRotation.W <= -1.0f)
+		{
+			// max + (current - min)
+			_newRotation.W = 1.0f + (_newRotation.W - -1.0f);
+		}
+
+		//if (_newRotation.W > 1)
+		//{
+		//	return;
+		//}
+
+		//if (_newRotation.W < -1)
+		//{
+		//	//W = -1;
+		//	return;
+		//}
+
+		Rotation = _newRotation;
 	}
 	FORCEINLINE void SetScale3D(const TVector<T>& _newScale3D)
 	{
-		Scale3D = &_newScale3D;
+		Scale3D = _newScale3D;
 	}
 	FORCEINLINE void SetLocation(const TVector<T>& _origin)
 	{
-		Translation = &_origin;
+		Translation = _origin;
 	}
 
 
@@ -200,7 +223,7 @@ public:
 	}
 	FORCEINLINE void RemoveScaling(T _tolerance = SMALL_NUMBER)
 	{
-		Scale3D = TVector<T>(1,1,1);
+		Scale3D = TVector<T>(1, 1, 1);
 		NormalizeRotation();
 	}
 
@@ -211,7 +234,7 @@ public:
 	{
 		TVector<T> _vector = TransformVector(_v);
 
-		const TVector<T> _translatedVec = _vector +  Translation;
+		const TVector<T> _translatedVec = _vector + Translation;
 
 		TVector<T> _result;
 		&_result = _translatedVec;
@@ -226,7 +249,7 @@ public:
 		const TVector<T> _inputVector = &_v;
 
 		//RotatedVec = Q.Rotate(Scale*V.X, Scale*V.Y, Scale*V.Z, 0.f)
-		const TVector<T> _scaledVec = Scale3D *_inputVector;
+		const TVector<T> _scaledVec = Scale3D * _inputVector;
 		TVector<T> _rotatedVec = Rotation.RotateVector(_scaledVec);
 
 		TVector<T> _result;
@@ -242,11 +265,11 @@ public:
 
 		if (_matrix.Determinant() < 0.f)
 		{
-			Scale3D = Scale3D, TVector<float>(-1.f,1.f,1.f);
+			Scale3D = Scale3D, TVector<float>(-1.f, 1.f, 1.f);
 			_m.SetAxis(0, -_m.GetScaledAxis(EAxis::X));
 		}
 
-		FQuat _rotation =FQuat(_m);
+		FQuat _rotation = FQuat(_m);
 		Rotation = &_rotation;
 		TVector<T> InTranslation = InMatrix.GetOrigin();
 		Translation = &InTranslation;
@@ -294,7 +317,7 @@ public:
 	}
 	FORCEINLINE void AddToTranslation(const TVector<T>& _deltaTranslation)
 	{
-		Translation +=&_deltaTranslation;
+		Translation += &_deltaTranslation;
 		DiagnosticCheckNaN_Translate();
 	}
 	FORCEINLINE void CopyRotation(const TTransform<T>& _other)
@@ -315,6 +338,49 @@ public:
 	}
 
 
-}; 
+public:
+	FORCEINLINE TTransform<T> operator+(const TTransform<T>& Atom) const
+	{
+		return TTransform<T>(Rotation + Atom.Rotation, Translation + Atom.Translation, Scale3D + Atom.Scale3D);
+	}
+
+	FORCEINLINE TTransform<T>& operator+=(const TTransform<T>& Atom)
+	{
+		Translation += Atom.Translation;
+		Rotation += Atom.Rotation;
+		Scale3D += Atom.Scale3D;
+
+		return *this;
+	}
+
+	FORCEINLINE TTransform<T> operator-(const TTransform<T>& Atom)
+	{
+		return TTransform<T>(Rotation - Atom.Rotation, Translation - Atom.Translation, Scale3D - Atom.Scale3D);
+	}
+
+	FORCEINLINE TTransform<T>& operator-=(const TTransform<T>& Atom)
+	{
+		Translation -= Atom.Translation;
+		Rotation -= Atom.Rotation;
+		Scale3D -= Atom.Scale3D;
+
+		return *this;
+	}
+
+	FORCEINLINE TTransform<T> operator*(const TTransform<T>& Atom) const
+	{
+		return TTransform<T>(Rotation * Atom, Translation * Atom, Scale3D * Atom);
+	}
+
+	FORCEINLINE TTransform<T>& operator*=(const TTransform<T>& Atom)
+	{
+		Translation *= Atom;
+		Rotation *= Atom;
+		Scale3D *= Atom;
+
+		return *this;
+	}
+
+};
 template<typename T>
 TTransform<T> TTransform<T>::Identity = TTransform<T>();

@@ -85,7 +85,7 @@ FQuat FQuat::GetNormalized(float _tolerance) const
 	return _result;
 }
 
-FRotator FQuat::GetRotator() const
+const FRotator FQuat::GetRotator() const
 {
 	return FRotator(X,Y,Z);
 }

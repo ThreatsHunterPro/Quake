@@ -15,7 +15,11 @@ EngineWindow::EngineWindow()
 
 EngineWindow::~EngineWindow()
 {
+<<<<<<< HEAD
 	widgets.Empty();
+=======
+	//delete mainWindow;
+>>>>>>> main
 }
 
 
@@ -24,7 +28,12 @@ EngineWindow::~EngineWindow()
 void EngineWindow::Start()
 {
 	InitGLFW();
+<<<<<<< HEAD
 	InitImGUI();
+=======
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_ALWAYS);
+>>>>>>> main
 }
 
 void EngineWindow::InitGLFW()

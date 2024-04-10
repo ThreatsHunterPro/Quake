@@ -4,12 +4,12 @@ DetailsWindow::DetailsWindow(const FString& _name, EngineWindow* _window) : Pane
 {
 	buttons =
 	{
-		new Button("New Blueprint Script Component...", [this] {ExecuteCallback("New Blueprint Script Component..."); }),
+		new Button("Static Mesh", [this] {ExecuteCallback("Static Mesh"); }),
 	};
 }
 DetailsWindow::~DetailsWindow()
 {
-	buttons.empty();
+	buttons.clear();
 }
 void DetailsWindow::Draw()
 {
@@ -28,11 +28,12 @@ void DetailsWindow::Draw()
 		ImGui::OpenPopup("Add_popup");
 	if (ImGui::BeginPopup("Add_popup"))
 	{
+		//TODO Add search bar
 		const int _buttonsCount = buttons.size();
 		for (int _buttonIndex = 0; _buttonIndex < _buttonsCount; _buttonIndex++)
 		{
 			Button* _button = buttons[_buttonIndex];
-			if (ImGui::MenuItem(*(_button->GetTitle()), *(_button->GetShortcut())))
+			if (ImGui::Selectable(*_button[_buttonIndex].GetTitle()))
 			{
 				_button->Callback();
 			}
@@ -46,24 +47,83 @@ void DetailsWindow::Draw()
 #pragma endregion
 
 #pragma region parentage
-	if (ImGui::BeginListBox(""))
+	if (ImGui::BeginListBox(" "))
 	{
-		const bool _select = 0;
-		if (ImGui::Selectable("test", _select))
-			cout << "select" << endl;
-
+		int _item_current_index = 0;
+		int _count = buttons.size();
+		for (int i = 0; i < _count; i++)
+		{
+			const bool _is_selected = (_item_current_index == i);
+			if (ImGui::Selectable(*buttons[i]->GetTitle(), _is_selected))
+			{
+				_item_current_index = i;
+				cout << "select" << endl;
+			}
+			if (_is_selected)
+				ImGui::SetItemDefaultFocus();
+		}
 		ImGui::EndListBox();
 	}
 #pragma endregion
 
 #pragma region transform
-
+	if (ImGui::TreeNode("Transform"))
+	{
+		ImGui::PushItemWidth(ImGui::GetWindowWidth() * 0.10f);
+#pragma region Location
+		static float posX = 0;
+		static float posY = 0;
+		static float posZ = 0;
+		ImGui::Text("Location");
+		ImGui::SameLine(0, 25);
+		ImGui::DragFloat("X", &posX, 0.005f); //TODO change value by get position
+		ImGui::SameLine(0, 25);
+		ImGui::DragFloat("Y", &posY, 0.005f); //TODO change value by get position
+		ImGui::SameLine(0, 25);
+		ImGui::DragFloat("Z", &posZ, 0.005f); //TODO change value by get position
+#pragma endregion
+#pragma region Rotation
+		static float rotX = 0;
+		static float rotY = 0;
+		static float rotZ = 0;
+		ImGui::Text("Rotation");
+		ImGui::SameLine(0, 25);
+		ImGui::DragFloat("X ", &rotX, 0.005f); //TODO change value by get position
+		ImGui::SameLine(0, 18);
+		ImGui::DragFloat("Y ", &rotY, 0.005f); //TODO change value by get position
+		ImGui::SameLine(0, 18);
+		ImGui::DragFloat("Z ", &rotZ, 0.005f);
+#pragma endregion
+#pragma region Scale
+		static float scaleX = 0;
+		static float scaleY = 0;
+		static float scaleZ = 0;
+		ImGui::Text("Scale");
+		ImGui::SameLine(0, 46);
+		ImGui::DragFloat("X  ", &scaleX, 0.5f); //TODO change value by get position
+		ImGui::SameLine(0, 11);
+		ImGui::DragFloat("Y  ", &scaleY, 0.5f); //TODO change value by get position
+		ImGui::SameLine(0, 11);
+		ImGui::DragFloat("Z  ", &scaleZ, 0.5f);
+#pragma endregion
+#pragma region Mobility
+		static int _index = 0;
+		ImGui::Text("Mobility");
+		ImGui::SameLine(0, 25);
+		ImGui::RadioButton("Static", &_index, 0); 
+		ImGui::SameLine();
+		ImGui::RadioButton("Stationary", &_index, 1); 
+		ImGui::SameLine();
+		ImGui::RadioButton("Movable", &_index, 2);
+#pragma endregion
+		ImGui::TreePop();
+	}
 #pragma endregion
 	ImGui::End();
 }
 void DetailsWindow::ExecuteCallback(const FString& _methodName) const
 {
-	cout << _methodName.GetText().c_str() << endl;
+	cout << "callback" << endl;
 }
 void DetailsWindow::Stop()
 {
