@@ -1,5 +1,15 @@
 #include "GameViewport.h"
 
+GameViewport::~GameViewport()
+{
+    for (UUserWidget* _widget : viewportWidgetList.GetAllValues())
+    {
+        delete _widget;
+
+    }
+    viewportWidgetList.Empty();
+}
+
 bool GameViewport::IsWisgetAdded(const FString& _userWIdgetName) const
 {
     return viewportWidgetList.GetAllKeys().Contains((_userWIdgetName.GetText()));

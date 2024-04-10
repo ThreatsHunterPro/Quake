@@ -6,7 +6,7 @@
 #include "Source/Runtime/UI/Components/TextBlock/UTextBlock.h"
 #include "Source/Runtime/UI/GameViewport.h" 
 #include "../../Runtime/Objects/Camera/UCamera.h"
- 
+#include <SFML/OpenGL.hpp>
 
 Engine::Engine()
 {
@@ -54,7 +54,7 @@ void Engine::Start()
 	mainWindow->Start();
 	skybox->BeginPlay();
 	glEnable(GL_DEPTH_TEST);
-	glfwSetInputMode(mainWindow->GetWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	//glfwSetInputMode(mainWindow->GetWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	// Shaders
 	woodenBoxMaterial.LoadMaterialShader("Element.vs", "Element.fs");
@@ -189,9 +189,9 @@ void Engine::Start()
 		pointLight = APointLight(_color, _position, PointLightDistance::TROIS_MILLE_DEUX_CENT_CINQUANTE);
 	}
 
-	//glEnable(GL_CULL_FACE);
-	//glCullFace(GL_BACK);
-	//glFrontFace(GL_CW);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glFrontFace(GL_CW);
 
 #pragma region Instancing
 
@@ -234,7 +234,6 @@ void Engine::Start()
 
 #pragma endregion
 
-
 #pragma region SkyBox
 
 
@@ -242,8 +241,8 @@ void Engine::Start()
 #pragma endregion 
 #pragma region UI INIT
 #pragma endregion
-	}
-		InitUI();
+	InitUI();
+ 
  
 }
 
@@ -287,23 +286,30 @@ GLuint Engine::LoadTexture(const char* _path, const int _wrapParam, const int _f
 void Engine::Update()
 { 
 	sf::RenderWindow* _window = mainWindow->GetWindow();
-	_window->setActive(true);
-	//sf::CircleShape shape(100, 20); 
-	GLFWwindow* _window = mainWindow->GetWindow();
+	//_window->setActive(true);
+	//sf::CircleShape shape(100, 20);  
 
 	CameraManager _camera = CameraManager::GetInstance();
- 
+	_window->setActive(true);
 	do
 	{
+		
 		TimerManager::GetInstance().Update();
 		InputManager::GetInstance().Update();
 		CameraManager::GetInstance().GetCameras()[0]->Update();
+ 
 
 		//ChangeBgColor(); 
 		Draw();
+		instancingShader.Use();
+		glBindVertexArray(quadVAO);
+		glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 10000);
+		glBindVertexArray(0);
 		skybox->Update(_camera);
+		_window->pushGLStates();
 		DrawUI();
 		_window->display();
+		_window->popGLStates();
 		//_window->draw(shape);
 
 	} while (_window->isOpen());
@@ -341,10 +347,11 @@ void Engine::ChangeBgColor()
 
 void Engine::InitUI()
 {
-	UUserWidget* _pointer = new UUserWidget("coucou", {
-		new UTextBlock("text coucou", {200,200},"BONJOUR", 100,sf::Color::Blue)
-		});
-	_pointer->AddToViewport();
+
+	//UUserWidget* _pointer = new UUserWidget("coucou", {
+	//	new UTextBlock("text coucou", {200,200},"BONJOUR", 100,sf::Color::Blue)
+	//	});
+	//_pointer->AddToViewport();
 }
 
 void Engine::DrawUI()

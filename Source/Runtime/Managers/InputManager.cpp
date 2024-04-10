@@ -41,13 +41,12 @@ void InputManager::Start(sf::RenderWindow* _window)
 	const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
  
 	CameraManager::GetInstance().GetCameras()[0]->SetTargetLocation(_cubePosition);
-	glfwSetWindowUserPointer(window, this);
+	//glfwSetWindowUserPointer(window, this);
  
 }
 
 void InputManager::Update()
-{
-	glfwPollEvents();
+{ 
 
 	ProcessMouse();
 	ProcessInputs();
@@ -57,28 +56,29 @@ void InputManager::InitControls() const
 {
 	new InputMapping({
 		ActionInput( ActionData("move forward",[&]() {
-				CameraManager::GetInstance().MoveForward(1.0f);
+ 
+				CameraManager::GetInstance().GetCameras()[0]->MoveForward(1.0f);
 			},InputData(ActionType::KeyPressed,sf::Keyboard::Z))),
 		ActionInput(ActionData("move right",[&]() {
-				CameraManager::GetInstance().MoveRight(1.0f);
+				CameraManager::GetInstance().GetCameras()[0]->MoveRight(1.0f);
 			},InputData(ActionType::KeyPressed,sf::Keyboard::D))),
 		ActionInput(ActionData("move left",[&]() {
-				CameraManager::GetInstance().MoveRight(-1.0f);
+				CameraManager::GetInstance().GetCameras()[0]->MoveRight(-1.0f);
 			},InputData(ActionType::KeyPressed,sf::Keyboard::Q))),
 		ActionInput(ActionData("move backwards",[&]() {
-				CameraManager::GetInstance().MoveForward(-1.0f);
+				CameraManager::GetInstance().GetCameras()[0]->MoveForward(-1.0f);
 			},InputData(ActionType::KeyPressed,sf::Keyboard::S))),
 		ActionInput(ActionData("lock on cube",[&]() {
 				const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
-				CameraManager::GetInstance().SetTargetLocation(_cubePosition);
+				CameraManager::GetInstance().GetCameras()[0]->SetTargetLocation(_cubePosition);
 			},InputData(ActionType::KeyPressed,sf::Keyboard::C))),
 		ActionInput(ActionData("change locked on cube",[&]() {
-				CameraManager::GetInstance().SetMoveView(true);
+				CameraManager::GetInstance().GetCameras()[0]->SetMoveView(true);
 				const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
-				CameraManager::GetInstance().SetTargetLocation(_cubePosition);
+				CameraManager::GetInstance().GetCameras()[0]->SetTargetLocation(_cubePosition);
 			},InputData(ActionType::KeyPressed,sf::Keyboard::V))),
 		ActionInput(ActionData("unlock cube",[&]() {
-				CameraManager::GetInstance().SetMoveView(false);
+				CameraManager::GetInstance().GetCameras()[0]->SetMoveView(false);
 			},InputData(ActionType::KeyPressed,sf::Keyboard::B))),
 		
 		}
@@ -109,8 +109,8 @@ void InputManager::ProcessMouse()
 {
 	const sf::Vector2i& _mousePos = sf::Vector2i(window->mapPixelToCoords(sf::Vector2i(sf::Mouse::getPosition(*window))));
 	const sf::Vector2f& _fMouse = sf::Vector2f(_mousePos);
-		const float yawValue = lastCursorPos.X - _mousePos.X;
-	const float pitchValue = lastCursorPos.Y - _yCursorPos.Y;
+		const float yawValue = lastCursorPos.X - _mousePos.x;
+	const float pitchValue = lastCursorPos.Y - _mousePos.y;
 	lastCursorPos = FVector2(_mousePos.x, _mousePos.y) ;
 	//double _xPos, yPos = 0.0;
 	//glfwGetCursorPos(window, &_xPos, &yPos);
@@ -141,6 +141,10 @@ void InputManager::ProcessInputs() const
 	sf::Event _event;
 	while (window->pollEvent(_event))
 	{
+		if (_event.type == sf::Event::Closed)
+		{
+			window->close();
+		}
 		for (InputMapping* _mapping : allMappings)
 			_mapping->ProcessInput(_event); 
 	}
@@ -257,9 +261,7 @@ void InputManager::ProcessInputs() const
 		CameraManager::GetInstance().SetMoveView(false);
 	}*/
  
-		//CameraManager::GetInstance().GetCameras()[0]->SetMoveView(false);
-	}
- 
+		//CameraManager::GetInstance().GetCameras()[0]->SetMoveView(false); 
 }
 
 void InputManager::Scroll(double xoffset, double yoffset)

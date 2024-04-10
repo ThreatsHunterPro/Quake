@@ -47,6 +47,7 @@ void EngineWindow::InitGLFW()
 		glfwTerminate();
 		return;
 	}
+	mainWindow->setActive(true);
 
  
 	// Initialize GLEW

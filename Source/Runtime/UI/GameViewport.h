@@ -17,7 +17,7 @@ public:
 	FORCEINLINE uInt GetSize() const {
 		return viewportWidgetList.Num();
 	}
-
+	~GameViewport();
 	bool IsWisgetAdded(const FString& _userWIdgetName) const;
 	void DrawUI(sf::RenderWindow& _window);
 	bool AddWidget(UUserWidget* _widget);
