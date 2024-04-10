@@ -1,12 +1,13 @@
 #pragma once
 #include <Source/CoreMinimal.h>
+#include <SFML/Graphics.hpp>
 //	InputManager::GetInstance().AddMapping(this);
 class ActionInput;
 class InputMapping
 {
-    TArray<ActionInput*> allActions;
+    vector<ActionInput> allActions;
     void Register();
 public:
-    InputMapping(const TArray<ActionInput*>& _inputs);
-
+    InputMapping(const initializer_list<ActionInput>& _inputs);
+    void ProcessInput(const sf::Event& _event);
 };

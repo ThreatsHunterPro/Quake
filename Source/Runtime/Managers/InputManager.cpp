@@ -2,21 +2,31 @@
 #include "CameraManager.h"
 #include "..\..\Editor\Engine\Engine.h"
 #include "..\Core\Math\FVector\TVector.h"
-
+#include "../Classes/Input/InputMapping.h"
+#include "../Classes/Input/ActionInput.h"
 InputManager::InputManager()
 {
 	window = nullptr;
-	previousCursorPos = FVector2();
+	lastCursorPos = FVector2();
 }
 
 void InputManager::AddMapping(InputMapping* _mapping)
 {
-	allMappings.Add(_mapping);
+	allMappings.push_back(_mapping);
 }
 
 void InputManager::ClearMappings()
 {
-	allMappings.Empty();
+	allMappings.clear();
+}
+
+InputManager::~InputManager()
+{
+	for (size_t i = 0; i < allMappings.size(); i++)
+	{
+		delete allMappings[i];
+	}
+	allMappings.clear();
 }
 
 
@@ -41,20 +51,49 @@ void InputManager::Update()
 
 void InputManager::InitControls() const
 {
+	new InputMapping({
+		ActionInput( ActionData("move forward",[&]() {
+				CameraManager::GetInstance().MoveForward(1.0f);
+			},InputData(ActionType::KeyPressed,sf::Keyboard::Z))),
+		ActionInput(ActionData("move right",[&]() {
+				CameraManager::GetInstance().MoveRight(1.0f);
+			},InputData(ActionType::KeyPressed,sf::Keyboard::D))),
+		ActionInput(ActionData("move left",[&]() {
+				CameraManager::GetInstance().MoveRight(-1.0f);
+			},InputData(ActionType::KeyPressed,sf::Keyboard::Q))),
+		ActionInput(ActionData("move backwards",[&]() {
+				CameraManager::GetInstance().MoveForward(-1.0f);
+			},InputData(ActionType::KeyPressed,sf::Keyboard::S))),
+		ActionInput(ActionData("lock on cube",[&]() {
+				const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
+				CameraManager::GetInstance().SetTargetLocation(_cubePosition);
+			},InputData(ActionType::KeyPressed,sf::Keyboard::C))),
+		ActionInput(ActionData("change locked on cube",[&]() {
+				CameraManager::GetInstance().SetMoveView(true);
+				const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
+				CameraManager::GetInstance().SetTargetLocation(_cubePosition);
+			},InputData(ActionType::KeyPressed,sf::Keyboard::V))),
+		ActionInput(ActionData("unlock cube",[&]() {
+				CameraManager::GetInstance().SetMoveView(false);
+			},InputData(ActionType::KeyPressed,sf::Keyboard::B))),
+		
+		}
+	);
+	
 
-	BindCallbacks();
+	//BindCallbacks();
 
-	//glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-	// glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	glfwPollEvents();
+	////glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+	//// glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	//glfwPollEvents();
 
-	int _windowWidth = window->getSize().x, _windowHeight = window->getSize().y;
- 
-	//glfwGetWindowSize(window, &_windowWidth, &_windowHeight);
+	//int _windowWidth = window->getSize().x, _windowHeight = window->getSize().y;
+ //
+	////glfwGetWindowSize(window, &_windowWidth, &_windowHeight);
 
-	const double _halfWidth = _windowWidth / 2.0;
-	const double _halfHeight = _windowHeight / 2.0;
-	//glfwSetCursorPos(window, _halfWidth, _halfHeight);
+	//const double _halfWidth = _windowWidth / 2.0;
+	//const double _halfHeight = _windowHeight / 2.0;
+	////glfwSetCursorPos(window, _halfWidth, _halfHeight);
 }
 
 void InputManager::BindCallbacks() const
@@ -64,6 +103,9 @@ void InputManager::BindCallbacks() const
 
 void InputManager::ProcessMouse()
 {
+	const sf::Vector2i& _mousePos = sf::Vector2i(window->mapPixelToCoords(sf::Vector2i(sf::Mouse::getPosition(*window))));
+	const sf::Vector2f& _fMouse = sf::Vector2f(_mousePos);
+	lastCursorPos = FVector2(_mousePos.x, _mousePos.y) ;
 	//double _xPos, yPos = 0.0;
 	//glfwGetCursorPos(window, &_xPos, &yPos);
 
@@ -84,6 +126,13 @@ void InputManager::ProcessMouse()
 //TODO fix inputs
 void InputManager::ProcessInputs() const
 {
+	sf::Event _event;
+	while (window->pollEvent(_event))
+	{
+		for (InputMapping* _mapping : allMappings)
+			_mapping->ProcessInput(_event); 
+	}
+	/*
 	sf::Event _event;
 	while (window->pollEvent(_event))
 	{
@@ -147,6 +196,7 @@ void InputManager::ProcessInputs() const
 			}
 		}
 	}
+	*/
 	/*
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{

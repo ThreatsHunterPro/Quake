@@ -14,10 +14,10 @@ class InputMapping;
 class InputManager
 {
     sf::RenderWindow* window;
-    FVector2 previousCursorPos;
+    FVector2 lastCursorPos;
 
     std::function<void(InputManager*, double, double)> onWindowScrollCallback = [](auto self, double _a, double _b) { self->Scroll(_a, _a); };
-    TArray<InputMapping*> allMappings;
+    vector<InputMapping*> allMappings;
 public:
     FORCEINLINE static InputManager& GetInstance()
     {
@@ -29,6 +29,7 @@ public:
     InputManager();
     void AddMapping(InputMapping* _mapping);
     void ClearMappings();
+    ~InputManager();
 private:
     void InitControls() const;
     void BindCallbacks() const;
