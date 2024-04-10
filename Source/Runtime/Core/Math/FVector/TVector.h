@@ -2,10 +2,13 @@
 #include <iostream>
 #include "../../Containers/FString.h"
 #include "glm/glm.hpp"
+
 using namespace std;
 using namespace glm;
 class FString;
 class FMath;
+
+#define SMALL_NUMBER 1.e-8f
 
 template<typename T>
 struct TVector

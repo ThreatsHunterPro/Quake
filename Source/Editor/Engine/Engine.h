@@ -5,6 +5,7 @@
 #include "..\..\Runtime\Core\Math\FVector\TVector.h"
 #include "..\..\Runtime\Core\Containers\TArray.h"
 #include "../../Runtime/Objects/Actors/Lights/PointLight/APointLight.h"
+#include "../GUI/ContentBrowser.h"
 
 class Engine
 {
@@ -47,6 +48,8 @@ class Engine
 
 	// Point light
 	APointLight pointLight;
+
+	ContentBrowser* contentBrowser;
 
 public:
 	FORCEINLINE static Engine& GetInstance()

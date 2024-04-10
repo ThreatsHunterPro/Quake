@@ -87,7 +87,8 @@ uInt FString::Find(FString _string)
 
 uInt FString::FindChar(const char _char)
 {
-	return Find(&_char);
+	const uInt& _pos = static_cast<const uInt&>(text.find(_char));
+	return _pos != string::npos ? _pos : -1;
 }
 
 uInt FString::FindLastChar(const char _char)

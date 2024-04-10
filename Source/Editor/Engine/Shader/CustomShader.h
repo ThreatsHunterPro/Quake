@@ -24,6 +24,6 @@ public:
 	void SetInt(const FString& _name, const int _value) const;
 	void SetFloat(const FString& _name, const float _value) const;
 	void SetVec3(const FString& _name, const FVector& _value) const;
-	void SetVec4(const FString& _name, FVector4& _value) const;
+	void SetVec4(const FString& _name, const FVector4& _value) const;
 	void SetMat4(const FString& _name, FMatrix& _model) const;
 };

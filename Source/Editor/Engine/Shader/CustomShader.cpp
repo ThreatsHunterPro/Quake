@@ -49,7 +49,7 @@ void CustomShader::SetVec3(const FString& _name, const FVector& _value) const
 	glUniform3f(glGetUniformLocation(shaderProgramID, _name.GetText().c_str()), _value.X, _value.Y, _value.Z);
 }
 
-void CustomShader::SetVec4(const FString& _name, FVector4& _value) const
+void CustomShader::SetVec4(const FString& _name, const FVector4& _value) const
 {
 	glUniform4f(glGetUniformLocation(shaderProgramID, _name.GetText().c_str()), _value.X, _value.Y, _value.Z, _value.W);
 }

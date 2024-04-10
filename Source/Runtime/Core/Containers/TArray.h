@@ -186,7 +186,7 @@ public:
 
         for (size_t _currentIndex = _index + 1; _currentIndex < count; _currentIndex++)
         {
-            _newArray[_currentIndex + _elementsCount] = tArray[_currentIndex];
+            _newArray[_currentIndex] = tArray[_currentIndex - 1];
         }
 
         delete[] tArray;
@@ -196,7 +196,7 @@ public:
     }
     SizeType Insert(const initializer_list<Type>& _initList, const SizeType& _index)
     {
-        const size_t& _elementsCount = _elements.Num();
+        const size_t& _elementsCount = _initList.size();
         count += _elementsCount;
         Type* _newArray = new Type[count];
 
@@ -221,7 +221,7 @@ public:
 
         return count;
     }
-    SizeType Insert(const Type* _elements, const SizeType& _count, const SizeType& _index)
+    SizeType Insert(const Type* _element, const SizeType& _count, const SizeType& _index)
     {
         count += _count;
         Type* _newArray = new Type[count];
@@ -231,14 +231,11 @@ public:
             _newArray[_currentIndex] = tArray[_currentIndex];
         }
 
-        for (size_t _currentIndex = 0; _currentIndex < _elementsCount; _currentIndex++)
-        {
-            _newArray[_index + _currentIndex] = _elements[_currentIndex];
-        }
+        _newArray[_index] = _element;
 
         for (size_t _currentIndex = _index + 1; _currentIndex < count; _currentIndex++)
         {
-            _newArray[_currentIndex + _elementsCount] = tArray[_currentIndex];
+            _newArray[_currentIndex] = tArray[_currentIndex - 1];
         }
 
         delete[] tArray;

@@ -178,6 +178,18 @@ void Engine::Start()
 		const FVector& _position = lightPos;
 		pointLight = APointLight(_color, _position, PointLightDistance::TROIS_MILLE_DEUX_CENT_CINQUANTE);
 	}
+
+	//ImGui
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO();
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
+
+	ImGui_ImplGlfw_InitForOpenGL(mainWindow->GetWindow(), true);
+	ImGui_ImplOpenGL3_Init();
+
+	contentBrowser = new ContentBrowser("Content Browser", mainWindow);
 }
 
 GLuint Engine::LoadTexture(const char* _path, const int _wrapParam, const int _filterParam)
@@ -228,20 +240,20 @@ void Engine::Update()
 		//ChangeBgColor();
 		Draw();
 
-		glfwSwapBuffers(_window);
 		glfwPollEvents();
 
-		 //Start the Dear ImGui frame
+		//ImGui frame
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
-		ImGui::ShowDemoWindow(); // Show demo window! :)
+		ImGui::ShowDemoWindow();
+		contentBrowser->Draw();
 
-		// Rendering
-		// (Your code clears your framebuffer, renders your other stuff etc.)
+		//ImGUI rendering
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-		// (Your code calls glfwSwapBuffers() etc.)
+
+		glfwSwapBuffers(_window);
 
 	} while (glfwGetKey(_window, GLFW_KEY_ESCAPE) != GLFW_PRESS && !glfwWindowShouldClose(_window));
 
@@ -395,6 +407,7 @@ void Engine::Stop()
 
 	mainWindow->Stop();
 	ClearElements();
+	delete contentBrowser;
 }
 
 void Engine::ClearElements()
