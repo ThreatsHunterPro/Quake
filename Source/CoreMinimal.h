@@ -3,6 +3,8 @@
 #include <functional>
 #include <list>
 
+#include <filesystem>
+
 #include "Runtime/Core/Containers/FString.h"
 #include "Runtime/Core/Containers/TArray.h"
 #include "Editor/Pointers/TWeakPtr.h"
@@ -29,3 +31,4 @@
 
 using namespace std;
 using namespace glm;
+namespace fs = std::filesystem;

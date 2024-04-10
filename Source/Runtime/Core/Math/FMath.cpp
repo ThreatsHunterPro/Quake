@@ -18,7 +18,7 @@ float FMath::FInterpConstantTo(float _current, float _target, float _deltaTime, 
 }
 FVector FMath::VInterpConstantTo(FVector& _current, FVector& _target, float _deltaTime, float _interpSpeed)
 {
-	FVector& _delta = _target - _current;
+	FVector _delta = _target - _current;
 	const float _deltaM = _delta.Length();
 	const float _maxStep = _interpSpeed * _deltaTime;
 

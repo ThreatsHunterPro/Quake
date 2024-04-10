@@ -1,6 +1,7 @@
 #pragma once
 #include "..\..\Runtime\Core\Containers\TArray.h"
 #include "TObjectPtr.h"
+#include "../GarbageCollector/GarbageCollector.h"
 
 template <typename T>
 class TSharedPtr : public TSmartPtr<T>

@@ -1,7 +1,6 @@
 #pragma once
 #include "..\..\Runtime\Core\Containers\TArray.h"
-#include "..\Pointers\TObjectPtr.h"
-#include "..\Pointers\TSoftObjectPtr.h"
+#include "../Pointers/TSoftObjectPtr.h"
 
 class GarbageCollector
 {
