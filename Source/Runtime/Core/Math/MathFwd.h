@@ -5,3 +5,10 @@ template<typename T> struct TVector;
 using FVector3d = TVector<double>;
 using FVector3i = TVector<int>;
 using FVector = TVector<float>;
+<<<<<<< HEAD
+=======
+
+using FTransform = TTransform<float>;
+using FTransformd = TTransform<double>;
+using FTransformi = TTransform<int>;
+>>>>>>> main

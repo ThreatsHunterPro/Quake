@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <functional>
+#include <list>
 
 #include "Runtime/Core/Containers/FString.h"
 #include "Runtime/Core/Containers/TArray.h"
@@ -24,6 +25,7 @@
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #endif
 
+#define BASE __super
 #define FORCEINLINE __forceinline
 
 using namespace std;

@@ -5,6 +5,10 @@
 #include "..\..\Runtime\Core\Math\FVector\TVector.h"
 #include "..\..\Runtime\Core\Containers\TArray.h"
 #include "../../Runtime/Objects/Actors/Lights/PointLight/APointLight.h"
+#include "../../Runtime/Objects/Actors/Skybox/ASkybox.h"
+#include "Material/Material.h"
+
+class UCamera;
 
 class Engine
 {
@@ -16,8 +20,6 @@ class Engine
 	GLuint EBO;
 	GLuint texture1;
 	GLuint texture2;
-	CustomShader elementShader;
-	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
 	bool use2D;
 	bool multipleCubes;
@@ -47,8 +49,32 @@ class Engine
 	GLuint emissionMap;
 	CustomShader lampShader;
 
+
+	// Material
+	UMaterial woodenBoxMaterial;
+
 	// Point light
 	APointLight pointLight;
+
+
+	// Instancing
+	CustomShader instancingShader;
+	vec2 translations[10000];
+	unsigned int instanceVBO, quadVAO, quadVBO;
+	float quadVertices[30] = {
+		// positions     // colors
+		-0.05f,  0.05f,  1.0f, 0.0f, 0.0f,
+		 0.05f, -0.05f,  0.0f, 1.0f, 0.0f,
+		-0.05f, -0.05f,  0.0f, 0.0f, 1.0f,
+
+		-0.05f,  0.05f,  1.0f, 0.0f, 0.0f,
+		 0.05f, -0.05f,  0.0f, 1.0f, 0.0f,
+		 0.05f,  0.05f,  0.0f, 1.0f, 1.0f
+	};
+
+	//Camera
+	UCamera* mainCamera;
+	ASkybox* skybox;
 
 
 public:
