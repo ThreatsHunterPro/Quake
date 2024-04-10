@@ -1,6 +1,9 @@
 #include "EngineWindow.h"
 #include "Source/Editor/Engine/Widgets/PlaceActorsWidget.h"
-#include "Source/Editor/Engine/Widgets/WorldSettings.h"
+//#include "Source/Editor/Engine/Widgets/DetailsWindow.h"
+#include "Source/Editor/Engine/Widgets/EditorBarMenuWidget.h"
+#include "Source/Editor/Engine/Widgets/WorldSettingsWidget.h"
+
 EngineWindow::EngineWindow()
 {
 	title = "Quake";
@@ -10,6 +13,9 @@ EngineWindow::EngineWindow()
 
 	widgets.Add(new PlaceActorsWidget(FString("test"), this));
 	widgets.Add(new WorldSettingsWidget(FString("Wolrd"), this));
+	widgets.Add(new EditorBarMenuWidget(FString("Menu"), this));
+	//widgets.Add(new PlaceActorsWidget(FString("test"), this));
+	//widgets.Add(new DetailsWindow(FString("Details"), this));
 }
 
 EngineWindow::~EngineWindow()
@@ -18,7 +24,7 @@ EngineWindow::~EngineWindow()
 	{
 		delete widgets[i];
 	}
-	widgets.Empty();
+	//widgets.Empty();
 }
 
 
@@ -28,6 +34,8 @@ void EngineWindow::Start()
 {
 	InitGLFW();
 	InitImGUI();
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_ALWAYS);
 }
 
 void EngineWindow::InitGLFW()

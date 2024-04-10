@@ -1,10 +1,11 @@
-#include "WorldSettings.h"
+#include "WorldSettingsWidget.h"
 
 WorldSettingsWidget::WorldSettingsWidget(const FString& _name, EngineWindow* _window) : PanelWidget(_name,_window)
 {
 	name = _name;
 	window = _window;
-	
+	//environmentIntensity = _light.GetIntensity();
+	//worldGravity = UWorld::GetWorldGravity();
 }
 
 WorldSettingsWidget::~WorldSettingsWidget()
@@ -49,28 +50,33 @@ void WorldSettingsWidget::Draw()
 	{
 		if (ImGui::TreeNode("Lightmass Settings"))
 		{
-
+			ImGui::SliderFloat("Environment Intensity", (float*)&environmentIntensity, 0.0f, 10.0f, "%0f");
+			//_light->SetIntensity(environmentIntensity);
 			ImGui::TreePop();
 			ImGui::Spacing();
 		}
 	}
-	if (ImGui::CollapsingHeader("Rendering"))
+	/*if (ImGui::CollapsingHeader("Audio"))
 	{
 
-	}
-	if (ImGui::CollapsingHeader("Audio"))
+	}*/
+	if (ImGui::CollapsingHeader("Physics"))
 	{
+		ImGui::Checkbox("Override World Gravity", &worldGravity);
+		ImGui::SliderFloat("Global Gravity Z", (float*)&globalGravityZ, -100.0f, 100.0f, "%0f");
+		//GetWorld()->SetGravity(globalGravity);
 
 	}
-
-	/*if (ImGui::CollapsingHeader("Physics"))
-	{
-	}
+	/*
 	if (ImGui::CollapsingHeader("NetWork"))
 	{
 	}
 	if (ImGui::CollapsingHeader("Tick"))
 	{
+		ImGui::SliderFloat2("Min Global Time Dilation", (float*)&environmentIntensity, 0.0f, 100000.0f, "%.0001f");
+		ImGui::SliderFloat2("Max Global Time Dilation", (float*)&environmentIntensity, 0.0f, 100000.0f, "%20f");
+		ImGui::SliderFloat2("Min Undilated Frame Time", (float*)&environmentIntensity, 0.0f, 100000.0f, "%.0005f");
+		ImGui::SliderFloat2("Max Undilated Frame Time", (float*)&environmentIntensity, 0.0f, 100000.0f, "%.4f");
 	}
 	if (ImGui::CollapsingHeader("Level Instance"))
 	{

@@ -8,6 +8,11 @@ class ALight : public AActor
 protected:
     FVector color;
     FVector position;
+    FVector direction;
+    FVector ambient;
+    FVector diffuse;
+    FVector specular;
+    FVector intensity;
     CustomShader lighting;
 
 public:
@@ -32,7 +37,11 @@ public:
 public:
     ALight() = default;
     ALight(const FVector& _color, const FVector& _position);
+    ALight(const FVector& _color, const FVector& _position, const FVector& _ambient, const FVector& _diffuse, const FVector& _specular);
+    ALight(const FVector& _color, const FVector& _position, const FVector& _ambient, const FVector& _diffuse, const FVector& _specular, const float _intensity);
 
 public:
-    virtual void Start(const CustomShader& _lighting);
+    void SetPhong(const FVector& _ambient, const FVector& _diffuse, const FVector& _specular);
+    void SetShader(const CustomShader& _shader);
+    virtual void Update(const int _index);
 };

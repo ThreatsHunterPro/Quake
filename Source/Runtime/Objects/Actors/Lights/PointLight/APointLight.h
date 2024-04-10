@@ -77,5 +77,5 @@ private:
     void UpdatePointLightSettings(const PointLightDistance& _distance);
 
 public:
-    void Start(const CustomShader& _lighting) override;
+    void Update(const int _index);
 };

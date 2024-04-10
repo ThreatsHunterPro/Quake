@@ -7,6 +7,9 @@
 Engine::Engine()
 {
 	mainWindow = new EngineWindow();
+	/*mainCamera = new UCamera();
+	skybox = new ASkybox();*/
+
 	VAO = GLuint();
 	VBO = GLuint();
 	EBO = GLuint();
@@ -41,6 +44,9 @@ Engine::~Engine()
 void Engine::Start()
 {
 	mainWindow->Start();
+	//skybox->BeginPlay();
+	glEnable(GL_DEPTH_TEST);
+	//glfwSetInputMode(mainWindow->GetWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	// Shaders
 	elementShader.LoadShadersFromPath("Element.vs", "Element.fs");
@@ -227,8 +233,12 @@ void Engine::Update()
 		CameraManager::GetInstance().Update();
 
 		//ChangeBgColor();
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 		Draw();
 
+		mainWindow->Update();
 		glfwPollEvents();
 
 		// Update mainWindow
@@ -339,6 +349,21 @@ void Engine::DrawElement()
 	elementShader.SetMat4("model", _model);
 }
 
+void Engine::DrawElements()
+{
+	for (unsigned int _index = 0; _index < 10; _index++)
+	{
+		ApplyShader();
+
+		FMatrix _model = FMatrix::Identity;
+		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());
+		const float _angle = 20.0f * _index;
+		_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
+
+		/*woodenBoxMaterial.GetMaterialShader().Use();
+		woodenBoxMaterial.GetMaterialShader().SetMat4("model", _model);*/
+	}
+}
 
 void Engine::DrawLamp()
 {
@@ -365,21 +390,18 @@ void Engine::DrawLamp()
 	use2D ? glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0) : glDrawArrays(GL_TRIANGLES, 0, 54);
 }
 
-void Engine::DrawElements()
-{
-	for (unsigned int _index = 0; _index < 10; _index++)
-	{
-		ApplyShader();
-
-		FMatrix _model = FMatrix::Identity;
-		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());
-		const float _angle = 20.0f * _index;
-		_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
-
-			elementShader.Use();
-			elementShader.SetMat4("model", _model);
-	}
-}
+//void Engine::DrawElements()
+//{
+//	for (unsigned int _index = 0; _index < 10; _index++)
+//	{
+//		ApplyShader();
+//
+//		FMatrix _model = FMatrix::Identity;
+//		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());
+//		const float _angle = 20.0f * _index;
+//		_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
+//	}
+//}
 
 void Engine::Stop()
 {
