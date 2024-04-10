@@ -22,4 +22,5 @@ struct FHitResult
 class UKismetSystemLibrary : UObject
 {
 	static bool LineTraceSingleForObjects(FVector _start, FVector _end, const TArray<AActor* >& ActorsToIgnore, FHitResult& _hitInfo);
+	static bool LineTraceMultiForObjects(FVector _start, FVector _end, const TArray<AActor* >& ActorsToIgnore, FHitResult& _hitInfo);
 };

@@ -64,6 +64,7 @@ public:
 		static Engine _instance;
 		return _instance;
 	}
+
 	FORCEINLINE UWorld* GetWorld()const
 	{
 		return world;

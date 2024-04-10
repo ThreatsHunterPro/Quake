@@ -1,13 +1,14 @@
 #include "CollisionShape.h"
 #include "../Core/Math/FVector/TVector.h"
 #include "../../Editor/Engine/Engine.h"
+#include "../Classes/World/UWorld.h"
 
 FCollisionShape::FCollisionShape()
 {
-    ShapeType = ECollisionShape::Line;
-    Box.Shape = Engine::GetInstance().GetPhysics().createBoxShape(Vector3());
-    Sphere.Shape = Engine::GetInstance().GetPhysics().createSphereShape(0);
-    Capsule.Shape = Engine::GetInstance().GetPhysics().createCapsuleShape(0, 0);
+    //ShapeType = ECollisionShape::Line;
+    Box.Shape = Engine::GetInstance().GetWorld()->GetPhysics().createBoxShape(Vector3());
+    //Sphere.Shape = UWorld::GetPhysics().createSphereShape(0);
+    //Capsule.Shape = UWorld::GetPhysics().createCapsuleShape(0, 0);
 }
 
 FCollisionShape::FCollisionShape(const FCollisionShape& _copy) : FCollisionShape()

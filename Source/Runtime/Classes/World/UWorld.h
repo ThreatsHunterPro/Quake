@@ -6,7 +6,7 @@ using namespace reactphysics3d;
 
 class UWorld : public UObject
 {
-	PhysicsWorld* world = nullptr;
+	PhysicsWorld* world;
 	PhysicsCommon physics;
 
 public:
