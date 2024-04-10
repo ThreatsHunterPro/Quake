@@ -5,10 +5,13 @@
 #include "..\..\Runtime\Core\Math\FVector\TVector.h"
 #include "..\..\Runtime\Core\Containers\TArray.h"
 #include "../../Runtime/Objects/Actors/Lights/PointLight/APointLight.h"
+#include "../../Runtime/Classes/World/UWorld.h"
 
 class Engine
 {
 	EngineWindow* mainWindow;
+
+	UWorld* world;
 
 	GLuint VAO;
 	GLuint VBO;
@@ -48,8 +51,6 @@ class Engine
 	// Point light
 	APointLight pointLight;
 
-	PhysicsCommon physics;
-	PhysicsWorld* world = nullptr;
 
 	RigidBody* body = nullptr;
 	RigidBody* floor = nullptr;
@@ -62,6 +63,10 @@ public:
 	{
 		static Engine _instance;
 		return _instance;
+	}
+	FORCEINLINE UWorld* GetWorld()const
+	{
+		return world;
 	}
 
 public:

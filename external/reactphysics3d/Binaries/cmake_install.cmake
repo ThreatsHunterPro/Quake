@@ -1,4 +1,4 @@
-# Install script for directory: D:/Github/Quake/external/reactphysics3d
+# Install script for directory: D:/Quake/external/reactphysics3d
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,25 +34,25 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Github/Quake/external/reactphysics3d/Binaries/Debug/reactphysics3d.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Quake/external/reactphysics3d/Binaries/Debug/reactphysics3d.lib")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Github/Quake/external/reactphysics3d/Binaries/Release/reactphysics3d.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Quake/external/reactphysics3d/Binaries/Release/reactphysics3d.lib")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Github/Quake/external/reactphysics3d/Binaries/MinSizeRel/reactphysics3d.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Quake/external/reactphysics3d/Binaries/MinSizeRel/reactphysics3d.lib")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Github/Quake/external/reactphysics3d/Binaries/RelWithDebInfo/reactphysics3d.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Quake/external/reactphysics3d/Binaries/RelWithDebInfo/reactphysics3d.lib")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "D:/Github/Quake/external/reactphysics3d/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "D:/Quake/external/reactphysics3d/include/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D/ReactPhysics3DConfig.cmake")
     file(DIFFERENT _cmake_export_file_changed FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D/ReactPhysics3DConfig.cmake"
-         "D:/Github/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig.cmake")
+         "D:/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig.cmake")
     if(_cmake_export_file_changed)
       file(GLOB _cmake_old_config_files "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D/ReactPhysics3DConfig-*.cmake")
       if(_cmake_old_config_files)
@@ -65,23 +65,23 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     endif()
     unset(_cmake_export_file_changed)
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Github/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig.cmake")
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Github/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig-debug.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig-debug.cmake")
   endif()
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Github/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig-minsizerel.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig-minsizerel.cmake")
   endif()
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Github/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig-relwithdebinfo.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig-relwithdebinfo.cmake")
   endif()
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Github/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Quake/external/reactphysics3d/Binaries/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig-release.cmake")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Github/Quake/external/reactphysics3d/Binaries/ReactPhysics3DConfigVersion.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ReactPhysics3D" TYPE FILE FILES "D:/Quake/external/reactphysics3d/Binaries/ReactPhysics3DConfigVersion.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -92,5 +92,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Github/Quake/external/reactphysics3d/Binaries/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Quake/external/reactphysics3d/Binaries/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

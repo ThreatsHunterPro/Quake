@@ -1,6 +1,6 @@
-^D:\GITHUB\QUAKE\EXTERNAL\REACTPHYSICS3D\CMAKELISTS.TXT
+^D:\QUAKE\EXTERNAL\REACTPHYSICS3D\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/Quake/external/reactphysics3d -BD:/Github/Quake/external/reactphysics3d/Binaries --check-stamp-file D:/Github/Quake/external/reactphysics3d/Binaries/CMakeFiles/generate.stamp
+C:\Users\PRAIT2401\Desktop\cmake-3.29.0-windows-x86_64\cmake-3.29.0-windows-x86_64\bin\cmake.exe -SD:/Quake/external/reactphysics3d -BD:/Quake/external/reactphysics3d/Binaries --check-stamp-file D:/Quake/external/reactphysics3d/Binaries/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

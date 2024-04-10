@@ -150,9 +150,7 @@ int main()
 #pragma endregion
 	*/
 
-	Engine* _engine = new Engine();
-	_engine->Launch();
-	delete _engine;
+	Engine::GetInstance().Launch();
 	
 	//PhysicsCommon _physics;
 	
@@ -229,4 +227,5 @@ int main()
 	//Vector3 scaling(1, 1, 1);
 	//// Create the ConvexMeshShape
 	//ConvexMeshShape* convexMeshShape = _physics.createConvexMeshShape(convexMesh, scaling);	
+	
 }
