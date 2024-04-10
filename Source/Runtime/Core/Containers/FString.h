@@ -144,11 +144,7 @@ inline FString FString::Format(const char* _text, Args... _args)
 
 	stringstream ss;
 	WriteArgToStream(ss, res, _args...); //on va appeler cette methode tout le long qu'il y ai des args grossièrement
-<<<<<<< HEAD
 	if (res.size()>1)
-=======
-	if (res.size() > 0)
->>>>>>> main
 		ss << res.back();
 	return FString(ss.str().c_str());
 }

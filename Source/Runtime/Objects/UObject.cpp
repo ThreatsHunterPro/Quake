@@ -1,10 +1,5 @@
 #include "UObject.h"
 
-UObject::UObject(UWorld* _world)
-{
-	world = _world;
-}
-
 void UObject::BeginDestroy()
 {
 	// is to remove pour le GC

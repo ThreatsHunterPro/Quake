@@ -10,7 +10,6 @@ struct FRotator
 public:
 	FRotator();
 	FRotator(float _inPitch, float _inYaw, float _inRoll);
-	FRotator(float _float);
 
 public:
 	FVector Euler()const;

@@ -1,7 +1,5 @@
 #include "EngineWindow.h"
 #include "Source/Editor/Engine/Widgets/PlaceActorsWidget.h"
-#include "Source/Editor/Engine/Widgets/DetailsWindow.h"
-
 #include "Source/Editor/Engine/Widgets/WorldSettings.h"
 EngineWindow::EngineWindow()
 {
@@ -12,8 +10,6 @@ EngineWindow::EngineWindow()
 
 	widgets.Add(new PlaceActorsWidget(FString("test"), this));
 	widgets.Add(new WorldSettingsWidget(FString("Wolrd"), this));
-	//widgets.Add(new PlaceActorsWidget(FString("test"), this));
-	widgets.Add(new DetailsWindow(FString("Details"), this));
 }
 
 EngineWindow::~EngineWindow()
@@ -32,10 +28,6 @@ void EngineWindow::Start()
 {
 	InitGLFW();
 	InitImGUI();
-=======
-	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_ALWAYS);
->>>>>>> main
 }
 
 void EngineWindow::InitGLFW()

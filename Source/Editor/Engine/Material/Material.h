@@ -1,16 +1,17 @@
 #pragma once
 #include "../Shader/CustomShader.h"
+#include "../../../CoreMinimal.h"
 #include "../../../Runtime/Core/Math/FMatrix.h"
 #include "../../../Runtime/Core/Math/FVector/TVector.h"
-#include "../Texture/CustomTexture.h"
+
 
 class UMaterial
 {
 	CustomShader materialShader;
 
-	CustomTexture diffuseTexture;
-	CustomTexture specularTexture;
-	CustomTexture emissionTexture;
+	int diffuseTexture;
+	int specularTexture;
+	int emissionTexture;
 
 	float shininess;
 	
@@ -32,9 +33,9 @@ public:
 
 	FORCEINLINE CustomShader GetMaterialShader() const { return materialShader; }
 
-	FORCEINLINE CustomTexture GetDiffuseTexture() const { return diffuseTexture; }
-	FORCEINLINE CustomTexture GetSpecularTexture() const { return specularTexture; }
-	FORCEINLINE CustomTexture GetEmissionTexture() const { return emissionTexture; }
+	FORCEINLINE int GetDiffuseTexture() const { return diffuseTexture; }
+	FORCEINLINE int GetSpecularTexture() const { return specularTexture; }
+	FORCEINLINE int GetEmissionTexture() const { return emissionTexture; }
 
 	FORCEINLINE float GetShininess() const { return shininess; }
 
@@ -53,6 +54,7 @@ public:
 	void LoadDiffuseTexture(const char* _texturePath, int _wrapParam, int _filterParam);
 	void LoadSpecularTexture(const char* _texturePath, int _wrapParam, int _filterParam);
 	void LoadEmissionTexture(const char* _texturePath, int _wrapParam, int _filterParam);
+	unsigned int LoadTexture(const char* _path, int _wrapParam, int _filterParam);
 	void InitMaterialTextures();
 	void BindAndUseMaterialTextures();
 	void SetLightValues(FVector _ambientValue, FVector _diffuseValue, FVector _specularValue);

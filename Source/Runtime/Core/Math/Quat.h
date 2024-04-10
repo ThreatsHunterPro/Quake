@@ -29,7 +29,7 @@ public:
 	FVector GetRightVector();
 	FVector GetUpVector();
 	FQuat GetNormalized(float _tolerance = SMALL_NUMBER) const;
-	const FRotator GetRotator() const;
+	FRotator GetRotator() const;
 
 
 

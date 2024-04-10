@@ -2,7 +2,6 @@
 #include "CameraManager.h"
 #include "..\..\Editor\Engine\Engine.h"
 #include "..\Core\Math\FVector\TVector.h"
-#include "../Objects/Camera/UCamera.h"
 
 InputManager::InputManager()
 {
@@ -17,7 +16,7 @@ void InputManager::Start(GLFWwindow* _window)
 	InitControls();
 
 	const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
-	CameraManager::GetInstance().GetCameras()[0]->SetTargetLocation(_cubePosition);
+	CameraManager::GetInstance().SetTargetLocation(_cubePosition);
 	glfwSetWindowUserPointer(window, this);
 }
 
@@ -59,12 +58,14 @@ void InputManager::ProcessMouse()
 	const float _xCursorPos = static_cast<float>(_xPos);
 	const float _yCursorPos = static_cast<float>(yPos);
 
-	const float yawValue = previousCursorPos.X - _xCursorPos;
-	const float pitchValue = previousCursorPos.Y - _yCursorPos;
+	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
+	{
+		const float yawValue = previousCursorPos.X - _xCursorPos;
+		const float pitchValue = previousCursorPos.Y - _yCursorPos;
 
-	CameraManager::GetInstance().GetCameras()[0]->MoveYaw(yawValue);
-	CameraManager::GetInstance().GetCameras()[0]->MovePitch(pitchValue);
-
+		CameraManager::GetInstance().MoveYaw(yawValue);
+		CameraManager::GetInstance().MovePitch(pitchValue);
+	}
 
 	previousCursorPos = FVector2(_xCursorPos, _yCursorPos);
 }
@@ -77,43 +78,43 @@ void InputManager::ProcessInputs() const
 
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().GetCameras()[0]->MoveForward(1.0f);
+		CameraManager::GetInstance().MoveForward(1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().GetCameras()[0]->MoveForward(-1.0f);
+		CameraManager::GetInstance().MoveForward(-1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().GetCameras()[0]->MoveRight(-1.0f);
+		CameraManager::GetInstance().MoveRight(-1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().GetCameras()[0]->MoveRight(1.0f);
+		CameraManager::GetInstance().MoveRight(1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_LEFT_ALT) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().GetCameras()[0]->MoveUp(-1.0f);
+		CameraManager::GetInstance().MoveUp(-1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().GetCameras()[0]->MoveUp(1.0f);
+		CameraManager::GetInstance().MoveUp(1.0f);
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_0) == GLFW_PRESS)
 	{
 		const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
-		CameraManager::GetInstance().GetCameras()[0]->SetTargetLocation(_cubePosition);
+		CameraManager::GetInstance().SetTargetLocation(_cubePosition);
 	}
 	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().GetCameras()[0]->SetMoveView(true);
+		CameraManager::GetInstance().SetMoveView(true);
 		const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
-		CameraManager::GetInstance().GetCameras()[0]->SetTargetLocation(_cubePosition);
+		CameraManager::GetInstance().SetTargetLocation(_cubePosition);
 	}
 	if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().GetCameras()[0]->SetMoveView(false);
+		CameraManager::GetInstance().SetMoveView(false);
 	}
 }
 
