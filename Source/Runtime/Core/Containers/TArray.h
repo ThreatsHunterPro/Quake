@@ -57,6 +57,7 @@ public:
     TArray(TArray<Type, SizeType>& _other)
     {
         tArray = _other.tArray;
+        count = _other.count;
     }
 
     // Move constructor.

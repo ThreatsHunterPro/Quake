@@ -89,8 +89,7 @@ private:
 	GLuint LoadTexture(const char* _path, const int _wrapParam, const int _filterParam);
 	void Update();
 	void ChangeBgColor();
-	void InitUI(); 
-	void DrawUI();
+
 #pragma region Draws
 	void Draw();
 	void ApplyShader();
