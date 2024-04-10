@@ -38,15 +38,13 @@ CameraManager::CameraManager()
 
 	// Render
 	windowSize = FVector2();
-	shader = CustomShader();
 }
 
 // Start
-void CameraManager::Start(const FVector2& _windowSize, const CustomShader& _shader, const CustomShader& _lighting)
+void CameraManager::Start(const FVector2& _windowSize, const vector<CustomShader*>& _shaders)
 {
 	windowSize = _windowSize;
-	shader = _shader;
-	lighting = _lighting;
+	shaders = _shaders;
 
 	InitDepth();
 }
@@ -72,7 +70,6 @@ void CameraManager::Update()
 		const float _camZ = targetLocation.Z + _radius * (float)FMath::Cos(_angle);
 		view = lookAt(vec3(_camX, 2.0f, _camZ), targetLocation.ToVec3(), vec3(0.0f, 1.0f, 0.0f));
 	}
-
 	else
 	{
 		view = lookAt(position.ToVec3(), position.ToVec3() + forward.ToVec3(), up.ToVec3());
@@ -80,13 +77,13 @@ void CameraManager::Update()
 
 	projection = perspective(FMath::DegreesToRadians(fov), (float)windowSize.X / (float)windowSize.Y, 0.1f, 100.0f);
 
-	shader.Use();
-	shader.SetMat4("view", view);
-	shader.SetMat4("projection", projection);
-
-	lighting.Use();
-	lighting.SetMat4("view", view);
-	lighting.SetMat4("projection", projection);
+	size_t _size = shaders.size();
+	for (size_t i = 0; i < _size; i++)
+	{
+ 		shaders[i]->Use();
+		shaders[i]->SetMat4("view", view);
+		shaders[i]->SetMat4("projection", projection);
+	}
 }
 void CameraManager::UpdateCameraVectors()
 {
