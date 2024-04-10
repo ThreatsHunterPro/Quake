@@ -2,15 +2,12 @@
 #include "..\..\Runtime\Managers\InputManager.h"
 #include "..\..\Runtime\Managers\CameraManager.h"
 #include "..\..\Runtime\Managers\TimerManager.h"
-#include "../../Runtime/Objects/Actors/AActor.h"
-#include "../../Runtime/Objects/Mesh/UPrimitiveMesh.h"
-#include "../../Runtime/Objects/Mesh/UStaticMeshComponent.h"
 
 
 Engine::Engine()
 {
 	mainWindow = new EngineWindow();
-	actor = nullptr;
+
 	VAO = GLuint();
 	VBO = GLuint();
 	EBO = GLuint();
@@ -25,7 +22,7 @@ Engine::Engine()
 	cubeIndex = 0;
 
 	// Lamp
-	drawLamp = false;
+	drawLamp = true;
 	moveLamp = true;
 	rotateLamp = false;
 	lightVAO = GLuint();
@@ -38,7 +35,7 @@ Engine::Engine()
 
 Engine::~Engine()
 {
-	delete mainWindow, actor;
+	delete mainWindow;
 }
 
 
@@ -51,119 +48,116 @@ void Engine::Start()
 	lampShader.LoadShadersFromPath("Lamp.vs", "Lamp.fs");
 
 	InputManager::GetInstance().Start(mainWindow->GetWindow());
-	CameraManager::GetInstance().Start(mainWindow->GetSize(), lampShader, elementShader);
-	//actor = new AActor("Loul", new UStaticMesh());
-
+	CameraManager::GetInstance().Start(mainWindow->GetSize(), { elementShader, lampShader });
 
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
-	//Plane
 	if (use2D) glGenBuffers(1, &EBO);
-	
 	glBindVertexArray(VAO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	
+
 	if (use2D)
 	{
-		TArray<float> _vertices2D = {
+		const float _vertices2D[] = {
 			// positions			//normals				// colors			// textures
 			 0.5f,  0.5f, 0.0f,		0.0f,  0.0f, -1.0f,		1.0f, 0.0f, 0.0f,   1.0f, 1.0f,	 // top right
 			 0.5f, -0.5f, 0.0f,		0.0f,  0.0f, -1.0f,		0.0f, 1.0f, 0.0f,   1.0f, 0.0f,	 // bottom right
 			-0.5f, -0.5f, 0.0f,		0.0f,  0.0f, -1.0f,		0.0f, 0.0f, 1.0f,   0.0f, 0.0f,	 // bottom left
 			-0.5f,  0.5f, 0.0f,		0.0f,  0.0f, -1.0f,		1.0f, 1.0f, 1.0f,   0.0f, 1.0f,  // top left 
 		};
-	
-		TArray<float>  _indices = {
+		unsigned int _indices[] = {
 			0, 1, 3,   // first triangle
 			1, 2, 3    // second triangle
 		};
-		
-		glBufferData(GL_ARRAY_BUFFER, _vertices2D.Num() * sizeof(float), _vertices2D.GetArray(), GL_STATIC_DRAW);
+
+		glBufferData(GL_ARRAY_BUFFER, sizeof(_vertices2D), _vertices2D, GL_STATIC_DRAW);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, _indices.Num() * sizeof(float), _indices.GetArray(), GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(_indices), _indices, GL_STATIC_DRAW);
 	}
+
 	else
 	{
-		TArray<float> _vertices = {//position		 // normals		    // color	      // texture
-			-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-			0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-			0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-			0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-			-0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-			-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+		const float _vertices[] = {
+			// position				// normals				// color			// texture
+			-0.5f, -0.5f, -0.5f,	0.0f,  0.0f, -1.0f,		1.0f, 0.0f, 0.0f,  	0.0f, 0.0f,
+			 0.5f, -0.5f, -0.5f,	0.0f,  0.0f, -1.0f,		0.0f, 1.0f, 0.0f,	1.0f, 0.0f,
+			 0.5f,  0.5f, -0.5f,	0.0f,  0.0f, -1.0f,		0.0f, 0.0f, 1.0f,	1.0f, 1.0f,
+			 0.5f,  0.5f, -0.5f,	0.0f,  0.0f, -1.0f,		1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
+			-0.5f,  0.5f, -0.5f,	0.0f,  0.0f, -1.0f,		0.0f, 1.0f, 0.0f,	0.0f, 1.0f,
+			-0.5f, -0.5f, -0.5f,	0.0f,  0.0f, -1.0f,		0.0f, 0.0f, 1.0f,	0.0f, 0.0f,
 
-			-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-			0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-			0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-			0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-			-0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-			-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+			-0.5f, -0.5f,  0.5f,	0.0f,  0.0f,  1.0f,		1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
+			 0.5f, -0.5f,  0.5f,	0.0f,  0.0f,  1.0f,		0.0f, 1.0f, 0.0f,	1.0f, 0.0f,
+			 0.5f,  0.5f,  0.5f,	0.0f,  0.0f,  1.0f,		0.0f, 0.0f, 1.0f,	1.0f, 1.0f,
+			 0.5f,  0.5f,  0.5f,	0.0f,  0.0f,  1.0f,		1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
+			-0.5f,  0.5f,  0.5f,	0.0f,  0.0f,  1.0f,		0.0f, 1.0f, 0.0f,	0.0f, 1.0f,
+			-0.5f, -0.5f,  0.5f,	0.0f,  0.0f,  1.0f,		0.0f, 0.0f, 1.0f,	0.0f, 0.0f,
 
-			-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-			-0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-			-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-			-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-			-0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-			-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+			-0.5f,  0.5f,  0.5f,	-1.0f,  0.0f, 0.0f,		1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
+			-0.5f,  0.5f, -0.5f,	-1.0f,  0.0f, 0.0f,		0.0f, 1.0f, 0.0f,	1.0f, 1.0f,
+			-0.5f, -0.5f, -0.5f,	-1.0f,  0.0f, 0.0f,		0.0f, 0.0f, 1.0f,	0.0f, 1.0f,
+			-0.5f, -0.5f, -0.5f,	-1.0f,  0.0f, 0.0f,		1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
+			-0.5f, -0.5f,  0.5f,	-1.0f,  0.0f, 0.0f,		0.0f, 1.0f, 0.0f,	0.0f, 0.0f,
+			-0.5f,  0.5f,  0.5f,	-1.0f,  0.0f, 0.0f,		0.0f, 0.0f, 1.0f,	1.0f, 0.0f,
 
-			0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-			0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-			0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-			0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-			0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-			0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+			0.5f,  0.5f,  0.5f,		1.0f,  0.0f,  0.0f,		1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
+			0.5f,  0.5f, -0.5f,		1.0f,  0.0f,  0.0f,		0.0f, 1.0f, 0.0f,	1.0f, 1.0f,
+			0.5f, -0.5f, -0.5f,		1.0f,  0.0f,  0.0f,		0.0f, 0.0f, 1.0f,	0.0f, 1.0f,
+			0.5f, -0.5f, -0.5f,		1.0f,  0.0f,  0.0f,		1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
+			0.5f, -0.5f,  0.5f,		1.0f,  0.0f,  0.0f,		0.0f, 1.0f, 0.0f,	0.0f, 0.0f,
+			0.5f,  0.5f,  0.5f,		1.0f,  0.0f,  0.0f,		0.0f, 0.0f, 1.0f,	1.0f, 0.0f,
 
-			-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-			0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-			0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-			0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-			-0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-			-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+			-0.5f, -0.5f, -0.5f,	0.0f, -1.0f,  0.0f,		1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
+			 0.5f, -0.5f, -0.5f,	0.0f, -1.0f,  0.0f,		0.0f, 1.0f, 0.0f,	1.0f, 1.0f,
+			 0.5f, -0.5f,  0.5f,	0.0f, -1.0f,  0.0f,		0.0f, 0.0f, 1.0f,	1.0f, 0.0f,
+			 0.5f, -0.5f,  0.5f,	0.0f, -1.0f,  0.0f,		1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
+			-0.5f, -0.5f,  0.5f,	0.0f, -1.0f,  0.0f,		0.0f, 1.0f, 0.0f,	0.0f, 0.0f,
+			-0.5f, -0.5f, -0.5f,	0.0f, -1.0f,  0.0f,		0.0f, 0.0f, 1.0f,	0.0f, 1.0f,
 
-			-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-			0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-			0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-			0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-			-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-			-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0
-	};
-		glBufferData(GL_ARRAY_BUFFER, _vertices.Num() * sizeof(float), _vertices.GetArray(), GL_STATIC_DRAW);
+			-0.5f,  0.5f, -0.5f,	0.0f,  1.0f,  0.0f,		1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
+			 0.5f,  0.5f, -0.5f,	0.0f,  1.0f,  0.0f,		0.0f, 1.0f, 0.0f,	1.0f, 1.0f,
+			 0.5f,  0.5f,  0.5f,	0.0f,  1.0f,  0.0f,		0.0f, 0.0f, 1.0f,	1.0f, 0.0f,
+			 0.5f,  0.5f,  0.5f,	0.0f,  1.0f,  0.0f,		1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
+			-0.5f,  0.5f,  0.5f,	0.0f,  1.0f,  0.0f,		0.0f, 1.0f, 0.0f,	0.0f, 0.0f,
+			-0.5f,  0.5f, -0.5f,	0.0f,  1.0f,  0.0f,		0.0f, 0.0f, 1.0f,	0.0f, 1.0f
+		};
+		glBufferData(GL_ARRAY_BUFFER, sizeof(_vertices), _vertices, GL_STATIC_DRAW);
 	}
-	
-	//position attribute
+
+	// position attribute
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	
+
 	// color attribute
 	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(float), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
-	
+
 	// texture coord attribute
 	glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, 11 * sizeof(float), (void*)(9 * sizeof(float)));
 	glEnableVertexAttribArray(3);
-	
+
 	// normals
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
-	
+
 	glGenVertexArrays(1, &lightVAO);
 	glBindVertexArray(lightVAO);
-	
+
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	
+
 	if (use2D)
 	{
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	}
-	
-	 //Textures
+
+	// Textures
 	diffuseMap = LoadTexture("../Content/Textures/WoodenBox.png", GL_CLAMP_TO_EDGE, GL_LINEAR);
 	specularMap = LoadTexture("../Content/Textures/WoodenBox_Specular.png", GL_CLAMP_TO_EDGE, GL_LINEAR);
 	emissionMap = LoadTexture("../Content/Textures/matrix.jpg", GL_REPEAT, GL_LINEAR);
-	
-	 //Shaders
+
+	// Shaders
 	elementShader.Use();
 	elementShader.SetInt("material.diffuse", 0);
 	elementShader.SetInt("material.specular", 1);
@@ -180,9 +174,28 @@ void Engine::Start()
 		lampShader.SetInt("texture1", 0);
 		lampShader.SetInt("texture2", 1);
 
-		const FVector& _color = FVector(1.0f, 1.0f, 1.0f);
+#pragma region LIGHT INIT
+		FVector& _color = FVector(1.0f, 1.0f, 1.0f);
 		const FVector& _position = lightPos;
-		pointLight = APointLight(_color, _position, PointLightDistance::TROIS_MILLE_DEUX_CENT_CINQUANTE);
+		const FVector& _direction = FVector(0.0f, -1.0f, 0.0f);
+		//Set lights array size
+		elementShader.SetInt("lights.dirLightsSize", 1);
+		elementShader.SetInt("lights.pointLightsSize", 1);
+		elementShader.SetInt("lights.spotLightsSize", 1);
+		//Directional light
+		directionalLight = ADirectionalLight(_color, _direction);
+		directionalLight.SetPhong(_color * 0.1f, _color, _color);
+		directionalLight.SetShader(elementShader);
+		//Point light
+		pointLight = APointLight(_color, _position, PointLightDistance::TRENTE_DEUX);
+		pointLight.SetPhong(_color * 0.05f, _color * 0.8f, _color);
+		pointLight.SetShader(elementShader);
+		//SPot light
+		spotLight = ASpotLight(_color, _position, PointLightDistance::CINQUANTE, 12.5f, 15.0f);
+		spotLight.SetPhong(_color * 0.0f, _color, _color);
+		spotLight.SetShader(elementShader);
+#pragma endregion
+
 	}
 }
 
@@ -232,11 +245,8 @@ void Engine::Update()
 		CameraManager::GetInstance().Update();
 
 		//ChangeBgColor();
-		
-		//actor->GetStaticMesh()->DrawElement();
-		//glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
 		Draw();
+
 		glfwSwapBuffers(_window);
 		glfwPollEvents();
 
@@ -253,7 +263,6 @@ void Engine::ChangeBgColor()
 	float blueValue = static_cast<float>(sin(timeValue * 1.4) / 2.0 + 0.5);
 	glClearColor(redValue, greenValue, blueValue, 1.0f);
 }
-
 
 void Engine::Draw()
 {
@@ -283,36 +292,26 @@ void Engine::ApplyShader()
 	elementShader.SetVec3("viewPos", CameraManager::GetInstance().GetPosition());
 	elementShader.SetFloat("time", glfwGetTime());
 
-	// ====> light properties <====
+	#pragma region LIGHT UPDATE
 
 	// == Directional light ==
-	//const FVector& _direction = FVector(0.0f, 0.0f, -1.0f);
-	//elementShader.SetVec3("light.direction", _direction);
+	const FVector& _direction = FVector(0.0f, -1.0f, 0.0f);
+	directionalLight.Update(0);
 
 	// == Point light ==
-	/*elementShader.SetVec3("light.ambient", FVector(0.2f, 0.2f, 0.2f));
-	elementShader.SetVec3("light.diffuse", FVector(0.5f, 0.5f, 0.5f));
-	elementShader.SetVec3("light.specular", FVector(1.0f, 1.0f, 1.0f));
 	pointLight.SetPosition(lightPos);
-	pointLight.Start(elementShader);*/
+	pointLight.Update(0);
 
-	// == Spot light ==
+	// == Spot light / Flash light ==
 	CameraManager& _camera = CameraManager::GetInstance();
-	elementShader.SetVec3("light.position", _camera.GetPosition());
-	elementShader.SetVec3("light.direction", _camera.GetForward());
-	elementShader.SetFloat("light.cutOff", cos(radians(12.5f)));
-	elementShader.SetFloat("light.outerCutOff", cos(radians(17.5f)));
+	spotLight.SetPosition(_camera.GetPosition());
+	spotLight.SetDirection(_camera.GetForward());
+	spotLight.Update(0);
 
-	elementShader.SetVec3("light.ambient", FVector(0.1f, 0.1f, 0.1f));
-	elementShader.SetVec3("light.diffuse", FVector(0.8f, 0.8f, 0.8f));
-	elementShader.SetVec3("light.specular", FVector(1.0f, 1.0f, 1.0f));
-
-	elementShader.SetFloat("light.constant", 1.0f);
-	elementShader.SetFloat("light.linear", 0.09f);
-	elementShader.SetFloat("light.quadratic", 0.032f);
+	#pragma endregion
 
 	// material properties
-	const float _intensity = 64.0f;
+	const float _intensity = 32.0f;
 	elementShader.SetFloat("material.shininess", _intensity);
 
 	// bind diffuse map
@@ -337,8 +336,9 @@ void Engine::DrawElement()
 	ApplyShader();
 
 	FMatrix _model = FMatrix::Identity;
-	//_model = translate(_model, FVector(0.0f, 0.0f, -5.0f));
-	_model = rotate(_model.ToMat4(), TimerManager::GetInstance().DeltaTimeSeconds(), vec3(0.0f, 1.0f, 0.0f));
+	_model = translate(_model.ToMat4(), FVector(0.0f, 0.0f, -5.0f).ToVec3());
+	//_model = rotate(_model.ToMat4(), TimerManager::GetInstance().DeltaTimeSeconds(), vec3(0.0f, 1.0f, 0.0f));
+	elementShader.Use();
 	elementShader.SetMat4("model", _model);
 }
 
@@ -351,10 +351,10 @@ void Engine::DrawElements()
 		FMatrix _model = FMatrix::Identity;
 		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());
 		const float _angle = 20.0f * _index;
-		_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
+		//_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
 
-			elementShader.Use();
-			elementShader.SetMat4("model", _model);
+		elementShader.Use();
+		elementShader.SetMat4("model", _model);
 	}
 }
 
@@ -383,7 +383,6 @@ void Engine::DrawLamp()
 	use2D ? glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0) : glDrawArrays(GL_TRIANGLES, 0, 54);
 }
 
-
 void Engine::Stop()
 {
 	mainWindow->Stop();
@@ -402,7 +401,6 @@ void Engine::ClearElements()
 	elementShader.ClearShader();
 }
 
-
 void Engine::Launch()
 {
 	Start();
@@ -418,5 +416,3 @@ FVector Engine::GetNextCubePosition()
 	cubeIndex %= 10;
 	return cubePositions[cubeIndex];
 }
-
-// La lumière n'a pas ses textures

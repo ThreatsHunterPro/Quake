@@ -100,6 +100,8 @@ public:
 
     ~TArray()
     {
+        if (!tArray)
+            return;
         delete[] tArray;
     }
 

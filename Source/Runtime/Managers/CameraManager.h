@@ -42,8 +42,7 @@ class CameraManager
 
 	// Render
 	FVector2 windowSize;
-	CustomShader shader;
-	CustomShader lighting;
+	vector<CustomShader> shaders;
 
 public:
 	FORCEINLINE void SetMoveView(const bool _status)
@@ -98,7 +97,7 @@ private:
 	void UpdateCameraVectors();
 
 public:
-	void Start(const FVector2& _windowSize, const CustomShader& _shader, const CustomShader& _lighting);
+	void Start(const FVector2& _windowSize, const vector<CustomShader>& _shaders);
 	void Update();
 
 	// Standard
