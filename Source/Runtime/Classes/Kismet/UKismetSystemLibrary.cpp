@@ -13,6 +13,6 @@ bool UKismetSystemLibrary::LineTraceMultiForObjects(FVector _start, FVector _end
 	FRaycastCallback _callback;
 	Ray _ray(_start.ToReactVector3(), _end.ToReactVector3());
 	
-	Engine::GetInstance().GetWorld()->GetWorld()->raycast(_ray, &_callback);
+	Engine::GetInstance().GetUWorld()->GetWorld()->raycast(_ray, &_callback);
 	return false;
 }

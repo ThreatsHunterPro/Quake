@@ -65,7 +65,7 @@ public:
 		return _instance;
 	}
 
-	FORCEINLINE UWorld* GetWorld()const
+	FORCEINLINE UWorld* GetUWorld()const
 	{
 		return world;
 	}
