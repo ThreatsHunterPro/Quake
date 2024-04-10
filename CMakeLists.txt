@@ -3,19 +3,8 @@ project(Quake)
 
 find_package(OpenGL REQUIRED)
 
-list(APPEND CMAKE_PREFIX_PATH "C:\\Program Files (x86)\\ReactPhysics3D") 
-find_package(ReactPhysics3D REQUIRED)
-
 # Compile external dependencies 
 add_subdirectory (external)
-
-
-# Library headers
-#target_include_directories(reactphysics3d PUBLIC
-#              $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-#              $<INSTALL_INTERFACE:include>
-#)
-
 
 include_directories(
 	external/AntTweakBar-1.16/include/
@@ -24,7 +13,6 @@ include_directories(
 	external/glew-1.13.0/include/
 	external/assimp-3.0.1270/include/
 	external/bullet-2.81-rev2613/src/
-	#external/reactphysics3d/include/
 	.
 )
 
@@ -32,7 +20,6 @@ set(ALL_LIBS
 	${OPENGL_LIBRARY}
 	glfw
 	GLEW_1130
-	ReactPhysics3D::ReactPhysics3D
 )
 
 add_definitions(
@@ -88,5 +75,3 @@ include_directories(
 #Librairies
 link_directories(Engine/Libraries)
 target_link_libraries(Quake ${ALL_LIBS})
-target_link_libraries (Quake ReactPhysics3D::ReactPhysics3D)
-

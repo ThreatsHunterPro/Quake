@@ -6,11 +6,6 @@
 
 #include "Editor/Pointers/TSharedPtr.h"
 #include "Source/Editor/Engine/Engine.h"
-#include <reactphysics3d/reactphysics3d.h>
-
-using namespace std;
-using namespace glm;
-using namespace reactphysics3d;
 
 struct B;
 struct A
@@ -153,80 +148,4 @@ int main()
 	Engine* _engine = new Engine();
 	_engine->Launch();
 	delete _engine;
-	
-	//PhysicsCommon _physics;
-	
-	//PhysicsWorld::WorldSettings _settings;
-	//_settings.worldName = "le monde de THOMAS";
-	//_settings.defaultVelocitySolverNbIterations = 20;
-	//_settings.isSleepingEnabled = false;
-	//_settings.gravity = Vector3(0, -9.81, 0);
-	
-	//PhysicsWorld* _world = _physics.createPhysicsWorld();
-	//
-	//
-	//Transform _tranforms = Transform::identity();
-	//RigidBody* _body = _world->createRigidBody(_tranforms);
-	////_body->enableGravity(false);
-	//
-	//SphereShape* _sphere = _physics.createSphereShape(3.0f);
-	//
-	//Collider* _collider = _body->addCollider(_sphere, _tranforms);
-	//
-	//
-	//const float timeStep = 1.0f / 60.0f;
-	//
-	//// Step the simulation a few steps
-	//for (int i = 0; i < 20; i++) {
-	//	_world->update(timeStep);
-	//	// Get the updated position of the body
-	//	const Transform& transform = _body->getTransform();
-	//	const Vector3& position = transform.getPosition();
-	//	// Display the position of the body
-	//	std::cout << " Body Position : (" << position.x << "," <<
-	//		position.y << ", " << position.z << ")" << std::endl;
-	//}
-
-	// Array with the vertices coordinates of the convex mesh
-	//float vertices[24] = { -3 , -3 , 3,
-	//3, -3, 3,
-	//3, -3, -3,
-	//3, -3, -3,
-	//-3, 3 , 3,
-	//3, 3, 3,
-	//3, 3, -3,
-	//-3, 3 , -3 };
-	//// Vertex array with all vertices of the mesh
-	//rp3d::VertexArray vertexArray(vertices, 3 * sizeof(float),
-	//	24, rp3d::VertexArray::DataType::VERTEX_FLOAT_TYPE);
-	//// Compute the convex mesh using only the array of vertices
-	//std::vector < rp3d::Message > messages;
-	//ConvexMesh* convexMesh = _physics.createConvexMesh(
-	//	vertexArray, messages);
-	//// Display the messages (info , warning and errors )
-	//if (messages.size() > 0) {
-	//	for (const rp3d::Message& message : messages) {
-	//		std::string messageType;
-	//		switch (message.type) {
-	//		case rp3d::Message::Type::Information:
-	//			messageType = " info ";
-	//			break;
-	//		case rp3d::Message::Type::Warning:
-	//			messageType = " warning ";
-	//			break;
-	//		case rp3d::Message::Type::Error:
-	//			messageType = " error ";
-	//			break;
-	//		}
-	//		std::cout << " Message (" << messageType << "): " <<
-	//			message.text << std::endl;
-	//	}
-	//}
-	//assert(convexMesh != nullptr);
-
-	
-	
-	//Vector3 scaling(1, 1, 1);
-	//// Create the ConvexMeshShape
-	//ConvexMeshShape* convexMeshShape = _physics.createConvexMeshShape(convexMesh, scaling);	
 }
