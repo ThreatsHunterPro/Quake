@@ -24,6 +24,14 @@ FMatrix::FMatrix(const FVector4& _inX, const FVector4& _inY, const FVector4& _in
     M[3][0] = _inW.X; M[3][1] = _inW.Y;  M[3][2] = _inW.Z;  M[3][3] = _inW.W;
 }
 
+FMatrix::FMatrix(const mat3& _matrix3)
+{
+    M[0][0] = _matrix3[0][0]; M[0][1] = _matrix3[0][1];  M[0][2] = _matrix3[0][2];  M[0][3] = 0.f;
+    M[1][0] = _matrix3[1][0]; M[1][1] = _matrix3[1][1];  M[1][2] = _matrix3[1][2];  M[1][3] = 0.f;
+    M[2][0] = _matrix3[2][0]; M[2][1] = _matrix3[2][1];  M[2][2] = _matrix3[2][2];  M[2][3] = 0.f;
+    M[3][0] = 0.f; M[3][1] = 0.f;  M[3][2] = 0.f;  M[3][3] = 1.f;
+}
+
 void FMatrix::SetIdentity()
 {
     M[0][0] = 1; M[0][1] = 0;  M[0][2] = 0;  M[0][3] = 0;
@@ -484,7 +492,8 @@ mat4 FMatrix::ToMat4()
     );
 }
 
-const mat4 FMatrix::ToMat4() const
+
+const mat4 FMatrix::ToMat4()const 
 {
     return mat4
     (

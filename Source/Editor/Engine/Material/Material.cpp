@@ -8,10 +8,13 @@
 
 UMaterial::UMaterial()
 {
+	shininess = 32.0f;
 }
 
 UMaterial::UMaterial(const char* _vertexPath, const char* _fragmentPath)
 {
+	LoadMaterialShader(_vertexPath, _fragmentPath);
+	shininess = 32.0f;
 }
 
 #pragma endregion
@@ -29,14 +32,11 @@ void UMaterial::InitMaterialTextures()
 
 void UMaterial::BindAndUseMaterialTextures()
 {
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, diffuseTexture);
+	materialShader.Use();
 
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, specularTexture);
-
-	glActiveTexture(GL_TEXTURE2);
-	glBindTexture(GL_TEXTURE_2D, emissionTexture);
+	diffuseTexture.BindTexture(0);
+	specularTexture.BindTexture(1);
+	emissionTexture.BindTexture(2);
 }
 
 void UMaterial::SetLightValues(FVector _ambientValue, FVector _diffuseValue, FVector _specularValue)
@@ -46,11 +46,6 @@ void UMaterial::SetLightValues(FVector _ambientValue, FVector _diffuseValue, FVe
 	SetSpecularValue(_specularValue);
 }
 
-void UMaterial::Use()
-{
-	materialShader.Use();
-}
-
 void UMaterial::LoadMaterialShader(const char* _vertexPath, const char* _fragmentPath)
 {
 	materialShader.LoadShadersFromPath(_vertexPath, _fragmentPath);
@@ -58,57 +53,18 @@ void UMaterial::LoadMaterialShader(const char* _vertexPath, const char* _fragmen
 
 void UMaterial::LoadDiffuseTexture(const char* _texturePath, int _wrapParam, int _filterParam)
 {
-	diffuseTexture = LoadTexture(_texturePath, _wrapParam, _filterParam);
+	diffuseTexture.LoadTexture(_texturePath, _wrapParam, _filterParam);
 }
 
 void UMaterial::LoadSpecularTexture(const char* _texturePath, int _wrapParam, int _filterParam)
 {
-	specularTexture = LoadTexture(_texturePath, _wrapParam, _filterParam);
+	specularTexture.LoadTexture(_texturePath, _wrapParam, _filterParam);
 }
 
 void UMaterial::LoadEmissionTexture(const char* _texturePath, int _wrapParam, int _filterParam)
 {
-	emissionTexture = LoadTexture(_texturePath, _wrapParam, _filterParam);
+	emissionTexture.LoadTexture(_texturePath, _wrapParam, _filterParam);
 }
-
-unsigned int UMaterial::LoadTexture(const char* _path, int _wrapParam, int _filterParam)
-{
-	unsigned int textureID;
-	glGenTextures(1, &textureID);
-
-	int width, height, nrComponents;
-	unsigned char* data = stbi_load(_path, &width, &height, &nrComponents, 0);
-	if (data)
-	{
-		GLenum format;
-		if (nrComponents == 1)
-			format = GL_RED;
-		else if (nrComponents == 3)
-			format = GL_RGB;
-		else if (nrComponents == 4)
-			format = GL_RGBA;
-
-		glBindTexture(GL_TEXTURE_2D, textureID);
-		glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
-
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, _wrapParam);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, _wrapParam);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, _filterParam);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, _filterParam);
-
-		stbi_image_free(data);
-	}
-	else
-	{
-		std::cout << "Texture failed to load at path: " << _path << std::endl;
-		stbi_image_free(data);
-	}
-
-	return textureID;
-}
-
-#pragma endregion
 
 #pragma region Set
 
@@ -133,20 +89,14 @@ void UMaterial::SetSpecularValue(FVector _specularValue)
 
 void UMaterial::SetShininessValue(float _shininessValue)
 {
-	shininess = _shininessValue;
-	materialShader.SetFloat("material.shininess", shininess);
+	materialShader.SetFloat("material.shininess", shininess = _shininessValue);
 }
 
 void UMaterial::SetLightSourcePosition(FVector _lightSourcePosition)
 {
 	lightSourcePosition = _lightSourcePosition;
 	materialShader.SetVec3("light.position", lightSourcePosition);
-}
-
-void UMaterial::SetLightDirection(FVector _direction)
-{
-	cameraDirection = _direction;
-	materialShader.SetVec3("light.direction", cameraDirection);
+	materialShader.SetVec3("lightPos", lightSourcePosition);
 }
 
 void UMaterial::SetCameraPosition(FVector _cameraPosition)

@@ -1,116 +1,21 @@
 #pragma once 
-#include "..\..\CoreMinimal.h"
-#include "..\..\Editor\Engine\Shader\CustomShader.h"
-#include "..\Core\Math\FVector\TVector.h"
-#include "..\Core\Math\FVector\FVector2.h"
-#include "..\Core\Math\FVector\FVector4.h"
+#include "../../CoreMinimal.h"
+
+class UCamera;
 
 class CameraManager
 {
-	// States
-	bool moveView;
-
-	// Values
-	float yaw;
-	float pitch;
-	float roll;
-	float angle;
-	float speed;
-	float sensivity;
-
-	// Positions
-	FVector position;
-	FVector targetLocation;
-
-	// FoV
-	float fov;
-	float minFov;
-	float maxFov;
-
-	// Ranges
-	float nearRange;
-	float farRange;
-
-	// Vectors
-	FVector forward;
-	FVector right;
-	FVector up;
-
-	// MVP
-	FMatrix projection;
-	FMatrix view;
-
-	// Render
-	FVector2 windowSize;
-	vector<CustomShader> shaders;
+	vector<UCamera*> cameras;
 
 public:
-	FORCEINLINE void SetMoveView(const bool _status)
-	{
-		moveView = _status;
-	}
-	FORCEINLINE void SetTargetLocation(const FVector& _location)
-	{
-		targetLocation = _location;
-	}
-	FORCEINLINE static CameraManager& GetInstance()
+	static CameraManager& GetInstance()
 	{
 		static CameraManager _instance;
 		return _instance;
 	}
-	FORCEINLINE const FVector& GetPosition() const
-	{
-		return position;
-	}
-	FORCEINLINE const FVector& GetForward() const
-	{
-		return forward;
-	}
-	FORCEINLINE const FMatrix& GetProjectionMatrix(bool _inPerspective = true)
-	{
-		if (_inPerspective)
-		{
-			return projection = perspective(FMath::DegreesToRadians(fov), static_cast<float>(windowSize.X) / static_cast<float>(windowSize.Y), nearRange, 100.0f);
-		}
-
-		return projection = ortho(-10.0f, 10.0f, -10.0f, 10.0f, nearRange, farRange);
-	}
-	FORCEINLINE const FMatrix& GetViewMatrix()
-	{
-		if (moveView)
-		{
-			const float _radius = 5.0f;
-			const float _angle = glfwGetTime();
-			const float _camX = targetLocation.X + _radius * (float)FMath::Sin(_angle);
-			const float _camZ = targetLocation.Z + _radius * (float)FMath::Cos(_angle);
-			return view = lookAt(vec3(_camX, 2.0f, _camZ), targetLocation.ToVec3(), vec3(0.0f, 1.0f, 0.0f));
-		}
-		
-		return view = lookAt(position.ToVec3(), position.ToVec3() + forward.ToVec3(), up.ToVec3());
-	}
+	vector<UCamera*> GetCameras() const { return cameras; }
 
 public:
-	CameraManager();
+	void Register(UCamera* _camera);
 
-private:
-	void InitDepth();
-	void UpdateCameraVectors();
-
-public:
-	void Start(const FVector2& _windowSize, const vector<CustomShader>& _shaders);
-	void Update();
-
-	// Standard
-	void MoveForward(float _forwardValue);
-	void MoveRight(float _rightValue);
-	void MoveUp(float _upValue);
-
-	// Mouse
-	void MoveYaw(float _value);
-	void MovePitch(float _value);
-	void MoveRoll(float _value);
-
-	// Other
-	void RotateAround(float _direction);
-	void Zoom(float _value);
 };

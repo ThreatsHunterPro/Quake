@@ -178,10 +178,10 @@ void UStaticMeshComponent::InitMaterial()
 
 void UStaticMeshComponent::DrawElement()
 {
-	material->Use();
-	CameraManager& _camera = CameraManager::GetInstance();
+	//material->Use();
+	/*CameraManager& _camera = CameraManager::GetInstance();
 	material->SetLightSourcePosition(_camera.GetPosition());
-	material->SetLightDirection(_camera.GetForward());
+	material->SetLightDirection(_camera.GetForward());*/
 
 	material->SetAmbientValue(FVector(0.1f, 0.1f, 0.1f));
 	material->SetDiffuseValue(FVector(0.8f, 0.8f, 0.8f));

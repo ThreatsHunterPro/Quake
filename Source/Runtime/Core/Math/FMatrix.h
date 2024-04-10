@@ -13,7 +13,6 @@ namespace EAxis
 		Z
 	};
 }
-
 struct FMatrix
 {
 #pragma region Var
@@ -25,6 +24,7 @@ struct FMatrix
 	FMatrix();
 	FMatrix(const FVector& _inX, const FVector& _inY, const FVector& _inZ, const FVector& _inW);
 	FMatrix(const FVector4& _inX, const FVector4& _inY, const FVector4& _inZ, const FVector4& _inW);
+	FMatrix(const mat3& _matrix3);
 #pragma endregion
 
 #pragma region Methods
@@ -66,7 +66,7 @@ struct FMatrix
 	FString ToString() const;
 
 	mat4 ToMat4();
-	const mat4 ToMat4() const;
+	const mat4 ToMat4()const ;
 #pragma endregion
 
 #pragma region Operators

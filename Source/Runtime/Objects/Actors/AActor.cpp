@@ -24,7 +24,7 @@ AActor::AActor(const FString& _name, UWorld* _world) : UObject(_world)
 AActor::~AActor()
 {
 	components.empty();
-	delete rootComponent, staticMesh;
+	//delete rootComponent, staticMesh;
 }
 
 void AActor::Start()
