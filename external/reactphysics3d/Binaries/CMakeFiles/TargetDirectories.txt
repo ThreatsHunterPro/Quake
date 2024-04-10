@@ -1,5 +1,0 @@
-D:/p2vs/QuakeGit/Quake/external/reactphysics3d/Binaries/CMakeFiles/reactphysics3d.dir
-D:/p2vs/QuakeGit/Quake/external/reactphysics3d/Binaries/CMakeFiles/RUN_TESTS.dir
-D:/p2vs/QuakeGit/Quake/external/reactphysics3d/Binaries/CMakeFiles/INSTALL.dir
-D:/p2vs/QuakeGit/Quake/external/reactphysics3d/Binaries/CMakeFiles/ALL_BUILD.dir
-D:/p2vs/QuakeGit/Quake/external/reactphysics3d/Binaries/CMakeFiles/ZERO_CHECK.dir

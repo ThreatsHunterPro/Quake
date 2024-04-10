@@ -1,37 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
-
 project(Quake)
 
-set(SFML_DIR "external/SFML-2.6.1/lib/cmake/SFML")
-set(SFML_INCLUDE_DIR "external/SFML-2.6.0/include")
-set(SFML_INCLUDE_LIB "external/SFML-2.6.0/lib")
-
-set(SFML_STATIC_LIBRARIES TRUE)
-
-#load packages
-list(APPEND CMAKE_PREFIX_PATH "Engine\\Libraries\\ReactPhysics3D")
-find_package(ReactPhysics3D REQUIRED)
 find_package(OpenGL REQUIRED)
-list(APPEND CMAKE_PREFIX_PATH "Engine\\Libraries\\imgui")
-find_package(imgui REQUIRED)
-
-set(CMAKE_PREFIX_PATH "external/freetype-2.13.0")
-find_package(SFML COMPONENTS graphics window system audio network REQUIRED)
-
-
-set(ALL_LIBS
-	${OPENGL_LIBRARY}
-	glfw
-	GLEW_1130
-    	sfml-graphics
-    	sfml-window 
-    	sfml-system
-	sfml-audio
-	sfml-network
-	ReactPhysics3D::ReactPhysics3D
-	imgui::imgui
-)
-
 
 # Compile external dependencies 
 add_subdirectory (external)
@@ -42,11 +12,15 @@ include_directories(
 	external/glm-0.9.7.1/
 	external/glew-1.13.0/include/
 	external/assimp-3.0.1270/include/
-	external/SFML-2.6.1/include/
-	external/SFML-2.6.1/lib/
+	external/bullet-2.81-rev2613/src/
 	.
 )
 
+set(ALL_LIBS
+	${OPENGL_LIBRARY}
+	glfw
+	GLEW_1130
+)
 
 add_definitions(
 	-DTW_STATIC
@@ -55,7 +29,6 @@ add_definitions(
 	-DGLEW_STATIC
 	-D_CRT_SECURE_NO_WARNINGS
 )
-
 
 # Récupération des fichiers .cpp dans les sous-dossiers de Source
 file(GLOB_RECURSE SOURCES "Source/*.cpp")
@@ -100,5 +73,3 @@ include_directories(Engine/Includes)
 #Librairies
 link_directories(Engine/Libraries)
 target_link_libraries(Quake ${ALL_LIBS})
-
-
