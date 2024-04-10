@@ -1,4 +1,4 @@
-#define STB_IMAGE_IMPLEMENTATION // a definir avec <stb_image.h> au dans le main
+//#define STB_IMAGE_IMPLEMENTATION // a definir avec <stb_image.h> au dans le main
 
 #include "CoreMinimal.h"
 #include "Runtime/Managers/UGameInstance.h"
@@ -7,8 +7,13 @@
 #include "Editor/Pointers/TSharedPtr.h"
 #include "Source/Editor/Engine/Engine.h"
 
+#include <ImGUI/imgui.h>
+#include <SFML/Graphics.hpp>
+#include <reactphysics3d/reactphysics3d.h>
+
 using namespace std;
 using namespace glm;
+using namespace sf;
 
 struct B;
 struct A
@@ -151,4 +156,25 @@ int main()
 	Engine* _engine = new Engine();
 	_engine->Launch();
 	delete _engine;
+
+	//RenderWindow window(VideoMode(200, 200), "SFML works!");
+
+	//while (window.isOpen())
+	//{
+	//	Event event;
+	//	while (window.pollEvent(event))
+	//	{
+	//		if (event.type == Event::Closed)
+	//		{
+	//			window.close();
+	//		}
+	//	}
+
+	//	window.clear();
+	//	// draw
+	//	window.display();
+	//}
+
+	//reactphysics3d::DECIMAL_LARGEST;
+	//ImGui::ShowDemoWindow();
 }

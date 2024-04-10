@@ -20,9 +20,9 @@
 #define FRAGMENT_SHADER_PATH "StandardShading.fragmentshader"
 
 // OBJECTS MACRO.H
-#ifdef _DEBUG
-#define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
-#endif
+//#ifdef _DEBUG
+//#define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
+//#endif
 
 #define BASE __super
 #define FORCEINLINE __forceinline

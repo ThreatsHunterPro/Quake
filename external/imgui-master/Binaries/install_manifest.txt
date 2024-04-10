@@ -1,0 +1,5 @@
+C:/Program Files (x86)/imgui/lib/imguid.lib
+C:/Program Files (x86)/imgui/lib/cmake/imgui/imgui-config.cmake
+C:/Program Files (x86)/imgui/lib/cmake/imgui/imgui-config-debug.cmake
+C:/Program Files (x86)/imgui/include/imgui.h
+C:/Program Files (x86)/imgui/include/imconfig.h

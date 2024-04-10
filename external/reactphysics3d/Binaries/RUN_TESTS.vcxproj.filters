@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\p2vs\QuakeGit\Quake\external\reactphysics3d\Binaries\CMakeFiles\86e0e3924c659c53fb5d6bfd0e397765\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1C414FD3-53AA-37C9-AC3E-34830A4BA9BB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
