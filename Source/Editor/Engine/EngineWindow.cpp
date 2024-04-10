@@ -4,7 +4,8 @@ EngineWindow::EngineWindow()
 {
 	title = "Quake";
 	size = FVector2(1920, 1080);
-	bgColor = FColor(51, 85, 85, 255);
+	//bgColor = FColor(51, 85, 85, 255);
+	bgColor = FColor(50, 50, 50, 255);
 	mainWindow = nullptr;
 }
 

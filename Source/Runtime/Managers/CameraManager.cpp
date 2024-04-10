@@ -51,8 +51,8 @@ void CameraManager::Start(const FVector2& _windowSize, const vector<CustomShader
 void CameraManager::InitDepth()
 {
 	glEnable(GL_DEPTH_TEST);
-	/*glDepthFunc(GL_LESS);
-	glEnable(GL_CULL_FACE);*/
+	glDepthFunc(GL_LESS);
+	//glEnable(GL_CULL_FACE);
 }
 
 // Update

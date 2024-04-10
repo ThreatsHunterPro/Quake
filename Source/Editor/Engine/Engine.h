@@ -19,22 +19,27 @@ class Engine
 	GLuint texture2;
 	CustomShader* elementShader;
 
+	const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
+	GLuint quadVAO;
+	GLuint quadVBO;
+	GLuint shadowFBO;
+	GLuint shadowMap;
+	FMatrix lightSpaceMatrix;
+	CustomShader* shadowShader;
+	CustomShader* debugShader;
+	float near_plane, far_plane;
+
 	bool use2D;
 	bool multipleCubes;
 	bool rotateElements;
 
 	int cubeIndex;
-	FVector cubePositions[10] = {
-		FVector(0.0f,  0.0f,  0.0f),
-		FVector(2.0f,  5.0f, -15.0f),
-		FVector(-1.5f, -2.2f, -2.5f),
-		FVector(-3.8f, -2.0f, -12.3f),
-		FVector(2.4f, -0.4f, -3.5f),
-		FVector(-1.7f,  3.0f, -7.5f),
-		FVector(1.3f, -2.0f, -2.5f),
-		FVector(1.5f,  2.0f, -2.5f),
-		FVector(1.5f,  0.2f, -1.5f),
-		FVector(-1.3f,  1.0f, -1.5f)
+	FVector cubePositions[5] = {
+		FVector(3.0f, 0.0f,  0.0f),
+		FVector(1.5f, 0.0f, -1.5f),
+		FVector(1.5f, 0.0f, 1.5f),
+		FVector(-1.5f, 0.0f, 0.0f),
+		FVector(1.5f, 0.0f, 0.0f)
 	};
 
 	bool drawLamp;
@@ -48,9 +53,9 @@ class Engine
 	CustomShader* lampShader;
 
 	// Point light
-	ADirectionalLight directionalLight;
-	APointLight pointLight;
-	ASpotLight spotLight;
+	ADirectionalLight* directionalLight;
+	APointLight* pointLight;
+	ASpotLight* spotLight;
 
 public:
 	FORCEINLINE static Engine& GetInstance()
@@ -72,9 +77,11 @@ private:
 #pragma region Draws
 	void Draw();
 	void ApplyShader();
+	void ApplyShadow();
+	void RenderScene(CustomShader* _shader);
 	void DrawLamp();
-	void DrawElement();
-	void DrawElements();
+	void DrawElement(CustomShader* _shader);
+	void DrawElements(CustomShader* _shader);
 	void ChangeElementColor();
 #pragma endregion
 
