@@ -164,6 +164,11 @@ FString FString::ToUpper()
 	return FString(_upperText.c_str());
 }
 
+const char * FString::ToCstr()
+{
+	return text.c_str();
+}
+
 void FString::Display()
 {
 	cout << text << endl;
