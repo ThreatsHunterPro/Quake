@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{57A95D64-8815-3468-9386-75430EFC56DE}</ProjectGuid>
+    <ProjectGuid>{9250A81B-EB50-37A0-BE62-F417DE20473B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\Quake\Binaries\external\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\QuakeGit\Quake\Binaries\external\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GLEW_1130.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GLEW_1130</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\Quake\Binaries\external\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\QuakeGit\Quake\Binaries\external\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GLEW_1130.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GLEW_1130</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\Quake\Binaries\external\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\QuakeGit\Quake\Binaries\external\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">GLEW_1130.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">GLEW_1130</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\Quake\Binaries\external\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\QuakeGit\Quake\Binaries\external\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">GLEW_1130.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">GLEW_1130</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -96,10 +96,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_BOOST_WORKAROUND;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -112,7 +112,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -130,10 +130,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_BOOST_WORKAROUND;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -146,7 +146,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -164,10 +164,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_BOOST_WORKAROUND;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -180,7 +180,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>
@@ -197,10 +197,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TW_STATIC;TW_NO_LIB_PRAGMA;TW_NO_DIRECT3D;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_BOOST_WORKAROUND;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\p2vs\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\Quake\external\glew-1.13.0\include;D:\p2vs\Quake\external\AntTweakBar-1.16\include;D:\p2vs\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\p2vs\QuakeGit\Quake\external\glfw-3.1.2\include\GLFW;D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include;D:\p2vs\QuakeGit\Quake\external\AntTweakBar-1.16\include;D:\p2vs\QuakeGit\Quake\external\assimp-3.0.1270\code\BoostWorkaround;D:\p2vs\QuakeGit\Quake\external\bullet-2.81-rev2613\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -212,11 +212,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\p2vs\Quake\external\CMakeLists.txt">
+    <CustomBuild Include="D:\p2vs\QuakeGit\Quake\external\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/p2vs/Quake/external/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/p2vs/QuakeGit/Quake/external/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/QuakeGit/Quake -BD:/p2vs/QuakeGit/Quake/Binaries --check-stamp-file D:/p2vs/QuakeGit/Quake/Binaries/external/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,11 +225,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckTypeSize.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\Quake\Binaries\external\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\p2vs\QuakeGit\Quake\Binaries\external\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/p2vs/Quake/external/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/p2vs/QuakeGit/Quake/external/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/QuakeGit/Quake -BD:/p2vs/QuakeGit/Quake/Binaries --check-stamp-file D:/p2vs/QuakeGit/Quake/Binaries/external/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -238,11 +238,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckTypeSize.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\Quake\Binaries\external\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\p2vs\QuakeGit\Quake\Binaries\external\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/p2vs/Quake/external/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/p2vs/QuakeGit/Quake/external/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/QuakeGit/Quake -BD:/p2vs/QuakeGit/Quake/Binaries --check-stamp-file D:/p2vs/QuakeGit/Quake/Binaries/external/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -251,11 +251,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckTypeSize.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\Quake\Binaries\external\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\p2vs\QuakeGit\Quake\Binaries\external\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/p2vs/Quake/external/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/p2vs/QuakeGit/Quake/external/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/Quake -BD:/p2vs/Quake/Binaries --check-stamp-file D:/p2vs/Quake/Binaries/external/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/p2vs/QuakeGit/Quake -BD:/p2vs/QuakeGit/Quake/Binaries --check-stamp-file D:/p2vs/QuakeGit/Quake/Binaries/external/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -264,17 +264,17 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.29\Modules\CheckTypeSize.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\Quake\Binaries\external\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\p2vs\QuakeGit\Quake\Binaries\external\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\p2vs\Quake\external\glew-1.13.0\src\glew.c" />
-    <ClInclude Include="D:\p2vs\Quake\external\glew-1.13.0\include\GL\glew.h" />
+    <ClCompile Include="D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\src\glew.c" />
+    <ClInclude Include="D:\p2vs\QuakeGit\Quake\external\glew-1.13.0\include\GL\glew.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\p2vs\Quake\Binaries\ZERO_CHECK.vcxproj">
-      <Project>{6388BD46-2429-321C-8946-E0CFE0C56207}</Project>
+    <ProjectReference Include="D:\p2vs\QuakeGit\Quake\Binaries\ZERO_CHECK.vcxproj">
+      <Project>{5DEFD063-A5E2-3253-ACE0-F42DAA18F750}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

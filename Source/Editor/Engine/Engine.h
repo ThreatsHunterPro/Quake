@@ -5,6 +5,8 @@
 #include "..\..\Runtime\Core\Math\FVector\TVector.h"
 #include "..\..\Runtime\Core\Containers\TArray.h"
 #include "../../Runtime/Objects/Actors/Lights/PointLight/APointLight.h"
+#include "../../Runtime/Objects/Actors/Lights/SpotLight/ASpotLight.h"
+#include "../../Runtime/Objects/Actors/Lights/DirectionalLight/ADirectionalLight.h"	
 
 class Engine
 {
@@ -46,7 +48,9 @@ class Engine
 	CustomShader lampShader;
 
 	// Point light
+	ADirectionalLight directionalLight;
 	APointLight pointLight;
+	ASpotLight spotLight;
 
 public:
 	FORCEINLINE static Engine& GetInstance()
