@@ -16,5 +16,5 @@ Button::Button(const FString& _title, Action _callback, const FString& _shortcut
 }
 Button::~Button()
 {
-    children.empty();
+    children.clear();
 }

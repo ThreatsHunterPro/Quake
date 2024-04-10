@@ -4,6 +4,7 @@
 
 class Button
 {
+protected:
     FString title;
     FString shortcut;
     Event<> event;

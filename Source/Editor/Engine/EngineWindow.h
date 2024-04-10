@@ -9,7 +9,7 @@ class EngineWindow
 #pragma region IMGUI
 	bool my_tool_active = true;
 	float my_color;
-	TArray<Widget*> widgets;
+	vector<Widget*> widgets;
 #pragma endregion
 
 
@@ -35,14 +35,14 @@ public:
 	FORCEINLINE void AddWidget(Widget* _widget)
 	{
 		int _occurrences = 0;
-		for (int _widgetIndex = 0; _widgetIndex < widgets.Num(); _widgetIndex++)
+		for (int _widgetIndex = 0; _widgetIndex < widgets.size(); _widgetIndex++)
 		{
 			FString _name = _widget->GetName();
 			if (_name != widgets[_widgetIndex]->GetName()) continue;
 			_occurrences++;
 			_widget->SetName(_name += std::to_string(_occurrences).c_str());
 		}
-		widgets.Add(_widget);
+		widgets.push_back(_widget);
 	}
 
 public:

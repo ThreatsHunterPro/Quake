@@ -8,12 +8,16 @@ EngineWindow::EngineWindow()
 	bgColor = FColor(51, 85, 85, 255);
 	mainWindow = nullptr;
 
-	widgets.Add(new PlaceActorsWidget(FString("test"), this));
+	widgets.push_back(new PlaceActorsWidget(FString("test"), this));
 }
 
 EngineWindow::~EngineWindow()
 {
-	widgets.Empty();
+	for (int i = 0; i < widgets.size(); i++)
+	{
+		delete widgets[i];
+	}
+	widgets.clear();
 }
 
 
@@ -96,7 +100,7 @@ void EngineWindow::UpdateWidgets()
 	ImGui::NewFrame();
 
 	// Draw widgets
-	const int _widgetsCount = widgets.Num();
+	const int _widgetsCount = widgets.size();
 	for (int _widgetIndex = 0; _widgetIndex < _widgetsCount; _widgetIndex++)
 	{
 		Widget* _widget = widgets[_widgetIndex];
@@ -127,7 +131,7 @@ void EngineWindow::Stop()
 void EngineWindow::StopImGUI()
 {
 	// Stop widgets
-	const int _widgetsCount = widgets.Num();
+	const int _widgetsCount = widgets.size();
 	for (int _widgetIndex = 0; _widgetIndex < _widgetsCount; _widgetIndex++)
 	{
 		Widget* _widget = widgets[_widgetIndex];

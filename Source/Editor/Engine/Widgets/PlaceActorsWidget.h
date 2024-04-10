@@ -1,30 +1,28 @@
 #pragma once
 #include "PanelWidget.h"
-#include <Source/Editor/Engine/Button.h>
+#include <Source/Editor/Engine/ActorsButton.h>
 
-enum EActorType
-{
-	BASIC,
-	LIGHTS,
-	SHAPES,
-	ALL_CLASSES,
-
-	COUNT
-};
-
-struct ClassType
-{
-	EActorType actorType;
-};
 
 class PlaceActorsWidget : public PanelWidget
 {
 	vector<Button*> filterButtons;
-	vector<Button*> actorsButtons;
+	vector<ActorsButton*> actorsButtons;
+
+	EActorType typeFilter;
+
+	map<EActorType, FString> enumToString = { { BASIC, "BASIC" },
+											  { LIGHTS, "LIGHTS" },
+											  { SHAPES, "SHAPES" },
+											  { ALL_CLASSES, "ALL CLASSES" } };
+
+	ImGuiTextFilter search;
 
 public:
 	PlaceActorsWidget(const FString& _name, EngineWindow* _window);
 	~PlaceActorsWidget();
+
+private:
+	FORCEINLINE FString EnumToString(EActorType _actorType) { return enumToString[_actorType]; }
 
 public:
 	void Draw() override;
