@@ -1,6 +1,5 @@
 #define STB_IMAGE_IMPLEMENTATION // a definir avec <stb_image.h> au dans le main
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
+
 #include "CoreMinimal.h"
 #include "Runtime/Managers/UGameInstance.h"
 #include "Runtime/Objects/Actors/AActor.h"
@@ -150,80 +149,7 @@ int main()
 
 #pragma endregion
 	*/
-	/*
-	Widget* _widget = new Widget();
 
-	// Initialise GLFW
-	if (!glfwInit())
-	{
-		fprintf(stderr, "Failed to initialize GLFW\n");
-		return -1;
-	}
-	glfwWindowHint(GLFW_SAMPLES, 4); // 4x antialiasing
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // On veut OpenGL 3.3
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // Pour rendre MacOS heureux ; ne devrait pas être nécessaire
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // On ne veut pas l'ancien OpenGL
-
-	// Ouvre une fenêtre et crée son contexte OpenGl
-	GLFWwindow* window; // (Dans le code source qui accompagne, cette variable est globale)
-	window = glfwCreateWindow(900, 900, "OutLiner", NULL, NULL);
-	if (window == NULL) {
-		fprintf(stderr, "Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version of the tutorials.\n");
-		glfwTerminate();
-		return -1;
-	}
-
-	glfwMakeContextCurrent(window); // Initialise GLEW
-	glfwSwapInterval(1);
-
-
-	glewExperimental = true; // Nécessaire dans le profil de base
-	if (glewInit() != GLEW_OK) {
-		fprintf(stderr, "Failed to initialize GLEW\n");
-		return -1;
-	}
-	_widget->Start(window);
-	//IMGUI_CHECKVERSION();
-	//ImGui::CreateContext();
-	//ImGuiIO& io = ImGui::GetIO();
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-	//io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // IF using Docking Branch
-
-	// Setup Platform/Renderer backends
-	//ImGui_ImplGlfw_InitForOpenGL(window, true);          // Second param install_callback=true will install GLFW callbacks and chain to existing ones.
-	//ImGui_ImplOpenGL3_Init();
-	
-	//ImGui::StyleColorsDark();
-
-	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-	
-	
-	do {
-		glClearColor(1, 1, 1, 1);
-		glClear(GL_COLOR_BUFFER_BIT);
-	
-
-		//ImGui_ImplOpenGL3_NewFrame();
-		//ImGui_ImplGlfw_NewFrame();
-		//ImGui::NewFrame();
-		_widget->Update();
-
-		//ImGui::ShowDemoWindow();
-		//ImGui::Render();
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-		glfwSwapBuffers(window);
-		glfwPollEvents();
-	
-	} while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(window) == 0);
-	_widget->End();
-	delete _widget;
-	delete window;
-	//ImGui_ImplOpenGL3_Shutdown();
-	//ImGui_ImplGlfw_Shutdown();
-	//ImGui::DestroyContext();
-	*/
 
 	Engine* _engine = new Engine();
 	_engine->Launch();
@@ -232,5 +158,5 @@ int main()
 	return 0;
 	
 	
-	
+
 }

@@ -10,7 +10,7 @@ EngineWindow::EngineWindow()
 
 EngineWindow::~EngineWindow()
 {
-
+	//delete mainWindow;
 }
 
 
@@ -19,6 +19,8 @@ EngineWindow::~EngineWindow()
 void EngineWindow::Start()
 {
 	InitGLFW();
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_ALWAYS);
 }
 
 void EngineWindow::InitGLFW()
