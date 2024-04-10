@@ -26,4 +26,10 @@ public:
     {
         return rigidBody->getTransform().getPosition();
     }
+
+    FORCEINLINE void SetMass(float _mass)
+    {
+        rigidBody->setMass(_mass);
+    }
+
 };
