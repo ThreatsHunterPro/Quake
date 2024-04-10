@@ -2,7 +2,6 @@
 
 
 
-#define STB_IMAGE_IMPLEMENTATION
 
 #pragma region Constructor
 

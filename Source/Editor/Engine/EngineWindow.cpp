@@ -39,17 +39,17 @@ void EngineWindow::InitGLFW()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Open a window and create its OpenGL context
-	mainWindow = glfwCreateWindow(size.X, size.Y, title.GetText().c_str(), nullptr, nullptr);
+	//mainWindow = glfwCreateWindow(size.X, size.Y, title.GetText().c_str(), nullptr, nullptr);
+	mainWindow = new sf::RenderWindow(sf::VideoMode(size.X, size.Y), title.GetText().c_str());
 	if (mainWindow == nullptr)
 	{
 		cerr << "Failed to create window !" << endl;
 		glfwTerminate();
 		return;
 	}
+	mainWindow->setActive(true);
 
-	glfwMakeContextCurrent(mainWindow);
-	glfwSetFramebufferSizeCallback(mainWindow, ResizeWindow);
-
+ 
 	// Initialize GLEW
 	glewExperimental = true;
 	if (glewInit() != GLEW_OK) {
@@ -72,7 +72,7 @@ void EngineWindow::Update() const
 
 void EngineWindow::UpdateWindow() const
 {
-	glfwSwapBuffers(mainWindow);
+	//glfwSwapBuffers(mainWindow);
 }
 
 #pragma endregion
@@ -86,7 +86,7 @@ void EngineWindow::Stop() const
 
 void EngineWindow::StopWindow() const
 {
-	glfwDestroyWindow(mainWindow);
+	delete mainWindow;
 	glfwTerminate();
 }
 

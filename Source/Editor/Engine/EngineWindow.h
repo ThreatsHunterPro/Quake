@@ -2,13 +2,14 @@
 #include "Source/CoreMinimal.h"
 #include "..\..\Runtime\Core\Math\FVector\FVector2.h"
 #include "..\..\Runtime\Core\Math\FColor.h"
+#include <SFML/Graphics.hpp>
 
 class EngineWindow
 {
 	FString title;
 	FVector2 size;
 	FColor bgColor;
-	GLFWwindow* mainWindow;
+	sf::RenderWindow* mainWindow;
 
 public:
 	FORCEINLINE FString GetTitle() const
@@ -19,7 +20,7 @@ public:
 	{
 		return size;
 	}
-	FORCEINLINE GLFWwindow* GetWindow() const
+	FORCEINLINE sf::RenderWindow* GetWindow() const
 	{
 		return mainWindow;
 	}
