@@ -2,7 +2,9 @@
 #include "..\..\Runtime\Managers\InputManager.h"
 #include "..\..\Runtime\Managers\CameraManager.h"
 #include "..\..\Runtime\Managers\TimerManager.h"
-
+#include "Source/Runtime/UI/Components/UUserWidget.h"
+#include "Source/Runtime/UI/Components/TextBlock/UTextBlock.h"
+#include "Source/Runtime/UI/GameViewport.h"
 
 Engine::Engine()
 {
@@ -195,8 +197,10 @@ void Engine::Start()
 		spotLight.SetPhong(_color * 0.0f, _color, _color);
 		spotLight.SetShader(elementShader);
 #pragma endregion
-
+#pragma region UI INIT
+#pragma endregion
 	}
+		InitUI();
 }
 
 GLuint Engine::LoadTexture(const char* _path, const int _wrapParam, const int _filterParam)
@@ -247,7 +251,7 @@ void Engine::Update()
 
 		//ChangeBgColor();
 		Draw();
-
+		DrawUI();
 		_window->display();
 		//_window->draw(shape);
 
@@ -263,6 +267,22 @@ void Engine::ChangeBgColor()
 	float redValue = static_cast<float>(sin(timeValue * 1.2) / 2.0 + 0.5);
 	float blueValue = static_cast<float>(sin(timeValue * 1.4) / 2.0 + 0.5);
 	glClearColor(redValue, greenValue, blueValue, 1.0f);
+}
+
+void Engine::InitUI()
+{
+	UUserWidget* _pointer = new UUserWidget("coucou", {
+		new UTextBlock("text coucou", {200,200},"BONJOUR", 100,sf::Color::Blue)
+		});
+	_pointer->AddToViewport();
+}
+
+void Engine::DrawUI()
+{
+	//TODO truc bien
+	mainWindow->GetWindow()->setActive(false);
+	GameViewport::GetInstance().DrawUI(*mainWindow->GetWindow());
+	mainWindow->GetWindow()->setActive(true);
 }
 
 void Engine::Draw()
