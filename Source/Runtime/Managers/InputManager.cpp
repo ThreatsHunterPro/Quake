@@ -1,9 +1,11 @@
 #include "InputManager.h"
 #include "CameraManager.h"
 #include "..\..\Editor\Engine\Engine.h"
-#include "..\Core\Math\FVector\TVector.h"
+#include "..\Core\Math\FVector\TVector.h" 
 #include "../Classes/Input/InputMapping.h"
-#include "../Classes/Input/ActionInput.h"
+#include "../Classes/Input/ActionInput.h" 
+#include "../Objects/Camera/UCamera.h"
+ 
 InputManager::InputManager()
 {
 	window = nullptr;
@@ -37,8 +39,10 @@ void InputManager::Start(sf::RenderWindow* _window)
 	InitControls();
 
 	const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
-	CameraManager::GetInstance().SetTargetLocation(_cubePosition);
-	//glfwSetWindowUserPointer(window, this);
+ 
+	CameraManager::GetInstance().GetCameras()[0]->SetTargetLocation(_cubePosition);
+	glfwSetWindowUserPointer(window, this);
+ 
 }
 
 void InputManager::Update()
@@ -105,13 +109,15 @@ void InputManager::ProcessMouse()
 {
 	const sf::Vector2i& _mousePos = sf::Vector2i(window->mapPixelToCoords(sf::Vector2i(sf::Mouse::getPosition(*window))));
 	const sf::Vector2f& _fMouse = sf::Vector2f(_mousePos);
+		const float yawValue = lastCursorPos.X - _mousePos.X;
+	const float pitchValue = lastCursorPos.Y - _yCursorPos.Y;
 	lastCursorPos = FVector2(_mousePos.x, _mousePos.y) ;
 	//double _xPos, yPos = 0.0;
 	//glfwGetCursorPos(window, &_xPos, &yPos);
 
 	//const float _xCursorPos = static_cast<float>(_xPos);
 	//const float _yCursorPos = static_cast<float>(yPos);
-
+ 
 	//if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
 	//{
 	//	const float yawValue = previousCursorPos.X - _xCursorPos;
@@ -120,6 +126,12 @@ void InputManager::ProcessMouse()
 	//	CameraManager::GetInstance().MoveYaw(yawValue);
 	//	CameraManager::GetInstance().MovePitch(pitchValue);
 	//}
+  
+
+
+	CameraManager::GetInstance().GetCameras()[0]->MoveYaw(yawValue);
+	CameraManager::GetInstance().GetCameras()[0]->MovePitch(pitchValue);
+ 
 
 	//previousCursorPos = FVector2(_xCursorPos, _yCursorPos);
 }
@@ -205,44 +217,49 @@ void InputManager::ProcessInputs() const
 
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().MoveForward(1.0f);
+		CameraManager::GetInstance().GetCameras()[0]->MoveForward(1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().MoveForward(-1.0f);
+		CameraManager::GetInstance().GetCameras()[0]->MoveForward(-1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().MoveRight(-1.0f);
+		CameraManager::GetInstance().GetCameras()[0]->MoveRight(-1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().MoveRight(1.0f);
+		CameraManager::GetInstance().GetCameras()[0]->MoveRight(1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_LEFT_ALT) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().MoveUp(-1.0f);
+		CameraManager::GetInstance().GetCameras()[0]->MoveUp(-1.0f);
 	}
 	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().MoveUp(1.0f);
+		CameraManager::GetInstance().GetCameras()[0]->MoveUp(1.0f);
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_0) == GLFW_PRESS)
 	{
 		const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
-		CameraManager::GetInstance().SetTargetLocation(_cubePosition);
+		CameraManager::GetInstance().GetCameras()[0]->SetTargetLocation(_cubePosition);
 	}
 	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
 	{
-		CameraManager::GetInstance().SetMoveView(true);
+		CameraManager::GetInstance().GetCameras()[0]->SetMoveView(true);
 		const FVector& _cubePosition = Engine::GetInstance().GetNextCubePosition();
-		CameraManager::GetInstance().SetTargetLocation(_cubePosition);
+		CameraManager::GetInstance().GetCameras()[0]->SetTargetLocation(_cubePosition);
 	}
 	if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
 	{
+ 
 		CameraManager::GetInstance().SetMoveView(false);
 	}*/
+ 
+		//CameraManager::GetInstance().GetCameras()[0]->SetMoveView(false);
+	}
+ 
 }
 
 void InputManager::Scroll(double xoffset, double yoffset)

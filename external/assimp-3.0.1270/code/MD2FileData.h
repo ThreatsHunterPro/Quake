@@ -97,7 +97,7 @@ struct Header
 struct GLCommand
 {
    float s, t;
-   uint32_t vertexIndex;
+   uint32_t _vertexIndex;
 } PACK_STRUCT;
 
 // ---------------------------------------------------------------------------

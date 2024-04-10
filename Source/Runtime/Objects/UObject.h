@@ -1,10 +1,16 @@
 #pragma once
 #include "..\..\CoreMinimal.h"
 
+class UWorld;
+
 class UObject
 {
+protected:
+	UWorld* world;
 
 public:
+	UObject() = default;
+	UObject(UWorld* _world);
 	virtual ~UObject() = default;
 
 public:
@@ -17,4 +23,5 @@ public:
 	//{
 	//	return NewObject<T>(/*this*/);
 	//}
+	FORCEINLINE UWorld* GetWorld() const { return world; }
 };

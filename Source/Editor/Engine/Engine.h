@@ -5,8 +5,10 @@
 #include "..\..\Runtime\Core\Math\FVector\TVector.h"
 #include "..\..\Runtime\Core\Containers\TArray.h"
 #include "../../Runtime/Objects/Actors/Lights/PointLight/APointLight.h"
-#include "../../Runtime/Objects/Actors/Lights/SpotLight/ASpotLight.h"
-#include "../../Runtime/Objects/Actors/Lights/DirectionalLight/ADirectionalLight.h"	
+#include "../../Runtime/Objects/Actors/Skybox/ASkybox.h"
+#include "Material/Material.h"
+
+class UCamera;
 
 class Engine
 {
@@ -17,7 +19,6 @@ class Engine
 	GLuint EBO;
 	GLuint texture1;
 	GLuint texture2;
-	CustomShader elementShader;
 
 	bool use2D;
 	bool multipleCubes;
@@ -42,15 +43,35 @@ class Engine
 	bool rotateLamp;
 	GLuint lightVAO;
 	FVector lightPos;
-	GLuint diffuseMap;
-	GLuint specularMap;
-	GLuint emissionMap;
 	CustomShader lampShader;
 
+
+	// Material
+	UMaterial woodenBoxMaterial;
+
 	// Point light
-	ADirectionalLight directionalLight;
 	APointLight pointLight;
-	ASpotLight spotLight;
+
+
+	// Instancing
+	CustomShader instancingShader;
+	vec2 translations[10000];
+	unsigned int instanceVBO, quadVAO, quadVBO;
+	float quadVertices[30] = {
+		// positions     // colors
+		-0.05f,  0.05f,  1.0f, 0.0f, 0.0f,
+		 0.05f, -0.05f,  0.0f, 1.0f, 0.0f,
+		-0.05f, -0.05f,  0.0f, 0.0f, 1.0f,
+
+		-0.05f,  0.05f,  1.0f, 0.0f, 0.0f,
+		 0.05f, -0.05f,  0.0f, 1.0f, 0.0f,
+		 0.05f,  0.05f,  0.0f, 1.0f, 1.0f
+	};
+
+	//Camera
+	UCamera* mainCamera;
+	ASkybox* skybox;
+
 
 public:
 	FORCEINLINE static Engine& GetInstance()

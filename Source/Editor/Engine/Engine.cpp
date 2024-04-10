@@ -1,21 +1,25 @@
 #include "Engine.h"
 #include "..\..\Runtime\Managers\InputManager.h"
 #include "..\..\Runtime\Managers\CameraManager.h"
-#include "..\..\Runtime\Managers\TimerManager.h"
+#include "..\..\Runtime\Managers\TimerManager.h" 
 #include "Source/Runtime/UI/Components/UUserWidget.h"
 #include "Source/Runtime/UI/Components/TextBlock/UTextBlock.h"
-#include "Source/Runtime/UI/GameViewport.h"
+#include "Source/Runtime/UI/GameViewport.h" 
+#include "../../Runtime/Objects/Camera/UCamera.h"
+ 
 
 Engine::Engine()
 {
 	mainWindow = new EngineWindow();
+
+	mainCamera = new UCamera();
+	skybox = new ASkybox();
 
 	VAO = GLuint();
 	VBO = GLuint();
 	EBO = GLuint();
 	texture1 = GLuint();
 	texture2 = GLuint();
-	elementShader = CustomShader();
 
 	use2D = false;
 	rotateElements = false;
@@ -29,28 +33,35 @@ Engine::Engine()
 	rotateLamp = false;
 	lightVAO = GLuint();
 	lightPos = FVector(0.5f, 0.5f, 1.0f);
-	diffuseMap = GLuint();
-	specularMap = GLuint();
-	emissionMap = GLuint();
 	lampShader = CustomShader();
+
+
+	// Material
+	woodenBoxMaterial = UMaterial();
 }
 
 Engine::~Engine()
 {
 	delete mainWindow;
+	delete mainCamera;
+	delete skybox;
 }
 
 
 void Engine::Start()
 {
+
 	mainWindow->Start();
+	skybox->BeginPlay();
+	glEnable(GL_DEPTH_TEST);
+	glfwSetInputMode(mainWindow->GetWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	// Shaders
-	elementShader.LoadShadersFromPath("Element.vs", "Element.fs");
+	woodenBoxMaterial.LoadMaterialShader("Element.vs", "Element.fs");
 	lampShader.LoadShadersFromPath("Lamp.vs", "Lamp.fs");
 
 	InputManager::GetInstance().Start(mainWindow->GetWindow());
-	CameraManager::GetInstance().Start(mainWindow->GetSize(), { elementShader, lampShader });
+	CameraManager::GetInstance().GetCameras()[0]->Start(mainWindow->GetSize(), lampShader, woodenBoxMaterial.GetMaterialShader());
 
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
@@ -155,15 +166,12 @@ void Engine::Start()
 	}
 
 	// Textures
-	diffuseMap = LoadTexture("../Content/Textures/WoodenBox.png", GL_CLAMP_TO_EDGE, GL_LINEAR);
-	specularMap = LoadTexture("../Content/Textures/WoodenBox_Specular.png", GL_CLAMP_TO_EDGE, GL_LINEAR);
-	emissionMap = LoadTexture("../Content/Textures/matrix.jpg", GL_REPEAT, GL_LINEAR);
+	woodenBoxMaterial.LoadDiffuseTexture("WoodenBox.png", GL_CLAMP_TO_EDGE, GL_LINEAR);
+	woodenBoxMaterial.LoadSpecularTexture("WoodenBox_Specular.png", GL_CLAMP_TO_EDGE, GL_LINEAR);
+	woodenBoxMaterial.LoadEmissionTexture("matrix.jpg", GL_REPEAT, GL_LINEAR);
 
 	// Shaders
-	elementShader.Use();
-	elementShader.SetInt("material.diffuse", 0);
-	elementShader.SetInt("material.specular", 1);
-	elementShader.SetInt("material.emission", 2);
+	woodenBoxMaterial.InitMaterialTextures();
 
 	if (drawLamp)
 	{
@@ -176,32 +184,70 @@ void Engine::Start()
 		lampShader.SetInt("texture1", 0);
 		lampShader.SetInt("texture2", 1);
 
-#pragma region LIGHT INIT
-		FVector& _color = FVector(1.0f, 1.0f, 1.0f);
+		const FVector& _color = FVector(1.0f, 1.0f, 1.0f);
 		const FVector& _position = lightPos;
-		const FVector& _direction = FVector(0.0f, -1.0f, 0.0f);
-		//Set lights array size
-		elementShader.SetInt("lights.dirLightsSize", 1);
-		elementShader.SetInt("lights.pointLightsSize", 1);
-		elementShader.SetInt("lights.spotLightsSize", 1);
-		//Directional light
-		directionalLight = ADirectionalLight(_color, _direction);
-		directionalLight.SetPhong(_color * 0.1f, _color, _color);
-		directionalLight.SetShader(elementShader);
-		//Point light
-		pointLight = APointLight(_color, _position, PointLightDistance::TRENTE_DEUX);
-		pointLight.SetPhong(_color * 0.05f, _color * 0.8f, _color);
-		pointLight.SetShader(elementShader);
-		//SPot light
-		spotLight = ASpotLight(_color, _position, PointLightDistance::CINQUANTE, 12.5f, 15.0f);
-		spotLight.SetPhong(_color * 0.0f, _color, _color);
-		spotLight.SetShader(elementShader);
+		pointLight = APointLight(_color, _position, PointLightDistance::TROIS_MILLE_DEUX_CENT_CINQUANTE);
+	}
+
+	//glEnable(GL_CULL_FACE);
+	//glCullFace(GL_BACK);
+	//glFrontFace(GL_CW);
+
+#pragma region Instancing
+
+
+	instancingShader.LoadShadersFromPath("10.1.instancing.vs", "10.1.instancing.fs");
+
+	int index = 0;
+	float offset = 0.1f;
+	for (int y = -100; y < 100; y += 2)
+	{
+		for (int x = -100; x < 100; x += 2)
+		{
+			vec2 translation;
+			translation.x = (float)x / 100.0f + offset;
+			translation.y = (float)y / 100.0f + offset;
+			translations[index++] = translation;
+		}
+	}
+
+	glGenBuffers(1, &instanceVBO);
+	glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vec2) * 10000, &translations[0], GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+	glGenVertexArrays(1, &quadVAO);
+	glGenBuffers(1, &quadVBO);
+	glBindVertexArray(quadVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), quadVertices, GL_STATIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(2 * sizeof(float)));
+	// also set instance data
+	glEnableVertexAttribArray(2);
+	glBindBuffer(GL_ARRAY_BUFFER, instanceVBO); // this attribute comes from a different vertex buffer
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glVertexAttribDivisor(2, 1); // tell OpenGL this is an instanced vertex attribute.
+
 #pragma endregion
+
+
+#pragma region SkyBox
+
+
+
+#pragma endregion 
 #pragma region UI INIT
 #pragma endregion
 	}
 		InitUI();
+ 
 }
+
+
 
 GLuint Engine::LoadTexture(const char* _path, const int _wrapParam, const int _filterParam)
 {
@@ -224,8 +270,8 @@ GLuint Engine::LoadTexture(const char* _path, const int _wrapParam, const int _f
 		glTexImage2D(GL_TEXTURE_2D, 0, _format, _width, _height, 0, _format, GL_UNSIGNED_BYTE, _data);
 		glGenerateMipmap(GL_TEXTURE_2D);
 
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, _wrapParam);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, _wrapParam);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, _format == GL_RGBA ? GL_CLAMP_TO_EDGE : _wrapParam);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, _format == GL_RGBA ? GL_CLAMP_TO_EDGE : _wrapParam);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, _filterParam);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, _filterParam);
 	}
@@ -239,24 +285,48 @@ GLuint Engine::LoadTexture(const char* _path, const int _wrapParam, const int _f
 }
 
 void Engine::Update()
-{
+{ 
 	sf::RenderWindow* _window = mainWindow->GetWindow();
 	_window->setActive(true);
-	//sf::CircleShape shape(100, 20);
+	//sf::CircleShape shape(100, 20); 
+	GLFWwindow* _window = mainWindow->GetWindow();
+
+	CameraManager _camera = CameraManager::GetInstance();
+ 
 	do
 	{
 		TimerManager::GetInstance().Update();
 		InputManager::GetInstance().Update();
-		CameraManager::GetInstance().Update();
+		CameraManager::GetInstance().GetCameras()[0]->Update();
 
-		//ChangeBgColor();
+		//ChangeBgColor(); 
 		Draw();
+		skybox->Update(_camera);
 		DrawUI();
 		_window->display();
 		//_window->draw(shape);
 
 	} while (_window->isOpen());
+	
+	/*
+	do
+	{ 
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+		Draw();
+		//instancingShader.Use();
+		//glBindVertexArray(quadVAO);
+		//glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 10000);
+		//glBindVertexArray(0);
+		skybox->Update(_camera);
+
+		mainWindow->Update();
+		glfwPollEvents();
+
+	} while (glfwGetKey(_window, GLFW_KEY_ESCAPE) != GLFW_PRESS && !glfwWindowShouldClose(_window));
+ 
+*/
 	glfwTerminate();
 }
 
@@ -291,7 +361,7 @@ void Engine::Draw()
 	ChangeElementColor();
 
 	multipleCubes ? DrawElements() : DrawElement();
-	if (drawLamp) DrawLamp();
+	//if (drawLamp) DrawLamp();
 
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
@@ -307,45 +377,43 @@ void Engine::ChangeElementColor()
 
 void Engine::ApplyShader()
 {
-	elementShader.Use();
 
-	// main properties
-	elementShader.SetVec3("viewPos", CameraManager::GetInstance().GetPosition());
-	elementShader.SetFloat("time", glfwGetTime());
+	woodenBoxMaterial.BindAndUseMaterialTextures();
+	woodenBoxMaterial.SetCameraPosition(CameraManager::GetInstance().GetCameras()[0]->GetTransform()->GetLocation());
+	woodenBoxMaterial.SetCurrentCurrentTime(glfwGetTime());
 
-	#pragma region LIGHT UPDATE
+	// ====> light properties <====
 
 	// == Directional light ==
-	const FVector& _direction = FVector(0.0f, -1.0f, 0.0f);
-	directionalLight.Update(0);
+	//const FVector& _direction = FVector(0.0f, 0.0f, -1.0f);
+	//elementShader.SetVec3("light.direction", _direction);
 
 	// == Point light ==
+	/*elementShader.SetVec3("light.ambient", FVector(0.2f, 0.2f, 0.2f));
+	elementShader.SetVec3("light.diffuse", FVector(0.5f, 0.5f, 0.5f));
+	woodenBoxMaterial.GetMaterialShader().SetVec3("light.specular", FVector(1.0f, 1.0f, 1.0f));
 	pointLight.SetPosition(lightPos);
-	pointLight.Update(0);
+	pointLight.Start(elementShader);*/
 
-	// == Spot light / Flash light ==
+	// == Spot light ==
 	CameraManager& _camera = CameraManager::GetInstance();
-	spotLight.SetPosition(_camera.GetPosition());
-	spotLight.SetDirection(_camera.GetForward());
-	spotLight.Update(0);
+	woodenBoxMaterial.GetMaterialShader().SetVec3("light.position", _camera.GetCameras()[0]->GetTransform()->GetLocation());
+	woodenBoxMaterial.GetMaterialShader().SetVec3("light.direction", _camera.GetCameras()[0]->GetForward());
+	woodenBoxMaterial.GetMaterialShader().SetFloat("light.cutOff", cos(radians(12.5f)));
+	woodenBoxMaterial.GetMaterialShader().SetFloat("light.outerCutOff", cos(radians(17.5f)));
 
-	#pragma endregion
+	woodenBoxMaterial.GetMaterialShader().SetVec3("light.ambient", FVector(0.1f, 0.1f, 0.1f));
+	woodenBoxMaterial.GetMaterialShader().SetVec3("light.diffuse", FVector(0.8f, 0.8f, 0.8f));
+	woodenBoxMaterial.GetMaterialShader().SetVec3("light.specular", FVector(1.0f, 1.0f, 1.0f));
+
+	woodenBoxMaterial.GetMaterialShader().SetFloat("light.constant", 1.0f);
+	woodenBoxMaterial.GetMaterialShader().SetFloat("light.linear", 0.09f);
+	woodenBoxMaterial.GetMaterialShader().SetFloat("light.quadratic", 0.032f);
 
 	// material properties
-	const float _intensity = 32.0f;
-	elementShader.SetFloat("material.shininess", _intensity);
+	const float _intensity = 64.0f;
+	woodenBoxMaterial.GetMaterialShader().SetFloat("material.shininess", _intensity);
 
-	// bind diffuse map
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, diffuseMap);
-
-	// bind specular map
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, specularMap);
-
-	// bind emission map
-	glActiveTexture(GL_TEXTURE2);
-	glBindTexture(GL_TEXTURE_2D, emissionMap);
 
 	// render the cube
 	glBindVertexArray(VAO);
@@ -357,10 +425,9 @@ void Engine::DrawElement()
 	ApplyShader();
 
 	FMatrix _model = FMatrix::Identity;
-	_model = translate(_model.ToMat4(), FVector(0.0f, 0.0f, -5.0f).ToVec3());
-	//_model = rotate(_model.ToMat4(), TimerManager::GetInstance().DeltaTimeSeconds(), vec3(0.0f, 1.0f, 0.0f));
-	elementShader.Use();
-	elementShader.SetMat4("model", _model);
+	//_model = translate(_model, FVector(0.0f, 0.0f, -5.0f));
+	_model = rotate(_model.ToMat4(), TimerManager::GetInstance().DeltaTimeSeconds(), vec3(0.0f, 1.0f, 0.0f));
+	woodenBoxMaterial.GetMaterialShader().SetMat4("model", _model);
 }
 
 void Engine::DrawElements()
@@ -372,10 +439,10 @@ void Engine::DrawElements()
 		FMatrix _model = FMatrix::Identity;
 		_model = translate(_model.ToMat4(), cubePositions[_index].ToVec3());
 		const float _angle = 20.0f * _index;
-		//_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
+		_model = rotate(_model.ToMat4(), _index <= 0 ? radians(_angle) : (float)glfwGetTime(), vec3(1.0f, 0.3f, 0.5f));
 
-		elementShader.Use();
-		elementShader.SetMat4("model", _model);
+		woodenBoxMaterial.GetMaterialShader().Use();
+		woodenBoxMaterial.GetMaterialShader().SetMat4("model", _model);
 	}
 }
 
@@ -417,9 +484,12 @@ void Engine::ClearElements()
 	glDeleteVertexArrays(1, &lightVAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
+	glDeleteVertexArrays(1, &quadVAO);
+	glDeleteBuffers(1, &quadVBO);
+
 
 	lampShader.ClearShader();
-	elementShader.ClearShader();
+	woodenBoxMaterial.GetMaterialShader().ClearShader();
 }
 
 void Engine::Launch()
@@ -437,3 +507,5 @@ FVector Engine::GetNextCubePosition()
 	cubeIndex %= 10;
 	return cubePositions[cubeIndex];
 }
+
+// La lumière n'a pas ses textures

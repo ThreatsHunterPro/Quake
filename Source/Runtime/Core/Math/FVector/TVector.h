@@ -140,6 +140,7 @@ public:
 		return vec3(X, Y, Z);
 	}
 
+
 #pragma region Operator 
 
 	//inverse
@@ -412,7 +413,6 @@ public:
 		return XYZ[_index];
 	}
 #pragma endregion Operator 
-
 
 };
 

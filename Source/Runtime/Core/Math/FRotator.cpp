@@ -15,6 +15,11 @@ FRotator::FRotator(float _inPitch, float _inYaw, float _inRoll)
 	Roll = _inRoll;
 }
 
+FRotator::FRotator(float _float)
+{
+	Pitch = Yaw = Roll = _float;
+}
+
 FVector FRotator::Euler()const
 {
 	return FVector(Roll, Pitch, Yaw);
