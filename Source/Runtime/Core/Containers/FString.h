@@ -136,7 +136,7 @@ inline FString FString::Format(const char* _text, Args... _args)
 	while (pos != std::string::npos)
 	{
 		res.push_back(_tmp.substr(0, pos));
-		_tmp.erase(0, pos + 2);
+			_tmp.erase(0, pos + 2);
 		pos = _tmp.find("{}");
 	}
 	if (!_tmp.empty())
@@ -144,7 +144,7 @@ inline FString FString::Format(const char* _text, Args... _args)
 
 	stringstream ss;
 	WriteArgToStream(ss, res, _args...); //on va appeler cette methode tout le long qu'il y ai des args grossièrement
-	if (res.size() > 0)
+	if (res.size()>1)
 		ss << res.back();
 	return FString(ss.str().c_str());
 }

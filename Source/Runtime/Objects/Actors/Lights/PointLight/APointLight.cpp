@@ -22,18 +22,11 @@ void APointLight::UpdatePointLightSettings(const PointLightDistance& _distance)
 	quadratic = _settings.quadratic;
 }
 
-void APointLight::Update(const int _index)
+void APointLight::Start(const CustomShader& _lighting)
 {
-	ALight::Update(_index);
+	ALight::Start(_lighting);
 
-	FString _name;
-	_name = _name.Format("pointLights[{}].", _index);
-
-	lighting->SetFloat(_name + "constant", constant);
-	lighting->SetFloat(_name + "linear", linear);
-	lighting->SetFloat(_name + "quadratic", quadratic);
-	lighting->SetVec3(_name + "position", position);
-	lighting->SetVec3(_name + "ambient", ambient);
-	lighting->SetVec3(_name + "diffuse", diffuse);
-	lighting->SetVec3(_name + "specular", specular);
+	lighting.SetFloat("light.constant", constant);
+	lighting.SetFloat("light.linear", linear);
+	lighting.SetFloat("light.quadratic", quadratic);
 }
