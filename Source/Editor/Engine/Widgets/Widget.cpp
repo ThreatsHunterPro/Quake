@@ -8,5 +8,5 @@ Widget::Widget(const FString& _name, EngineWindow* _window)
 }
 Widget::~Widget()
 {
-    delete window;
+    //delete window;
 }

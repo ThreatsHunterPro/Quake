@@ -1,8 +1,8 @@
 #pragma once
-#include "Source/CoreMinimal.h"
 #include "..\..\Runtime\Core\Math\FVector\FVector2.h"
 #include "..\..\Runtime\Core\Math\FColor.h"
 #include "Widgets/Widget.h"
+
 
 class EngineWindow
 {
@@ -52,7 +52,7 @@ public:
 public:
 	#pragma region Start
 
-	void Start();
+	virtual void Start();
 	void InitGLFW();
 	void InitImGUI();
 

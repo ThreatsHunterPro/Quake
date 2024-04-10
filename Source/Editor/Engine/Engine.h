@@ -9,6 +9,7 @@
 class Engine
 {
 	EngineWindow* mainWindow;
+	
 
 	GLuint VAO;
 	GLuint VBO;
@@ -16,6 +17,7 @@ class Engine
 	GLuint texture1;
 	GLuint texture2;
 	CustomShader elementShader;
+	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
 	bool use2D;
 	bool multipleCubes;
@@ -47,6 +49,7 @@ class Engine
 
 	// Point light
 	APointLight pointLight;
+
 
 public:
 	FORCEINLINE static Engine& GetInstance()

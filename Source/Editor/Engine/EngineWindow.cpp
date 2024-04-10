@@ -1,6 +1,6 @@
 #include "EngineWindow.h"
 #include "Source/Editor/Engine/Widgets/PlaceActorsWidget.h"
-
+#include "Source/Editor/Engine/Widgets/WorldSettings.h"
 EngineWindow::EngineWindow()
 {
 	title = "Quake";
@@ -9,10 +9,15 @@ EngineWindow::EngineWindow()
 	mainWindow = nullptr;
 
 	widgets.Add(new PlaceActorsWidget(FString("test"), this));
+	widgets.Add(new WorldSettingsWidget(FString("Wolrd"), this));
 }
 
 EngineWindow::~EngineWindow()
 {
+	for (size_t i = 0; i < widgets.Num(); i++)
+	{
+		delete widgets[i];
+	}
 	widgets.Empty();
 }
 

@@ -7,7 +7,6 @@
 Engine::Engine()
 {
 	mainWindow = new EngineWindow();
-
 	VAO = GLuint();
 	VBO = GLuint();
 	EBO = GLuint();
@@ -177,7 +176,9 @@ void Engine::Start()
 		const FVector& _color = FVector(1.0f, 1.0f, 1.0f);
 		const FVector& _position = lightPos;
 		pointLight = APointLight(_color, _position, PointLightDistance::TROIS_MILLE_DEUX_CENT_CINQUANTE);
+
 	}
+	
 }
 
 GLuint Engine::LoadTexture(const char* _path, const int _wrapParam, const int _filterParam)
